@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">GravityTech Software</title>
+  <desc id="logoDesc">GravityTech Software circular technology logo</desc>
+  <defs>
+    <linearGradient id="gtBlue" x1="114" y1="98" x2="418" y2="404" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a5a78"/>
+      <stop offset="1" stop-color="#12aee5"/>
+    </linearGradient>
+    <linearGradient id="gtDark" x1="120" y1="120" x2="316" y2="346" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0c5260"/>
+      <stop offset="1" stop-color="#073f51"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0a5a78"/>
+  <circle cx="256" cy="256" r="202" fill="#ffffff"/>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#1d252c" stroke-width="10"/>
+  <path
+    d="M140 177c0-25 20-45 45-45h78v50h-82c-10 0-16 11-11 20l66 112c16 27 52 27 68 0l61-104H256l27 48c6 10-8 21-16 12l-50-86h-38l85 145c24 42 84 42 109 0l79-137H276v-60h96c45 0 82 37 82 82v128h-48V214c0-7-6-13-13-13h-7l-73 127c-30 51-104 51-134 0l-72-124c-11-19 3-43 25-43h8v16z"
+    fill="url(#gtDark)"
+  />
+  <path
+    d="M276 132h111c37 0 67 30 67 67v149h-60V220c0-15-12-27-27-27h-91v-61z"
+    fill="url(#gtBlue)"
+  />
+  <g fill="#12aee5">
+    <rect x="346" y="146" width="72" height="12" rx="6"/>
+    <rect x="386" y="176" width="52" height="12" rx="6"/>
+    <rect x="340" y="208" width="86" height="12" rx="6"/>
+    <rect x="374" y="238" width="64" height="12" rx="6"/>
+    <rect x="334" y="270" width="92" height="12" rx="6"/>
+    <rect x="358" y="302" width="54" height="12" rx="6"/>
+    <rect x="330" y="334" width="74" height="12" rx="6"/>
+  </g>
+</svg>
