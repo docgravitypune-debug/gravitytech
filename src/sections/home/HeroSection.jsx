@@ -1,0 +1,92 @@
+import { useMemo } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, PlayCircle, ShieldCheck, Sparkles } from "lucide-react";
+import logoUrl from "../../../assets/logo.svg";
+import AnimatedBackground from "../../components/AnimatedBackground.jsx";
+import useAnimatedMetrics from "../../hooks/useAnimatedMetrics.js";
+import { heroMetrics } from "../../data.js";
+
+export default function HeroSection() {
+  const metrics = useAnimatedMetrics(useMemo(() => heroMetrics, []));
+
+  return (
+    <section className="hero section futuristic-hero">
+      <AnimatedBackground />
+      <div className="container hero-grid">
+        <motion.div
+          className="hero-copy"
+          initial={{ opacity: 0, y: 38 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <p className="eyebrow pulse-label">
+            <Sparkles size={16} /> Client project delivery + career-ready training
+          </p>
+          <h1>
+            Build real software in a <span>futuristic project lab.</span>
+          </h1>
+          <p className="hero-text">
+            GravityTech Software helps clients launch dependable technology solutions and gives
+            candidates real-time project exposure across Java, Python, data analytics, React, web
+            apps, and cloud-ready systems.
+          </p>
+          <div className="hero-actions">
+            <a className="button" href="#projects">
+              Explore Project Tracks <ArrowRight size={18} />
+            </a>
+            <a className="button button-secondary" href="careers.html">
+              <PlayCircle size={18} /> Apply for Project Work
+            </a>
+          </div>
+          <dl className="hero-metrics" aria-label="GravityTech delivery highlights">
+            {metrics.map((metric) => (
+              <div key={metric.label}>
+                <dt>
+                  {metric.current}
+                  {metric.suffix || ""}
+                </dt>
+                <dd>{metric.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </motion.div>
+
+        <motion.aside
+          className="hero-card"
+          aria-label="Featured project lab"
+          initial={{ opacity: 0, scale: 0.94, rotate: -2 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+        >
+          <div className="orbit-card holo-card">
+            <div className="orbit-rings">
+              <span />
+              <span />
+              <span />
+            </div>
+            <img src={logoUrl} alt="GravityTech Software logo" />
+            <h2>Real-Time Client Project Lab</h2>
+            <p>
+              Guided delivery sprints, code reviews, demos, documentation, dashboards, and
+              production-style workflows.
+            </p>
+            <ul className="check-list">
+              <li>
+                <ShieldCheck size={18} /> Java enterprise APIs
+              </li>
+              <li>
+                <ShieldCheck size={18} /> Python automation and AI
+              </li>
+              <li>
+                <ShieldCheck size={18} /> Data analytics dashboards
+              </li>
+              <li>
+                <ShieldCheck size={18} /> Client documentation and demos
+              </li>
+            </ul>
+          </div>
+        </motion.aside>
+      </div>
+    </section>
+  );
+}

@@ -1,12 +1,50 @@
+export const heroMetrics = [
+  { label: "Project modules", value: 42 },
+  { label: "Tech tracks", value: 8 },
+  { label: "Client sectors", value: 6 },
+  { label: "Practical delivery", value: 100, suffix: "%" },
+];
+
+export const services = [
+  {
+    icon: "Code2",
+    title: "Java Engineering Pods",
+    description:
+      "Spring Boot APIs, secure admin panels, ERP modules, payment flows, role-based dashboards, and deployment-ready backend systems.",
+    accent: "cyan",
+  },
+  {
+    icon: "BrainCircuit",
+    title: "Python Automation and AI",
+    description:
+      "Automation, Flask/Django apps, reporting pipelines, scraping, ML prototypes, AI assistants, and backend utilities.",
+    accent: "violet",
+  },
+  {
+    icon: "BarChart3",
+    title: "Data Analytics Studio",
+    description:
+      "SQL analysis, KPI modeling, dashboards, forecasting, Excel-to-BI migration, and boardroom-ready insight reports.",
+    accent: "lime",
+  },
+  {
+    icon: "CloudCog",
+    title: "Web, Cloud and Product Builds",
+    description:
+      "Responsive websites, client portals, CRM workflows, cloud-ready dashboards, SaaS prototypes, and UI systems.",
+    accent: "orange",
+  },
+];
+
 export const projectData = [
   {
-    title: "Java CRM and Lead Management",
+    title: "Java CRM and Lead Command Center",
     category: "java",
     level: "Intermediate",
     timeline: "4 modules",
     description:
-      "Build a Spring Boot CRM with lead capture, role-based access, status workflows, and dashboard reporting.",
-    skills: ["Spring Boot", "REST API", "MySQL"],
+      "Build a Spring Boot CRM with lead capture, role-based access, status workflows, notifications, and analytics.",
+    skills: ["Spring Boot", "REST API", "MySQL", "RBAC"],
   },
   {
     title: "Java Inventory and Billing System",
@@ -14,17 +52,17 @@ export const projectData = [
     level: "Advanced",
     timeline: "5 modules",
     description:
-      "Create purchase, stock, invoice, tax, and admin reporting modules for a business operations platform.",
-    skills: ["Java", "Hibernate", "Admin UI"],
+      "Create purchase, stock, invoice, tax, user, and admin reporting modules for a business operations platform.",
+    skills: ["Java", "Hibernate", "Admin UI", "Reports"],
   },
   {
-    title: "Python Automation Suite",
+    title: "Python Business Automation Suite",
     category: "python",
     level: "Beginner",
     timeline: "3 modules",
     description:
-      "Automate file processing, email alerts, spreadsheet cleanup, and daily report generation for client teams.",
-    skills: ["Python", "Pandas", "Automation"],
+      "Automate file processing, email alerts, spreadsheet cleanup, daily report generation, and client utilities.",
+    skills: ["Python", "Pandas", "Automation", "Email"],
   },
   {
     title: "Python AI Support Assistant",
@@ -32,26 +70,26 @@ export const projectData = [
     level: "Advanced",
     timeline: "5 modules",
     description:
-      "Prototype a support assistant with ticket classification, knowledge search, and response suggestions.",
-    skills: ["Python", "NLP", "Flask"],
+      "Prototype a support assistant with ticket classification, knowledge search, scoring, and response suggestions.",
+    skills: ["Python", "NLP", "Flask", "AI"],
   },
   {
-    title: "Sales Data Analytics Dashboard",
+    title: "Sales Analytics War Room",
     category: "analytics",
     level: "Intermediate",
     timeline: "4 modules",
     description:
       "Analyze sales trends, product performance, region comparisons, and monthly KPIs with interactive charts.",
-    skills: ["SQL", "Dashboards", "KPIs"],
+    skills: ["SQL", "Dashboards", "KPIs", "Charts"],
   },
   {
-    title: "Customer Churn Analytics",
+    title: "Customer Churn Intelligence",
     category: "analytics",
     level: "Advanced",
     timeline: "4 modules",
     description:
       "Prepare data, identify churn patterns, create scoring logic, and present insights for retention planning.",
-    skills: ["Python", "EDA", "Reporting"],
+    skills: ["Python", "EDA", "Reporting", "Modeling"],
   },
   {
     title: "Client Project Portal",
@@ -60,7 +98,7 @@ export const projectData = [
     timeline: "4 modules",
     description:
       "Deliver a responsive portal for project updates, document sharing, task progress, and client feedback.",
-    skills: ["HTML", "JavaScript", "UX"],
+    skills: ["React", "JavaScript", "UX", "APIs"],
   },
   {
     title: "Cloud-Ready Admin Dashboard",
@@ -69,7 +107,82 @@ export const projectData = [
     timeline: "5 modules",
     description:
       "Build a secure admin dashboard with analytics cards, user management, deployment notes, and QA checklist.",
-    skills: ["Frontend", "APIs", "Cloud"],
+    skills: ["Frontend", "APIs", "Cloud", "QA"],
+  },
+];
+
+export const clients = [
+  "Youget Software Solution",
+  "IntactBox System Pvt Ltd",
+  "Appligo Technosoft Pvt Ltd",
+  "Mauli Project Management",
+  "Guru Software Solutions",
+  "Inbatoz Consultansy Pvt Ltd",
+  "Incub8 Engineering LLP",
+  "Webforge Technology Pvt Ltd",
+  "Zentovia Technologies Pvt Ltd",
+  "LAPD IT Services",
+  "Eklakshya Abhyasika",
+  "Agstya Abhyasika",
+  "Sarathi Study Senter",
+  "Terra Fordge Infra",
+];
+
+export const testimonials = [
+  {
+    name: "Project Delivery Head",
+    company: "Youget Software Solution",
+    rating: 5,
+    quote:
+      "GravityTech brings a practical delivery mindset. Their project modules are clear, demo-ready, and easy for teams to extend.",
+  },
+  {
+    name: "Operations Team",
+    company: "IntactBox System Pvt Ltd",
+    rating: 5,
+    quote:
+      "The team understood our workflow quickly and converted it into a clean project plan with useful software modules.",
+  },
+  {
+    name: "Technology Coordinator",
+    company: "Appligo Technosoft Pvt Ltd",
+    rating: 5,
+    quote:
+      "Their Java, Python, and analytics tracks are strong for real-time project practice and client-facing demonstrations.",
+  },
+  {
+    name: "Program Lead",
+    company: "Eklakshya Abhyasika",
+    rating: 5,
+    quote:
+      "GravityTech helped us present technical work in a structured way with documentation, dashboards, and delivery checkpoints.",
+  },
+];
+
+export const processSteps = [
+  {
+    number: "01",
+    title: "Signal Capture",
+    description:
+      "We collect the client requirement, user roles, data flows, integrations, risks, and success metrics.",
+  },
+  {
+    number: "02",
+    title: "Sprint Architecture",
+    description:
+      "The work is mapped into UI, backend, database, analytics, QA, documentation, and demo milestones.",
+  },
+  {
+    number: "03",
+    title: "Build Lab",
+    description:
+      "Developers and learners work in guided pods with code review, task boards, testing, and feedback loops.",
+  },
+  {
+    number: "04",
+    title: "Launch Demo",
+    description:
+      "We hand over a working demo, screenshots, deployment notes, user guide, and next-phase improvement roadmap.",
   },
 ];
 
@@ -100,7 +213,7 @@ export const careerTracks = [
     type: "Project-based",
     description:
       "Create responsive pages, dashboards, reusable UI sections, API integrations, and demo-ready flows.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["React", "CSS", "JavaScript"],
   },
   {
     title: "Software Testing and QA",
@@ -118,72 +231,18 @@ export const careerTracks = [
   },
 ];
 
-export const services = [
+export const careerHighlights = [
   {
-    icon: "J",
-    title: "Java Project Development",
-    description:
-      "Spring Boot APIs, role-based dashboards, ERP modules, payment flows, and deployment-ready backend systems.",
+    title: "Mentored sprint work",
+    description: "Break client requirements into tickets and deliver usable software increments.",
   },
   {
-    icon: "Py",
-    title: "Python Solutions",
-    description:
-      "Automation, Flask/Django apps, web scraping, reporting pipelines, AI/ML prototypes, and backend services.",
+    title: "Technology specialization",
+    description: "Pick Java, Python, data analytics, frontend, full-stack, cloud, or QA project work.",
   },
   {
-    icon: "DA",
-    title: "Data Analytics",
-    description:
-      "Business dashboards, Excel-to-BI migration, SQL analysis, Power BI-style reporting, forecasting, and KPI tracking.",
-  },
-  {
-    icon: "UX",
-    title: "Web & Product Builds",
-    description:
-      "Responsive websites, admin panels, project portals, CRM workflows, and prototype-to-launch delivery.",
-  },
-];
-
-export const clients = [
-  "Youget Software Solution",
-  "IntactBox System Pvt Ltd",
-  "Appligo Technosoft Pvt Ltd",
-  "Mauli Project Management",
-  "Guru Software Solutions",
-  "Inbatoz Consultansy Pvt Ltd",
-  "Incub8 Engineering LLP",
-  "Webforge Technology Pvt Ltd",
-  "Zentovia Technologies Pvt Ltd",
-  "LAPD IT Services",
-  "Eklakshya Abhyasika",
-  "Agstya Abhyasika",
-  "Sarathi Study Senter",
-  "Terra Fordge Infra",
-];
-
-export const processSteps = [
-  {
-    number: "01",
-    title: "Requirement Discovery",
-    description: "We capture the client goal, users, workflow, integrations, and success metrics.",
-  },
-  {
-    number: "02",
-    title: "Project Sprint Plan",
-    description: "Work is split into milestones with UI, backend, database, analytics, and QA tasks.",
-  },
-  {
-    number: "03",
-    title: "Guided Implementation",
-    description:
-      "Developers and learners work on practical modules with review, testing, and feedback.",
-  },
-  {
-    number: "04",
-    title: "Demo & Handover",
-    description:
-      "We deliver a working project demo, documentation, deployment notes, and improvement roadmap.",
+    title: "Demo-ready portfolio",
+    description: "Prepare explanations, screenshots, documentation, and deployment notes.",
   },
 ];
 
@@ -196,8 +255,8 @@ export const categoryLabels = {
 };
 
 export const categoryIcons = {
-  analytics: "DA",
-  java: "J",
-  python: "Py",
-  web: "UX",
+  analytics: "BarChart3",
+  java: "Code2",
+  python: "BrainCircuit",
+  web: "CloudCog",
 };

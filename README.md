@@ -1,9 +1,10 @@
 # GravityTech Software React Website
 
-A complete React + Vite website for GravityTech Software. The site presents
-client software services, real-time project work, technology project tracks, and
-a careers page for applicants interested in Java, Python, data analytics, and
-web/full-stack project experience.
+A complete futuristic React + Vite website for GravityTech Software. The site
+presents client software services, real-time project work, technology project
+tracks, animated backgrounds, sliders, client reviews, and a careers page for
+applicants interested in Java, Python, data analytics, React, and web/full-stack
+project experience.
 
 ## Pages
 
@@ -15,21 +16,43 @@ web/full-stack project experience.
 ## React structure
 
 - `src/main.jsx` - React entry point.
-- `src/App.jsx` - page components, forms, navigation, cards, and dynamic UI.
-- `src/data.js` - project, service, client, process, and career track data.
+- `src/App.jsx` - small app shell that selects the current page.
+- `src/pages/` - page-level React components for home and careers.
+- `src/components/` - shared components such as header, footer, brand, toast,
+  animated background, animated section, and section headings.
+- `src/sections/home/` - homepage sections including hero, services, project
+  slider, process, clients, CTA, and contact form.
+- `src/sections/careers/` - careers page sections including hero, openings,
+  highlights, application form, and FAQ.
+- `src/sections/shared/` - shared testimonial/review slider.
+- `src/hooks/` - custom React hooks.
+- `src/utils/` - icon mapping and formatting helpers.
+- `src/data.js` - project, service, client, review, process, and career track
+  data.
 - `src/storage.js` - local-storage helpers for demo submissions.
 - `assets/styles.css` - shared responsive styling.
 - `assets/logo.svg` and `assets/favicon.svg` - GravityTech brand assets.
 
 ## Features
 
-- Responsive GravityTech-branded layout.
+- Futuristic responsive GravityTech-branded layout.
+- Animated hero/background effects powered by Framer Motion.
+- Swiper project slider and client review slider.
 - React state for dynamic project filtering by technology track.
-- Data-driven React career cards.
+- Data-driven React career cards and service cards.
 - Separate client section with client cards generated from `src/data.js`.
+- Client review/testimonial section.
 - Local-storage demo forms for project inquiries and career applications.
 - Mobile navigation and animated hero counters.
 - SVG logo and favicon included in `assets/`.
+
+## Main packages
+
+- React
+- Vite
+- Framer Motion
+- Swiper
+- Lucide React
 
 ## Install dependencies
 
