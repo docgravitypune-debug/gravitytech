@@ -394,34 +394,54 @@ export const lifeAtGravityTech = [
 
 export const perksBenefits = [
   {
-    icon: "ShieldCheck",
-    title: "Mentor Support",
-    description: "Guidance on code quality, project structure, interviews, and portfolio presentation.",
+    icon: "HeartPulse",
+    title: "Health and Wellness Support",
+    description: "Guidance, healthy work habits, and support systems that keep you learning without burnout.",
   },
   {
-    icon: "CloudCog",
+    icon: "Headphones",
     title: "Flexible Work Culture",
-    description: "Hybrid and remote-friendly project workflows with clear delivery checkpoints.",
+    description: "Balance project work and learning with hybrid, remote-friendly, and adaptive flexibility.",
   },
   {
-    icon: "BarChart3",
+    icon: "TrendingUp",
     title: "Transparent Career Growth",
-    description: "Clear tracks, practical evaluations, real project outcomes, and improvement feedback.",
-  },
-  {
-    icon: "UsersRound",
-    title: "Team Learning Events",
-    description: "Peer demos, review sessions, technical discussions, and client-style presentations.",
-  },
-  {
-    icon: "Rocket",
-    title: "Portfolio Building",
-    description: "Create demo-ready work with screenshots, architecture notes, and deployment guides.",
+    description: "Clear tracks, fair evaluations, real opportunities, and mentor feedback after every sprint.",
   },
   {
     icon: "BrainCircuit",
-    title: "Modern Tech Exposure",
-    description: "Practice Java, Python, React, analytics, QA, DevOps, AI tools, and documentation.",
+    title: "Dedicated Learning Budget",
+    description: "Access resources, tools, AI workflows, and guided practice for modern software skills.",
+  },
+  {
+    icon: "LineChart",
+    title: "Project Ownership",
+    description: "Own modules, decisions, demos, and improvements instead of only watching others build.",
+  },
+  {
+    icon: "UsersRound",
+    title: "Community Exposure",
+    description: "Collaborate with developers, analysts, testers, clients, mentors, and project contributors.",
+  },
+  {
+    icon: "Lightbulb",
+    title: "Career Development Initiatives",
+    description: "Upskill with workshops, mentorship, code reviews, documentation practice, and mock demos.",
+  },
+  {
+    icon: "Laptop",
+    title: "High-end Project Tools",
+    description: "Use modern editors, AI tools, Git workflows, deployment utilities, and collaboration systems.",
+  },
+  {
+    icon: "BadgeDollarSign",
+    title: "Bonus and Referrals",
+    description: "Extra rewards and recognition for strong delivery, referrals, and consistent improvement.",
+  },
+  {
+    icon: "Scale",
+    title: "Equal Opportunities",
+    description: "Freshers, students, switchers, and early-career talent can grow through practical work.",
   },
 ];
 

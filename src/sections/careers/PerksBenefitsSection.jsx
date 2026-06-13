@@ -21,7 +21,9 @@ export default function PerksBenefitsSection() {
         <div className="perks-grid">
           {perksBenefits.map((perk, index) => (
             <article className={`perk-card glass-card perk-card-${index + 1}`} key={perk.title}>
-              <Icon name={perk.icon} size={34} />
+              <span className="perk-icon">
+                <Icon name={perk.icon} size={36} />
+              </span>
               <h3>{perk.title}</h3>
               <p>{perk.description}</p>
             </article>

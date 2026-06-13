@@ -1,4 +1,5 @@
 import {
+  BadgeDollarSign,
   BarChart3,
   BrainCircuit,
   BriefcaseBusiness,
@@ -6,8 +7,14 @@ import {
   CloudCog,
   Code2,
   DatabaseZap,
+  Headphones,
+  HeartPulse,
   Layers3,
+  Laptop,
+  Lightbulb,
+  LineChart,
   Rocket,
+  Scale,
   ShieldCheck,
   Sparkles,
   Star,
@@ -15,6 +22,7 @@ import {
 } from "lucide-react";
 
 const icons = {
+  BadgeDollarSign,
   BarChart3,
   BrainCircuit,
   BriefcaseBusiness,
@@ -22,8 +30,14 @@ const icons = {
   CloudCog,
   Code2,
   DatabaseZap,
+  Headphones,
+  HeartPulse,
   Layers3,
+  Laptop,
+  Lightbulb,
+  LineChart,
   Rocket,
+  Scale,
   ShieldCheck,
   Sparkles,
   Star,

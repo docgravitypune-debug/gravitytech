@@ -1487,22 +1487,56 @@ textarea {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
+  align-items: start;
 }
 
 .perk-card {
-  min-height: 230px;
+  min-height: 224px;
+  padding: 38px 34px;
+  background: rgba(255, 246, 253, 0.72);
+  border-radius: 22px;
 }
 
-.perk-card svg {
+.perk-icon {
   position: relative;
   z-index: 1;
-  color: #6b6779;
-  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  color: #6f6a76;
+}
+
+.perk-icon svg {
+  stroke-width: 1.8;
+}
+
+.perk-card h3 {
+  margin-top: 0;
+  font-size: 1.24rem;
+  letter-spacing: -0.03em;
+}
+
+.perk-card p {
+  max-width: 260px;
 }
 
 .perk-card-2,
-.perk-card-5 {
+.perk-card-5,
+.perk-card-8 {
   transform: translateY(54px);
+}
+
+.perk-card-3,
+.perk-card-6,
+.perk-card-9 {
+  transform: translateY(0);
+}
+
+.perk-card-10 {
+  grid-column: 3;
 }
 
 .about-preview-grid,
@@ -1930,7 +1964,10 @@ textarea {
   }
 
   .perk-card-2,
-  .perk-card-5 {
+  .perk-card-5,
+  .perk-card-8,
+  .perk-card-10 {
+    grid-column: auto;
     transform: none;
   }
 

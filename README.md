@@ -52,6 +52,7 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 - About page and homepage about preview section.
 - Live validation for contact and job application forms.
 - Resume uploader on the career application form.
+- Expanded perks and benefits grid with managed icons and staggered cards.
 - React state for dynamic project filtering by technology track.
 - Data-driven React career cards and service cards.
 - Separate proper client section with animated client cards generated from
