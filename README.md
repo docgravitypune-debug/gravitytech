@@ -12,12 +12,15 @@ Java, Python, data analytics, React, and web/full-stack project experience.
   process, and project inquiry form.
 - `/careers.html` - career/project-work tracks, application form, local
   application history, and FAQ.
+- `/job-openings.html` - technical job openings board with search, filters, and
+  role cards.
 
 ## React structure
 
 - `src/main.jsx` - React entry point.
 - `src/App.jsx` - small app shell that selects the current page.
-- `src/pages/` - page-level React components for home and careers.
+- `src/pages/` - page-level React components for home, careers, and job
+  openings.
 - `src/components/` - shared components such as header, footer, brand, toast,
   animated background, animated section, and section headings.
 - `src/sections/home/` - homepage sections including hero, services, project
@@ -27,8 +30,8 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 - `src/sections/shared/` - shared testimonial/review slider.
 - `src/hooks/` - custom React hooks.
 - `src/utils/` - icon mapping and formatting helpers.
-- `src/data.js` - project, service, client, review, process, and career track
-  data.
+- `src/data.js` - project, service, client, review, process, career track, and
+  job opening data.
 - `src/storage.js` - local-storage helpers for demo submissions.
 - `assets/styles.css` - shared responsive styling.
 - `assets/logo.svg` and `assets/favicon.svg` - GravityTech brand assets.
@@ -42,6 +45,8 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 - Animated hero/background effects powered by Framer Motion.
 - Swiper project slider and client review slider.
 - Coditas-inspired impact stats and structured delivery/career journey sections.
+- Dedicated job openings page for Java, Python, React, Data Analytics, QA,
+  DevOps, full-stack, and documentation roles.
 - React state for dynamic project filtering by technology track.
 - Data-driven React career cards and service cards.
 - Separate proper client section with animated client cards generated from

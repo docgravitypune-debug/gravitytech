@@ -12,14 +12,14 @@ export default function Header({ page }) {
 
   const closeMenu = () => setIsOpen(false);
   const links =
-    page === "careers"
+    page === "careers" || page === "jobs"
       ? [
           { href: "index.html#services", label: "Services" },
           { href: "index.html#projects", label: "Projects" },
           { href: "index.html#clients", label: "Clients" },
-          { href: "#openings", label: "Openings" },
+          { href: "job-openings.html", label: "Openings" },
           { href: "#reviews", label: "Reviews" },
-          { href: "#apply", label: "Apply" },
+          { href: "careers.html#apply", label: "Apply" },
         ]
       : [
           { href: "#services", label: "Services" },
@@ -55,10 +55,10 @@ export default function Header({ page }) {
           <li>
             <a
               className="button button-small"
-              href={page === "careers" ? "index.html#contact" : "#contact"}
+              href={page === "careers" || page === "jobs" ? "index.html#contact" : "#contact"}
               onClick={closeMenu}
             >
-              {page === "careers" ? "Hire Us" : "Start a Project"}
+              {page === "careers" || page === "jobs" ? "Hire Us" : "Start a Project"}
             </a>
           </li>
         </ul>

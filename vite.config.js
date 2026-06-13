@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         careers: resolve(__dirname, "careers.html"),
+        jobs: resolve(__dirname, "job-openings.html"),
       },
     },
   },

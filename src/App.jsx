@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import CareersPage from "./pages/CareersPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import JobOpeningsPage from "./pages/JobOpeningsPage.jsx";
 import Toast from "./components/Toast.jsx";
 
 export default function App({ page }) {
@@ -8,10 +9,13 @@ export default function App({ page }) {
   const toastTimer = useRef();
 
   useEffect(() => {
-    document.title =
-      page === "careers"
-        ? "Careers | GravityTech Software"
-        : "GravityTech Software | Futuristic Client Project Lab";
+    const titles = {
+      careers: "Careers | GravityTech Software",
+      jobs: "Job Openings | GravityTech Software",
+      home: "GravityTech Software | Futuristic Client Project Lab",
+    };
+
+    document.title = titles[page] || titles.home;
   }, [page]);
 
   useEffect(() => {
@@ -29,7 +33,13 @@ export default function App({ page }) {
 
   return (
     <>
-      {page === "careers" ? <CareersPage showToast={showToast} /> : <HomePage showToast={showToast} />}
+      {page === "jobs" ? (
+        <JobOpeningsPage />
+      ) : page === "careers" ? (
+        <CareersPage showToast={showToast} />
+      ) : (
+        <HomePage showToast={showToast} />
+      )}
       <Toast message={toast} />
     </>
   );

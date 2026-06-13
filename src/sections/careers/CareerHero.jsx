@@ -25,6 +25,9 @@ export default function CareerHero() {
             practices.
           </p>
           <div className="hero-actions">
+            <a className="button" href="job-openings.html">
+              Job Openings <BriefcaseBusiness size={18} />
+            </a>
             <a className="button" href="#apply">
               Apply Now <ArrowRight size={18} />
             </a>

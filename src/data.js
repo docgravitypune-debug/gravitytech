@@ -249,6 +249,89 @@ export const careerTracks = [
   },
 ];
 
+export const jobOpenings = [
+  {
+    title: "Java Spring Boot Developer",
+    area: "Java",
+    type: "Full time",
+    experience: "1-3 years",
+    location: "Pune / Remote",
+    skills: ["Java", "Spring Boot", "REST API", "MySQL", "Git"],
+    description:
+      "Build client-ready backend APIs, role-based workflows, dashboards, and integration modules for real-time business projects.",
+  },
+  {
+    title: "Python Automation Developer",
+    area: "Python",
+    type: "Full time",
+    experience: "0-2 years",
+    location: "Pune / Remote",
+    skills: ["Python", "Pandas", "Flask", "Automation", "APIs"],
+    description:
+      "Create automation scripts, reporting utilities, data pipelines, and lightweight backend services for client operations.",
+  },
+  {
+    title: "React Frontend Developer",
+    area: "Frontend",
+    type: "Project based",
+    experience: "0-2 years",
+    location: "Hybrid",
+    skills: ["React", "JavaScript", "CSS", "Responsive UI", "Vite"],
+    description:
+      "Develop responsive interfaces, animated sections, dashboards, forms, and reusable UI components for GravityTech projects.",
+  },
+  {
+    title: "Data Analytics Associate",
+    area: "Data Analytics",
+    type: "Internship",
+    experience: "Fresher",
+    location: "Pune / Remote",
+    skills: ["SQL", "Excel", "Power BI", "Python", "Dashboards"],
+    description:
+      "Clean datasets, analyze KPIs, create dashboards, document insights, and prepare client-facing analytics reports.",
+  },
+  {
+    title: "Full-Stack Project Trainee",
+    area: "Full Stack",
+    type: "Internship",
+    experience: "Fresher",
+    location: "Pune",
+    skills: ["React", "Node.js", "APIs", "Database", "Deployment"],
+    description:
+      "Work across frontend, backend, database, documentation, and deployment tasks in guided project sprints.",
+  },
+  {
+    title: "Software Testing and QA Trainee",
+    area: "QA",
+    type: "Project based",
+    experience: "Fresher",
+    location: "Remote",
+    skills: ["Manual Testing", "Test Cases", "Bug Reports", "Regression", "UAT"],
+    description:
+      "Write test scenarios, verify features, document defects, support release checklists, and validate project workflows.",
+  },
+  {
+    title: "DevOps and Cloud Intern",
+    area: "DevOps",
+    type: "Internship",
+    experience: "0-1 year",
+    location: "Hybrid",
+    skills: ["GitHub", "CI/CD", "Linux", "Docker", "Cloud Basics"],
+    description:
+      "Support build pipelines, deployment notes, environment setup, monitoring checklists, and cloud-ready project handover.",
+  },
+  {
+    title: "Technical Content Writer",
+    area: "Documentation",
+    type: "Part time",
+    experience: "0-2 years",
+    location: "Remote",
+    skills: ["Technical Writing", "SEO", "Docs", "Case Studies", "AI Tools"],
+    description:
+      "Create project documentation, technical blogs, demo scripts, user guides, and client handover content.",
+  },
+];
+
 export const careerHighlights = [
   {
     title: "Mentored sprint work",
