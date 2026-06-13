@@ -145,6 +145,23 @@ export const services = [
   },
 ];
 
+export const clients = [
+  "Youget Software Solution",
+  "IntactBox System Pvt Ltd",
+  "Appligo Technosoft Pvt Ltd",
+  "Mauli Project Management",
+  "Guru Software Solutions",
+  "Inbatoz Consultansy Pvt Ltd",
+  "Incub8 Engineering LLP",
+  "Webforge Technology Pvt Ltd",
+  "Zentovia Technologies Pvt Ltd",
+  "LAPD IT Services",
+  "Eklakshya Abhyasika",
+  "Agstya Abhyasika",
+  "Sarathi Study Senter",
+  "Terra Fordge Infra",
+];
+
 export const processSteps = [
   {
     number: "01",

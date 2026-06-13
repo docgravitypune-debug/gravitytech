@@ -4,6 +4,7 @@ import {
   careerTracks,
   categoryIcons,
   categoryLabels,
+  clients,
   processSteps,
   projectData,
   services,
@@ -66,6 +67,7 @@ function Header({ page }) {
           { href: "#services", label: "Services" },
           { href: "#projects", label: "Projects" },
           { href: "#process", label: "Process" },
+          { href: "#clients", label: "Clients" },
           { href: "careers.html", label: "Careers" },
         ];
 
@@ -133,6 +135,7 @@ function HomePage({ showToast }) {
         <ServicesSection />
         <ProjectsSection />
         <ProcessSection />
+        <ClientsSection />
         <CareerCta />
         <ContactSection showToast={showToast} />
       </main>
@@ -141,6 +144,7 @@ function HomePage({ showToast }) {
         links={[
           { href: "#services", label: "Services" },
           { href: "#projects", label: "Projects" },
+          { href: "#clients", label: "Clients" },
           { href: "careers.html", label: "Careers" },
         ]}
         tracks={["Java", "Python", "Data Analytics"]}
@@ -322,6 +326,34 @@ function ProcessSection() {
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+  );
+}
+
+function ClientsSection() {
+  return (
+    <section id="clients" className="section section-muted">
+      <div className="container">
+        <div className="section-heading split">
+          <div>
+            <p className="eyebrow">Our clients</p>
+            <h2>Trusted by growing software, education, and infrastructure teams.</h2>
+          </div>
+          <p>
+            GravityTech Software supports real-time project work and technology delivery for a
+            diverse client network across software services, consultancy, engineering, education,
+            and infrastructure.
+          </p>
+        </div>
+        <div className="client-grid" aria-label="GravityTech client list">
+          {clients.map((client) => (
+            <article className="client-card" key={client}>
+              <span>{getClientInitials(client)}</span>
+              <h3>{client}</h3>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -789,4 +821,14 @@ function formatDate(value) {
     day: "numeric",
     year: "numeric",
   });
+}
+
+function getClientInitials(name) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
 }

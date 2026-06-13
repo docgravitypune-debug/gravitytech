@@ -16,7 +16,7 @@ web/full-stack project experience.
 
 - `src/main.jsx` - React entry point.
 - `src/App.jsx` - page components, forms, navigation, cards, and dynamic UI.
-- `src/data.js` - project, service, process, and career track data.
+- `src/data.js` - project, service, client, process, and career track data.
 - `src/storage.js` - local-storage helpers for demo submissions.
 - `assets/styles.css` - shared responsive styling.
 - `assets/logo.svg` and `assets/favicon.svg` - GravityTech brand assets.
@@ -26,6 +26,7 @@ web/full-stack project experience.
 - Responsive GravityTech-branded layout.
 - React state for dynamic project filtering by technology track.
 - Data-driven React career cards.
+- Separate client section with client cards generated from `src/data.js`.
 - Local-storage demo forms for project inquiries and career applications.
 - Mobile navigation and animated hero counters.
 - SVG logo and favicon included in `assets/`.
