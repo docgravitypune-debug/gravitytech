@@ -182,13 +182,17 @@ textarea {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   z-index: 30;
   top: 0;
-  padding: 16px 0 0;
-  background: transparent;
+  left: 0;
+  right: 0;
+  padding: 16px 0;
+  background:
+    linear-gradient(180deg, rgba(26, 21, 48, 0.62), rgba(26, 21, 48, 0.18) 72%, transparent),
+    rgba(26, 21, 48, 0.18);
   border-bottom: 0;
-  backdrop-filter: none;
+  backdrop-filter: blur(16px);
 }
 
 .navbar {
@@ -198,11 +202,15 @@ textarea {
   justify-content: space-between;
   gap: 22px;
   padding: 12px 24px;
-  background: rgba(26, 21, 48, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)),
+    rgba(26, 21, 48, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-pill);
-  box-shadow: 0 12px 44px rgba(26, 21, 48, 0.2);
-  backdrop-filter: blur(14px);
+  box-shadow:
+    0 18px 54px rgba(26, 21, 48, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
 }
 
 .brand {
