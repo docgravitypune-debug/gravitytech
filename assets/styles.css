@@ -1,20 +1,46 @@
 :root {
-  --ink: #ecfeff;
-  --ink-dark: #07111f;
-  --muted: #9fb5c5;
-  --brand: #00d4ff;
-  --brand-2: #7c3aed;
-  --brand-3: #a3e635;
+  --color-bg-dark: #1a1530;
+  --color-bg-dark-2: #15131f;
+  --color-bg-light: #ffffff;
+  --color-text-dark: #1f1b2e;
+  --color-text-light: #f5f3fa;
+  --color-text-muted: #6b6779;
+  --color-text-muted-light: #c9c6d6;
+  --gradient-accent: linear-gradient(90deg, #29d6e0 0%, #6a5cf5 55%, #b13cf0 100%);
+  --gradient-accent-soft: linear-gradient(90deg, #4dd0e1 0%, #7c4dff 100%);
+  --gradient-hero-bg: linear-gradient(135deg, rgba(26, 21, 48, 0.94) 0%, rgba(40, 30, 70, 0.9) 100%);
+  --gradient-section-pink: linear-gradient(135deg, #fdeefc 0%, #f3d9fb 35%, #e3c7ff 70%, #fdf3ff 100%);
+  --gradient-section-warm: linear-gradient(135deg, #fff6ef 0%, #fbe4f1 50%, #f3d6ff 100%);
+  --card-bg-light: #f8f3fc;
+  --card-bg-light-alt: #f2e6fb;
+  --card-bg-dark: #232032;
+  --border-soft: rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 8px 30px rgba(60, 30, 90, 0.08);
+  --shadow-card: 0 4px 24px rgba(40, 20, 80, 0.06);
+  --radius-pill: 999px;
+  --radius-card: 20px;
+  --radius-card-lg: 28px;
+  --font-display: "Poppins", "Inter", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --section-padding-y: 100px;
+  --section-padding-x: 6vw;
+  --container-max: 1280px;
+  --ink: var(--color-text-light);
+  --ink-dark: var(--color-text-dark);
+  --muted: var(--color-text-muted-light);
+  --brand: #29d6e0;
+  --brand-2: #6a5cf5;
+  --brand-3: #b13cf0;
   --brand-4: #fb923c;
-  --paper: #ffffff;
-  --surface: #0d1728;
-  --surface-2: #111c31;
-  --line: rgba(148, 163, 184, 0.22);
-  --glass: rgba(13, 23, 40, 0.66);
-  --glass-light: rgba(255, 255, 255, 0.82);
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-  --radius: 28px;
-  --max-width: 1200px;
+  --paper: var(--color-bg-light);
+  --surface: var(--color-bg-dark);
+  --surface-2: var(--color-bg-dark-2);
+  --line: rgba(255, 255, 255, 0.12);
+  --glass: rgba(35, 32, 50, 0.7);
+  --glass-light: rgba(248, 243, 252, 0.86);
+  --shadow: 0 24px 80px rgba(40, 20, 80, 0.16);
+  --radius: var(--radius-card-lg);
+  --max-width: var(--container-max);
 }
 
 * {
@@ -27,15 +53,11 @@ html {
 
 body {
   margin: 0;
-  color: var(--ink);
-  background:
-    radial-gradient(circle at top left, rgba(0, 212, 255, 0.2), transparent 32rem),
-    radial-gradient(circle at 85% 12%, rgba(124, 58, 237, 0.18), transparent 28rem),
-    #050b16;
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  color: var(--color-text-dark);
+  background: var(--color-bg-light);
+  font-family: var(--font-body);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.menu-open {
@@ -67,19 +89,19 @@ textarea {
 .section {
   position: relative;
   overflow: hidden;
-  padding: 104px 0;
+  padding: var(--section-padding-y) 0;
 }
 
 .section-muted {
-  background:
-    radial-gradient(circle at 12% 10%, rgba(0, 212, 255, 0.1), transparent 28rem),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  margin: 24px;
+  background: var(--gradient-section-pink);
+  border-radius: 40px;
 }
 
 .section-dark {
-  background:
-    radial-gradient(circle at top left, rgba(124, 58, 237, 0.24), transparent 34rem),
-    linear-gradient(135deg, #07111f, #0d1728 74%);
+  margin: 24px;
+  background: var(--color-bg-dark);
+  border-radius: 40px;
 }
 
 .section-heading {
@@ -99,10 +121,12 @@ textarea {
 .application-grid h2,
 .learning-grid h2 {
   margin: 0;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-size: clamp(2.05rem, 4vw, 3.9rem);
-  line-height: 1.02;
-  letter-spacing: -0.05em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .section-heading p,
@@ -111,8 +135,21 @@ textarea {
 .learning-grid p,
 .application-grid p,
 .contact-grid p {
-  color: var(--muted);
+  color: var(--color-text-muted);
   font-size: 1.05rem;
+}
+
+.section-dark .section-heading h2,
+.section-dark .section-heading p,
+.section-dark h2,
+.section-dark h3,
+.section-dark p {
+  color: var(--color-text-light);
+}
+
+.section-dark .section-heading p,
+.section-dark p {
+  color: var(--color-text-muted-light);
 }
 
 .split {
@@ -128,7 +165,7 @@ textarea {
   align-items: center;
   gap: 8px;
   margin: 0 0 14px;
-  color: var(--brand);
+  color: #8b3df0;
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.18em;
@@ -137,27 +174,35 @@ textarea {
 
 .pulse-label {
   padding: 8px 12px;
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.22);
-  border-radius: 999px;
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+  color: var(--color-text-light);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 30px rgba(120, 80, 240, 0.22);
 }
 
 .site-header {
   position: sticky;
   z-index: 30;
   top: 0;
-  background: rgba(5, 11, 22, 0.78);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(20px);
+  padding: 16px 0 0;
+  background: transparent;
+  border-bottom: 0;
+  backdrop-filter: none;
 }
 
 .navbar {
-  min-height: 84px;
+  min-height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 22px;
+  padding: 12px 24px;
+  background: rgba(26, 21, 48, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 12px 44px rgba(26, 21, 48, 0.2);
+  backdrop-filter: blur(14px);
 }
 
 .brand {
@@ -239,11 +284,11 @@ textarea {
   gap: 9px;
   min-height: 54px;
   padding: 0 24px;
-  color: #03121d;
-  background: linear-gradient(135deg, var(--brand), var(--brand-3));
+  color: #ffffff;
+  background: var(--gradient-accent);
   border: 0;
-  border-radius: 999px;
-  box-shadow: 0 18px 42px rgba(0, 212, 255, 0.24);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(120, 80, 240, 0.35);
   cursor: pointer;
   font-weight: 900;
   transition:
@@ -254,7 +299,7 @@ textarea {
 .button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 22px 52px rgba(0, 212, 255, 0.36);
+  box-shadow: 0 12px 30px rgba(120, 80, 240, 0.45);
 }
 
 .button-secondary {
@@ -273,13 +318,11 @@ textarea {
 .glass-card {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
-    var(--glass);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(22px);
+  background: rgba(248, 243, 252, 0.88);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
   transform-style: preserve-3d;
   transition:
     border-color 220ms ease,
@@ -291,7 +334,7 @@ textarea {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 36%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.54), transparent 44%);
   opacity: 0.42;
   pointer-events: none;
 }
@@ -302,7 +345,7 @@ textarea {
   width: 190px;
   height: 190px;
   content: "";
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(139, 61, 240, 0.1);
   border-radius: 999px;
   filter: blur(4px);
   opacity: 0;
@@ -311,10 +354,10 @@ textarea {
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 212, 255, 0.42);
+  border-color: rgba(139, 61, 240, 0.2);
   box-shadow:
-    0 28px 90px rgba(0, 0, 0, 0.38),
-    0 0 42px rgba(0, 212, 255, 0.12);
+    0 18px 48px rgba(60, 30, 90, 0.12),
+    0 0 42px rgba(139, 61, 240, 0.1);
 }
 
 .glass-card:hover::after {
@@ -322,7 +365,8 @@ textarea {
 }
 
 .dark-card {
-  background: rgba(5, 11, 22, 0.56);
+  background: var(--card-bg-dark);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .animated-bg {
@@ -390,14 +434,14 @@ textarea {
   min-height: 760px;
   display: flex;
   align-items: center;
-  padding-top: 112px;
+  padding: 132px 0 92px;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
 }
 
 .futuristic-hero {
-  background:
-    radial-gradient(circle at 80% 10%, rgba(0, 212, 255, 0.16), transparent 30rem),
-    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.18), transparent 30rem),
-    linear-gradient(180deg, #050b16, #091426 78%);
+  background: var(--gradient-hero-bg), var(--color-bg-dark);
+  background-blend-mode: multiply;
 }
 
 .hero-grid {
@@ -411,24 +455,29 @@ textarea {
 
 .hero h1 {
   max-width: 820px;
+  margin-inline: auto;
+  color: var(--color-text-light);
   font-size: clamp(3rem, 7vw, 6.8rem);
 }
 
-.hero h1 span {
+.hero h1 span,
+.text-gradient {
   color: transparent;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2), var(--brand-3));
+  background: var(--gradient-accent-soft);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 .hero-text {
   max-width: 700px;
-  margin: 24px 0 0;
+  margin: 24px auto 0;
+  color: var(--color-text-muted-light);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
   margin-top: 34px;
 }
@@ -438,7 +487,7 @@ textarea {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   max-width: 760px;
-  margin: 42px 0 0;
+  margin: 42px auto 0;
 }
 
 .hero-metrics div {
@@ -463,12 +512,49 @@ textarea {
   font-weight: 800;
 }
 
+.hero-logo-strip {
+  margin-top: 54px;
+  overflow: hidden;
+  opacity: 0.86;
+}
+
+.hero-logo-strip p {
+  margin: 0 0 16px;
+  color: var(--color-text-muted-light);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-logo-strip div {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  animation: marquee 34s linear infinite;
+}
+
+.hero-logo-strip span {
+  padding: 8px 14px;
+  color: var(--color-text-muted-light);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  font-weight: 700;
+}
+
 .orbit-card,
 .career-panel {
   padding: 34px;
 }
 
 .holo-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(35, 32, 50, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-card-lg);
+  backdrop-filter: blur(18px);
   border-color: rgba(0, 212, 255, 0.24);
   box-shadow:
     0 28px 90px rgba(0, 0, 0, 0.35),
@@ -594,7 +680,7 @@ textarea {
   position: relative;
   z-index: 1;
   margin: 18px 0 10px;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-size: 1.17rem;
   line-height: 1.25;
 }
@@ -610,7 +696,31 @@ textarea {
   position: relative;
   z-index: 1;
   margin: 0;
-  color: var(--muted);
+  color: var(--color-text-muted);
+}
+
+.section-dark .service-card h3,
+.section-dark .project-card h3,
+.section-dark .career-card h3,
+.section-dark .client-card h3,
+.section-dark .impact-card h3,
+.section-dark .journey-card h3,
+.section-dark .review-card h3,
+.section-dark .highlight-list h3,
+.dark-card h3 {
+  color: var(--color-text-light);
+}
+
+.section-dark .service-card p,
+.section-dark .project-card p,
+.section-dark .career-card p,
+.section-dark .client-card p,
+.section-dark .impact-card p,
+.section-dark .journey-card p,
+.section-dark .review-card p,
+.section-dark .highlight-list p,
+.dark-card p {
+  color: var(--color-text-muted-light);
 }
 
 .card-icon,
@@ -654,10 +764,10 @@ textarea {
 
 .filter-button {
   padding: 10px 18px;
-  color: rgba(236, 254, 255, 0.8);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  color: var(--color-text-dark);
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
   cursor: pointer;
   font-weight: 900;
 }
@@ -665,8 +775,8 @@ textarea {
 .filter-button.active,
 .filter-button:hover,
 .filter-button:focus-visible {
-  color: #03121d;
-  background: linear-gradient(135deg, var(--brand), var(--brand-3));
+  color: #ffffff;
+  background: var(--gradient-accent);
   border-color: transparent;
 }
 
@@ -693,14 +803,14 @@ textarea {
 .impact-copy h2 {
   max-width: 640px;
   margin: 0;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-size: clamp(2.1rem, 4vw, 4rem);
   line-height: 1.03;
   letter-spacing: -0.05em;
 }
 
 .impact-copy p {
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .impact-stats {
@@ -709,6 +819,14 @@ textarea {
 
 .impact-card {
   min-height: 260px;
+}
+
+.impact-card:nth-child(2) {
+  background: rgba(242, 230, 251, 0.9);
+}
+
+.impact-card:nth-child(3) {
+  background: rgba(253, 242, 233, 0.92);
 }
 
 .impact-card strong {
@@ -760,10 +878,10 @@ textarea {
 .project-meta span,
 .career-meta span {
   padding: 7px 10px;
-  color: rgba(236, 254, 255, 0.9);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 999px;
+  color: #6d28d9;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
   font-size: 0.82rem;
   font-weight: 800;
 }
@@ -862,8 +980,8 @@ textarea {
   justify-content: center;
   width: 48px;
   height: 48px;
-  color: #03121d;
-  background: linear-gradient(135deg, var(--brand), var(--brand-3));
+  color: #ffffff;
+  background: var(--gradient-accent);
   border-radius: 16px;
   font-weight: 950;
 }
@@ -888,7 +1006,7 @@ textarea {
 }
 
 .client-accent-lime > span {
-  background: linear-gradient(135deg, var(--brand-3), var(--brand));
+  background: linear-gradient(135deg, #4dd0e1, #7c4dff);
 }
 
 .client-accent-orange > span {
@@ -978,7 +1096,7 @@ textarea {
   z-index: 1;
   display: grid;
   gap: 8px;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-weight: 900;
 }
 
@@ -987,16 +1105,16 @@ textarea {
 .form-card textarea {
   width: 100%;
   padding: 14px 16px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--color-text-dark);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--border-soft);
   border-radius: 14px;
   outline: none;
 }
 
 .form-card input::placeholder,
 .form-card textarea::placeholder {
-  color: rgba(236, 254, 255, 0.48);
+  color: rgba(31, 27, 46, 0.42);
 }
 
 .form-card select option {
@@ -1018,7 +1136,7 @@ textarea {
   position: relative;
   z-index: 1;
   margin: 0;
-  color: var(--muted);
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
@@ -1106,9 +1224,11 @@ textarea {
 }
 
 .site-footer {
-  padding: 58px 0 24px;
-  color: rgba(236, 254, 255, 0.7);
-  background: #030711;
+  margin-top: 24px;
+  padding: 80px 0 40px;
+  color: var(--color-text-muted-light);
+  background: var(--color-bg-dark-2);
+  border-radius: 40px 40px 0 0;
   border-top: 1px solid var(--line);
 }
 
@@ -1126,7 +1246,7 @@ textarea {
 .site-footer span {
   display: block;
   margin-top: 8px;
-  color: rgba(236, 254, 255, 0.72);
+  color: var(--color-text-muted-light);
 }
 
 .site-footer a:hover,

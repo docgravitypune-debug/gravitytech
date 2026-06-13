@@ -4,7 +4,7 @@ import { ArrowRight, PlayCircle, ShieldCheck, Sparkles } from "lucide-react";
 import logoUrl from "../../../assets/logo.svg";
 import AnimatedBackground from "../../components/AnimatedBackground.jsx";
 import useAnimatedMetrics from "../../hooks/useAnimatedMetrics.js";
-import { heroMetrics } from "../../data.js";
+import { clients, heroMetrics } from "../../data.js";
 
 export default function HeroSection() {
   const metrics = useAnimatedMetrics(useMemo(() => heroMetrics, []));
@@ -23,7 +23,7 @@ export default function HeroSection() {
             <Sparkles size={16} /> Client project delivery + career-ready training
           </p>
           <h1>
-            Build real software in a <span>futuristic project lab.</span>
+            Build real software in a <span className="text-gradient">futuristic project lab.</span>
           </h1>
           <p className="hero-text">
             GravityTech Software helps clients launch dependable technology solutions and gives
@@ -49,6 +49,14 @@ export default function HeroSection() {
               </div>
             ))}
           </dl>
+          <div className="hero-logo-strip" aria-label="Trusted client names">
+            <p>Trusted by teams building real software outcomes</p>
+            <div>
+              {clients.slice(0, 8).map((client) => (
+                <span key={client.name}>{client.name}</span>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         <motion.aside
