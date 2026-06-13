@@ -3,6 +3,7 @@ import Footer from "../components/Footer.jsx";
 import HeroSection from "../sections/home/HeroSection.jsx";
 import ServicesSection from "../sections/home/ServicesSection.jsx";
 import ImpactSection from "../sections/home/ImpactSection.jsx";
+import AboutPreviewSection from "../sections/home/AboutPreviewSection.jsx";
 import ProjectsSection from "../sections/home/ProjectsSection.jsx";
 import ProcessSection from "../sections/home/ProcessSection.jsx";
 import ClientsSection from "../sections/home/ClientsSection.jsx";
@@ -18,6 +19,7 @@ export default function HomePage({ showToast }) {
         <HeroSection />
         <ServicesSection />
         <ImpactSection />
+        <AboutPreviewSection />
         <ProjectsSection />
         <ProcessSection />
         <ClientsSection />
@@ -29,6 +31,7 @@ export default function HomePage({ showToast }) {
         description="Futuristic software delivery, client project labs, and career-ready real-time project work."
         links={[
           { href: "#services", label: "Services" },
+          { href: "about.html", label: "About" },
           { href: "#projects", label: "Projects" },
           { href: "#clients", label: "Clients" },
           { href: "#reviews", label: "Reviews" },

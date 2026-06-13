@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap");
+
 :root {
   --color-bg-dark: #1a1530;
   --color-bg-dark-2: #15131f;
@@ -1370,6 +1372,265 @@ textarea {
   text-transform: uppercase;
 }
 
+.life-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.life-copy h2,
+.perks-heading h2,
+.about-preview-grid h2,
+.about-hero h1,
+.about-story-grid h2 {
+  margin: 0;
+  color: var(--color-text-dark);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.life-story-list {
+  display: grid;
+  gap: 28px;
+  margin-top: 46px;
+}
+
+.life-story-list h3 {
+  margin: 0 0 12px;
+  color: #1f3760;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.life-story-list p,
+.perks-heading p,
+.about-preview-grid p,
+.about-story-grid p,
+.about-hero p {
+  color: var(--color-text-muted);
+  font-size: 1.08rem;
+}
+
+.life-collage {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 18px;
+  min-height: 560px;
+}
+
+.life-photo {
+  position: relative;
+  display: flex;
+  min-height: 180px;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+}
+
+.life-photo::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.32), transparent 26%),
+    linear-gradient(135deg, rgba(41, 214, 224, 0.82), rgba(177, 60, 240, 0.82));
+}
+
+.life-photo::after {
+  position: absolute;
+  inset: 18px;
+  content: "";
+  opacity: 0.35;
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%);
+  background-size: 28px 28px;
+  border-radius: 18px;
+}
+
+.life-photo span {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.life-photo-1 {
+  grid-row: span 2;
+}
+
+.life-photo-2 {
+  margin-top: 56px;
+}
+
+.life-photo-3 {
+  min-height: 230px;
+}
+
+.life-photo-4 {
+  margin-bottom: 44px;
+}
+
+.perks-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 62px;
+}
+
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.perk-card {
+  min-height: 230px;
+}
+
+.perk-card svg {
+  position: relative;
+  z-index: 1;
+  color: #6b6779;
+  margin-bottom: 20px;
+}
+
+.perk-card-2,
+.perk-card-5 {
+  transform: translateY(54px);
+}
+
+.about-preview-grid,
+.about-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.about-mini-stats,
+.about-stat-grid,
+.about-value-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.about-mini-stats,
+.about-stat-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-mini-stats article,
+.about-stat-grid article {
+  padding: 28px;
+}
+
+.about-mini-stats strong,
+.about-stat-grid strong {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: transparent;
+  background: var(--gradient-accent-soft);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: clamp(2.3rem, 4vw, 3.7rem);
+  line-height: 1;
+}
+
+.about-mini-stats span,
+.about-stat-grid span {
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-muted);
+  font-weight: 800;
+}
+
+.about-value-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-value-grid article {
+  padding: 30px;
+}
+
+.about-value-grid svg {
+  position: relative;
+  z-index: 1;
+  color: #8b3df0;
+}
+
+.about-hero {
+  min-height: 530px;
+  display: flex;
+  align-items: center;
+  padding: 132px 0 82px;
+}
+
+.about-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.about-hero h1,
+.about-hero p {
+  color: var(--color-text-light);
+}
+
+.about-hero p:not(.eyebrow) {
+  color: var(--color-text-muted-light);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+}
+
+.field-error {
+  color: #c026d3;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.field-invalid input,
+.field-invalid select,
+.field-invalid textarea,
+.field-invalid .resume-dropzone {
+  border-color: #c026d3;
+  box-shadow: 0 0 0 4px rgba(192, 38, 211, 0.12);
+}
+
+.resume-upload input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.resume-dropzone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 74px;
+  padding: 16px;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px dashed rgba(139, 61, 240, 0.34);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+}
+
+.resume-dropzone svg {
+  color: #8b3df0;
+}
+
 .career-card .button {
   position: relative;
   z-index: 1;
@@ -1514,8 +1775,20 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .life-grid,
+  .about-preview-grid,
+  .about-story-grid,
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
   .impact-stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .perks-grid,
+  .about-value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .jobs-layout {
@@ -1539,6 +1812,7 @@ textarea {
 
   .hero-grid,
   .jobs-hero-grid,
+  .perks-heading,
   .contact-grid,
   .application-grid,
   .learning-grid,
@@ -1558,6 +1832,8 @@ textarea {
 
   .career-grid,
   .impact-stats,
+  .about-mini-stats,
+  .about-stat-grid,
   .jobs-filter-panel,
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1607,6 +1883,10 @@ textarea {
   .career-grid,
   .client-grid,
   .impact-stats,
+  .perks-grid,
+  .about-mini-stats,
+  .about-stat-grid,
+  .about-value-grid,
   .journey-grid,
   .jobs-filter-panel,
   .process-grid,
@@ -1628,6 +1908,35 @@ textarea {
   .journey-card,
   .client-card {
     min-height: auto;
+  }
+
+  .section-muted,
+  .section-dark {
+    margin: 12px;
+    border-radius: 28px;
+  }
+
+  .life-collage {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .life-photo,
+  .life-photo-2,
+  .life-photo-3,
+  .life-photo-4 {
+    min-height: 190px;
+    margin: 0;
+  }
+
+  .perk-card-2,
+  .perk-card-5 {
+    transform: none;
+  }
+
+  .about-hero {
+    min-height: auto;
+    padding-top: 118px;
   }
 
   .hero-actions {

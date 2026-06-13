@@ -10,6 +10,8 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 
 - `/` or `index.html` - landing page, services, dynamic project catalog,
   process, and project inquiry form.
+- `/about.html` - about page with company story, values, stats, and delivery
+  method.
 - `/careers.html` - career/project-work tracks, application form, local
   application history, and FAQ.
 - `/job-openings.html` - technical job openings board with search, filters, and
@@ -26,7 +28,7 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 - `src/sections/home/` - homepage sections including hero, services, project
   slider, impact stats, process, clients, CTA, and contact form.
 - `src/sections/careers/` - careers page sections including hero, openings,
-  highlights, application form, and FAQ.
+  life-at section, perks and benefits, highlights, application form, and FAQ.
 - `src/sections/shared/` - shared testimonial/review slider.
 - `src/hooks/` - custom React hooks.
 - `src/utils/` - icon mapping and formatting helpers.
@@ -47,6 +49,9 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 - Coditas-inspired impact stats and structured delivery/career journey sections.
 - Dedicated job openings page for Java, Python, React, Data Analytics, QA,
   DevOps, full-stack, and documentation roles.
+- About page and homepage about preview section.
+- Live validation for contact and job application forms.
+- Resume uploader on the career application form.
 - React state for dynamic project filtering by technology track.
 - Data-driven React career cards and service cards.
 - Separate proper client section with animated client cards generated from

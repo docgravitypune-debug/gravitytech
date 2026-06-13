@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import CareersPage from "./pages/CareersPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import JobOpeningsPage from "./pages/JobOpeningsPage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
 import Toast from "./components/Toast.jsx";
 
 export default function App({ page }) {
@@ -12,6 +13,7 @@ export default function App({ page }) {
     const titles = {
       careers: "Careers | GravityTech Software",
       jobs: "Job Openings | GravityTech Software",
+      about: "About Us | GravityTech Software",
       home: "GravityTech Software | Futuristic Client Project Lab",
     };
 
@@ -33,7 +35,9 @@ export default function App({ page }) {
 
   return (
     <>
-      {page === "jobs" ? (
+      {page === "about" ? (
+        <AboutPage />
+      ) : page === "jobs" ? (
         <JobOpeningsPage />
       ) : page === "careers" ? (
         <CareersPage showToast={showToast} />

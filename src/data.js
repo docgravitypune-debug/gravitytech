@@ -374,6 +374,85 @@ export const careerJourney = [
   },
 ];
 
+export const lifeAtGravityTech = [
+  {
+    title: "Freedom to shape your own journey",
+    description:
+      "Instead of forcing you into a fixed mould, GravityTech gives you project tracks, mentors, client-style tasks, and space to grow through real delivery.",
+  },
+  {
+    title: "Collaborative project culture",
+    description:
+      "Work with developers, analysts, testers, and documentation contributors in guided sprints that feel close to real product teams.",
+  },
+  {
+    title: "Learning with accountability",
+    description:
+      "Every module includes requirements, reviews, demo checkpoints, and documentation so you learn how professional software work actually moves.",
+  },
+];
+
+export const perksBenefits = [
+  {
+    icon: "ShieldCheck",
+    title: "Mentor Support",
+    description: "Guidance on code quality, project structure, interviews, and portfolio presentation.",
+  },
+  {
+    icon: "CloudCog",
+    title: "Flexible Work Culture",
+    description: "Hybrid and remote-friendly project workflows with clear delivery checkpoints.",
+  },
+  {
+    icon: "BarChart3",
+    title: "Transparent Career Growth",
+    description: "Clear tracks, practical evaluations, real project outcomes, and improvement feedback.",
+  },
+  {
+    icon: "UsersRound",
+    title: "Team Learning Events",
+    description: "Peer demos, review sessions, technical discussions, and client-style presentations.",
+  },
+  {
+    icon: "Rocket",
+    title: "Portfolio Building",
+    description: "Create demo-ready work with screenshots, architecture notes, and deployment guides.",
+  },
+  {
+    icon: "BrainCircuit",
+    title: "Modern Tech Exposure",
+    description: "Practice Java, Python, React, analytics, QA, DevOps, AI tools, and documentation.",
+  },
+];
+
+export const aboutStats = [
+  { value: "14+", label: "Client partners" },
+  { value: "8", label: "Project tracks" },
+  { value: "42+", label: "Project modules" },
+  { value: "100%", label: "Practical learning" },
+];
+
+export const aboutValues = [
+  {
+    icon: "Code2",
+    title: "Build practical software",
+    description:
+      "We focus on working modules, readable code, documentation, and demos that clients and learners can understand.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Review before delivery",
+    description:
+      "Every project track uses checkpoints for requirements, UI, backend, analytics, QA, and handover quality.",
+  },
+  {
+    icon: "UsersRound",
+    title: "Grow through collaboration",
+    description:
+      "Our delivery style connects clients, mentors, developers, testers, analysts, and content contributors.",
+  },
+];
+
 export const categoryLabels = {
   all: "All",
   analytics: "Data Analytics",

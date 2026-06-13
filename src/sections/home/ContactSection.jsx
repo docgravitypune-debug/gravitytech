@@ -1,14 +1,37 @@
 import { Mail, Phone } from "lucide-react";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import useLiveValidation from "../../hooks/useLiveValidation.js";
 import { saveEntry, storageKeys } from "../../storage.js";
 
+const contactValidators = {
+  name: (value) => (value.trim().length < 2 ? "Enter your full name." : ""),
+  email: (value) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? "" : "Enter a valid email address."),
+  interest: (value) => (value ? "" : "Select a project interest."),
+  message: (value) => (value.trim().length < 15 ? "Please describe your requirement in at least 15 characters." : ""),
+};
+
 export default function ContactSection({ showToast }) {
+  const form = useLiveValidation(
+    {
+      email: "",
+      interest: "",
+      message: "",
+      name: "",
+    },
+    contactValidators,
+  );
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+
+    if (!form.isValid) {
+      form.touchAll();
+      showToast("Please fix the highlighted contact form fields.");
+      return;
+    }
+
     const saved = saveEntry(storageKeys.project, {
-      ...data,
+      ...form.values,
       submittedAt: new Date().toISOString(),
     });
 
@@ -19,6 +42,14 @@ export default function ContactSection({ showToast }) {
     );
     form.reset();
   };
+
+  const fieldProps = (name) => ({
+    "aria-invalid": Boolean(form.touched[name] && form.errors[name]),
+    name,
+    onBlur: form.handleBlur,
+    onChange: form.handleChange,
+    value: form.values[name],
+  });
 
   return (
     <AnimatedSection id="contact" className="section section-muted">
@@ -40,18 +71,20 @@ export default function ContactSection({ showToast }) {
             <span>Java | Python | Data Analytics | React | Web Apps</span>
           </div>
         </div>
-        <form className="form-card glass-card" onSubmit={handleSubmit}>
-          <label>
+        <form className="form-card glass-card" onSubmit={handleSubmit} noValidate>
+          <label className={form.touched.name && form.errors.name ? "field-invalid" : ""}>
             Full name
-            <input name="name" type="text" placeholder="Your name" required />
+            <input type="text" placeholder="Your name" {...fieldProps("name")} />
+            {form.touched.name && form.errors.name ? <span className="field-error">{form.errors.name}</span> : null}
           </label>
-          <label>
+          <label className={form.touched.email && form.errors.email ? "field-invalid" : ""}>
             Email address
-            <input name="email" type="email" placeholder="you@example.com" required />
+            <input type="email" placeholder="you@example.com" {...fieldProps("email")} />
+            {form.touched.email && form.errors.email ? <span className="field-error">{form.errors.email}</span> : null}
           </label>
-          <label>
+          <label className={form.touched.interest && form.errors.interest ? "field-invalid" : ""}>
             Project interest
-            <select name="interest" required defaultValue="">
+            <select {...fieldProps("interest")}>
               <option value="">Select a track</option>
               <option>Java Project</option>
               <option>Python Project</option>
@@ -59,15 +92,20 @@ export default function ContactSection({ showToast }) {
               <option>React / Website Project</option>
               <option>Client Software Development</option>
             </select>
+            {form.touched.interest && form.errors.interest ? (
+              <span className="field-error">{form.errors.interest}</span>
+            ) : null}
           </label>
-          <label>
+          <label className={form.touched.message && form.errors.message ? "field-invalid" : ""}>
             Requirement
             <textarea
-              name="message"
               rows="4"
               placeholder="Describe your project or training need"
-              required
+              {...fieldProps("message")}
             />
+            {form.touched.message && form.errors.message ? (
+              <span className="field-error">{form.errors.message}</span>
+            ) : null}
           </label>
           <button className="button" type="submit">
             Submit Requirement

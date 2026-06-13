@@ -3,6 +3,8 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import TestimonialsSection from "../sections/shared/TestimonialsSection.jsx";
 import CareerHero from "../sections/careers/CareerHero.jsx";
+import LifeAtSection from "../sections/careers/LifeAtSection.jsx";
+import PerksBenefitsSection from "../sections/careers/PerksBenefitsSection.jsx";
 import OpeningsSection from "../sections/careers/OpeningsSection.jsx";
 import CareerJourneySection from "../sections/careers/CareerJourneySection.jsx";
 import ProgramHighlights from "../sections/careers/ProgramHighlights.jsx";
@@ -14,14 +16,14 @@ export default function CareersPage({ showToast }) {
   const [selectedTrack, setSelectedTrack] = useState("");
   const [applications, setApplications] = useState(() => readEntries(storageKeys.career));
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+  const handleSubmit = (data) => {
     const entry = {
       ...data,
+      resumeName: data.resume?.name || "",
+      resumeSize: data.resume?.size || 0,
       submittedAt: new Date().toISOString(),
     };
+    delete entry.resume;
     const saved = saveEntry(storageKeys.career, entry);
 
     if (saved) {
@@ -34,7 +36,6 @@ export default function CareersPage({ showToast }) {
         : "Application received, but this browser blocked local demo storage.",
     );
     setSelectedTrack("");
-    form.reset();
   };
 
   return (
@@ -42,6 +43,8 @@ export default function CareersPage({ showToast }) {
       <Header page="careers" />
       <main>
         <CareerHero />
+        <LifeAtSection />
+        <PerksBenefitsSection />
         <OpeningsSection onTrackApply={setSelectedTrack} />
         <CareerJourneySection />
         <ProgramHighlights />
