@@ -268,12 +268,20 @@
         };
 
         if (formType === "career") {
-          saveEntry(storageKeys.career, entry);
+          const saved = saveEntry(storageKeys.career, entry);
           renderApplicationList();
-          showToast("Application saved. GravityTech can connect this form to a backend next.");
+          showToast(
+            saved
+              ? "Application saved. GravityTech can connect this form to a backend next."
+              : "Application received, but this browser blocked local demo storage.",
+          );
         } else {
-          saveEntry(storageKeys.project, entry);
-          showToast("Requirement saved locally. We can add backend email or CRM integration next.");
+          const saved = saveEntry(storageKeys.project, entry);
+          showToast(
+            saved
+              ? "Requirement saved locally. We can add backend email or CRM integration next."
+              : "Requirement received, but this browser blocked local demo storage.",
+          );
         }
 
         form.reset();
@@ -284,7 +292,14 @@
   function saveEntry(key, entry) {
     const existing = readEntries(key);
     existing.unshift(entry);
-    localStorage.setItem(key, JSON.stringify(existing.slice(0, 8)));
+
+    try {
+      localStorage.setItem(key, JSON.stringify(existing.slice(0, 8)));
+      return true;
+    } catch (error) {
+      console.warn("Unable to save GravityTech entry", error);
+      return false;
+    }
   }
 
   function readEntries(key) {
@@ -320,7 +335,9 @@
           year: "numeric",
         });
 
-        return `<li><strong>${application.name}</strong> - ${application.track} (${submittedDate})</li>`;
+        return `<li><strong>${escapeHtml(application.name)}</strong> - ${escapeHtml(
+          application.track,
+        )} (${submittedDate})</li>`;
       })
       .join("");
   }
@@ -389,5 +406,19 @@
     };
 
     return labels[category] || "GT";
+  }
+
+  function escapeHtml(value) {
+    return String(value || "").replace(/[&<>"']/g, (character) => {
+      const entities = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      };
+
+      return entities[character];
+    });
   }
 })();
