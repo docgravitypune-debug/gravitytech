@@ -112,33 +112,51 @@ export const projectData = [
 ];
 
 export const clients = [
-  "Youget Software Solution",
-  "IntactBox System Pvt Ltd",
-  "Appligo Technosoft Pvt Ltd",
-  "Mauli Project Management",
-  "Guru Software Solutions",
-  "Inbatoz Consultansy Pvt Ltd",
-  "Incub8 Engineering LLP",
-  "Webforge Technology Pvt Ltd",
-  "Zentovia Technologies Pvt Ltd",
-  "LAPD IT Services",
-  "Eklakshya Abhyasika",
-  "Agstya Abhyasika",
-  "Sarathi Study Senter",
-  "Terra Fordge Infra",
+  { name: "YouGet Software Solution", sector: "Software Solutions", accent: "cyan" },
+  { name: "IntactBox Systems Pvt Ltd", sector: "Enterprise Systems", accent: "violet" },
+  { name: "Appligo Technosoft Pvt Ltd", sector: "Technology Services", accent: "lime" },
+  { name: "Mauli Project Management", sector: "Project Management", accent: "orange" },
+  { name: "Guru Software Solutions", sector: "Software Consulting", accent: "cyan" },
+  { name: "Inbatoz Consultancy Pvt Ltd", sector: "Business Consultancy", accent: "violet" },
+  { name: "Incub8 Engineering LLP", sector: "Engineering", accent: "lime" },
+  { name: "Webforge Technology Pvt Ltd", sector: "Web Technology", accent: "orange" },
+  { name: "Zentovia Technologies Pvt Ltd", sector: "Technology Products", accent: "cyan" },
+  { name: "LAPD IT Services", sector: "IT Services", accent: "violet" },
+  { name: "Eklakshya Abhyasika", sector: "Education", accent: "lime" },
+  { name: "Agastya Abhyasika", sector: "Education", accent: "orange" },
+  { name: "Sarathi Study Center", sector: "Education", accent: "cyan" },
+  { name: "Terra Forge Infra", sector: "Infrastructure", accent: "violet" },
+];
+
+export const impactStats = [
+  {
+    value: "14+",
+    label: "Client partners",
+    description: "Software, education, consulting, engineering, IT, and infrastructure teams.",
+  },
+  {
+    value: "8",
+    label: "Delivery tracks",
+    description: "Java, Python, analytics, React, QA, documentation, web, and cloud project work.",
+  },
+  {
+    value: "100%",
+    label: "Practical focus",
+    description: "Every track is built around real modules, demos, documentation, and review loops.",
+  },
 ];
 
 export const testimonials = [
   {
     name: "Project Delivery Head",
-    company: "Youget Software Solution",
+    company: "YouGet Software Solution",
     rating: 5,
     quote:
       "GravityTech brings a practical delivery mindset. Their project modules are clear, demo-ready, and easy for teams to extend.",
   },
   {
     name: "Operations Team",
-    company: "IntactBox System Pvt Ltd",
+    company: "IntactBox Systems Pvt Ltd",
     rating: 5,
     quote:
       "The team understood our workflow quickly and converted it into a clean project plan with useful software modules.",
@@ -243,6 +261,33 @@ export const careerHighlights = [
   {
     title: "Demo-ready portfolio",
     description: "Prepare explanations, screenshots, documentation, and deployment notes.",
+  },
+];
+
+export const careerJourney = [
+  {
+    number: "01",
+    title: "Apply and choose track",
+    description:
+      "Select Java, Python, data analytics, React/full-stack, QA, or documentation based on your goals.",
+  },
+  {
+    number: "02",
+    title: "Join project sprint",
+    description:
+      "Work on tickets, Git commits, standup-style progress, UI/API modules, dashboards, and testing tasks.",
+  },
+  {
+    number: "03",
+    title: "Review and improve",
+    description:
+      "Get feedback on code quality, documentation, user flow, presentation, and client communication.",
+  },
+  {
+    number: "04",
+    title: "Showcase portfolio",
+    description:
+      "Prepare a demo story with screenshots, architecture notes, deployment steps, and outcome summary.",
   },
 ];
 

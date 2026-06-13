@@ -2,6 +2,7 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import HeroSection from "../sections/home/HeroSection.jsx";
 import ServicesSection from "../sections/home/ServicesSection.jsx";
+import ImpactSection from "../sections/home/ImpactSection.jsx";
 import ProjectsSection from "../sections/home/ProjectsSection.jsx";
 import ProcessSection from "../sections/home/ProcessSection.jsx";
 import ClientsSection from "../sections/home/ClientsSection.jsx";
@@ -16,6 +17,7 @@ export default function HomePage({ showToast }) {
       <main>
         <HeroSection />
         <ServicesSection />
+        <ImpactSection />
         <ProjectsSection />
         <ProcessSection />
         <ClientsSection />

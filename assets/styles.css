@@ -280,6 +280,11 @@ textarea {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   backdrop-filter: blur(22px);
+  transform-style: preserve-3d;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
 }
 
 .glass-card::before {
@@ -289,6 +294,31 @@ textarea {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 36%);
   opacity: 0.42;
   pointer-events: none;
+}
+
+.glass-card::after {
+  position: absolute;
+  inset: auto auto -45% -20%;
+  width: 190px;
+  height: 190px;
+  content: "";
+  background: rgba(0, 212, 255, 0.1);
+  border-radius: 999px;
+  filter: blur(4px);
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 212, 255, 0.42);
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.38),
+    0 0 42px rgba(0, 212, 255, 0.12);
+}
+
+.glass-card:hover::after {
+  opacity: 1;
 }
 
 .dark-card {
@@ -533,7 +563,9 @@ textarea {
 
 .service-grid,
 .career-grid,
-.client-grid {
+.client-grid,
+.impact-stats,
+.journey-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
@@ -543,6 +575,8 @@ textarea {
 .project-card,
 .career-card,
 .client-card,
+.impact-card,
+.journey-card,
 .review-card,
 .highlight-list article,
 .form-card {
@@ -553,6 +587,8 @@ textarea {
 .project-card h3,
 .career-card h3,
 .client-card h3,
+.impact-card h3,
+.journey-card h3,
 .review-card h3,
 .highlight-list h3 {
   position: relative;
@@ -566,6 +602,9 @@ textarea {
 .service-card p,
 .project-card p,
 .career-card p,
+.client-card p,
+.impact-card p,
+.journey-card p,
 .highlight-list p,
 .review-card p {
   position: relative;
@@ -634,6 +673,55 @@ textarea {
 .project-slider,
 .review-slider {
   padding: 6px 4px 54px;
+}
+
+.service-card:hover,
+.project-card:hover,
+.career-card:hover,
+.review-card:hover,
+.highlight-list article:hover {
+  transform: translateY(-8px);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1fr);
+  gap: 42px;
+  align-items: center;
+}
+
+.impact-copy h2 {
+  max-width: 640px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -0.05em;
+}
+
+.impact-copy p {
+  color: var(--muted);
+}
+
+.impact-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.impact-card {
+  min-height: 260px;
+}
+
+.impact-card strong {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: transparent;
+  background: linear-gradient(135deg, var(--brand), var(--brand-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
 }
 
 .project-card,
@@ -759,10 +847,14 @@ textarea {
 }
 
 .client-card {
-  min-height: 150px;
+  display: flex;
+  min-height: 178px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
 }
 
-.client-card span {
+.client-card > span {
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -774,6 +866,34 @@ textarea {
   background: linear-gradient(135deg, var(--brand), var(--brand-3));
   border-radius: 16px;
   font-weight: 950;
+}
+
+.client-card div {
+  position: relative;
+  z-index: 1;
+}
+
+.client-card h3 {
+  margin-bottom: 6px;
+}
+
+.client-card p {
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.client-accent-violet > span {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--brand-2), #c4b5fd);
+}
+
+.client-accent-lime > span {
+  background: linear-gradient(135deg, var(--brand-3), var(--brand));
+}
+
+.client-accent-orange > span {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--brand-4), #f43f5e);
 }
 
 .review-card {
@@ -904,6 +1024,21 @@ textarea {
 
 .career-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.journey-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.journey-card {
+  min-height: 255px;
+}
+
+.journey-card > span {
+  position: relative;
+  z-index: 1;
+  color: var(--brand);
+  font-weight: 950;
 }
 
 .career-card .button {
@@ -1039,8 +1174,17 @@ textarea {
 
   .service-grid,
   .client-grid,
-  .process-grid {
+  .process-grid,
+  .journey-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1063,6 +1207,7 @@ textarea {
   }
 
   .career-grid,
+  .impact-stats,
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1110,9 +1255,17 @@ textarea {
   .service-grid,
   .career-grid,
   .client-grid,
+  .impact-stats,
+  .journey-grid,
   .process-grid,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .impact-card,
+  .journey-card,
+  .client-card {
+    min-height: auto;
   }
 
   .hero-actions {

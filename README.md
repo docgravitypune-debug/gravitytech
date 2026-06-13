@@ -2,9 +2,9 @@
 
 A complete futuristic React + Vite website for GravityTech Software. The site
 presents client software services, real-time project work, technology project
-tracks, animated backgrounds, sliders, client reviews, and a careers page for
-applicants interested in Java, Python, data analytics, React, and web/full-stack
-project experience.
+tracks, Coditas-inspired impact sections, animated backgrounds, sliders, client
+reviews, proper client cards, and a careers page for applicants interested in
+Java, Python, data analytics, React, and web/full-stack project experience.
 
 ## Pages
 
@@ -21,7 +21,7 @@ project experience.
 - `src/components/` - shared components such as header, footer, brand, toast,
   animated background, animated section, and section headings.
 - `src/sections/home/` - homepage sections including hero, services, project
-  slider, process, clients, CTA, and contact form.
+  slider, impact stats, process, clients, CTA, and contact form.
 - `src/sections/careers/` - careers page sections including hero, openings,
   highlights, application form, and FAQ.
 - `src/sections/shared/` - shared testimonial/review slider.
@@ -38,9 +38,11 @@ project experience.
 - Futuristic responsive GravityTech-branded layout.
 - Animated hero/background effects powered by Framer Motion.
 - Swiper project slider and client review slider.
+- Coditas-inspired impact stats and structured delivery/career journey sections.
 - React state for dynamic project filtering by technology track.
 - Data-driven React career cards and service cards.
-- Separate client section with client cards generated from `src/data.js`.
+- Separate proper client section with animated client cards generated from
+  `src/data.js`.
 - Client review/testimonial section.
 - Local-storage demo forms for project inquiries and career applications.
 - Mobile navigation and animated hero counters.
