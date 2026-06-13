@@ -2,9 +2,17 @@
   "name": "gravitytech-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Dynamic static website for GravityTech Software with project catalog and careers page.",
+  "description": "React website for GravityTech Software with project catalog and careers page.",
   "scripts": {
-    "check": "node --check assets/app.js",
-    "serve": "python3 -m http.server 4173"
+    "dev": "vite --host 0.0.0.0 --port 4173",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "check": "vite build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "vite": "^8.0.16"
   }
 }

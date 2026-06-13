@@ -1,35 +1,62 @@
-# GravityTech Software Website
+# GravityTech Software React Website
 
-A complete dynamic static website for GravityTech Software. The site presents
+A complete React + Vite website for GravityTech Software. The site presents
 client software services, real-time project work, technology project tracks, and
 a careers page for applicants interested in Java, Python, data analytics, and
 web/full-stack project experience.
 
 ## Pages
 
-- `index.html` - landing page, services, dynamic project catalog, process, and
-  project inquiry form.
-- `careers.html` - career/project-work tracks, application form, local
+- `/` or `index.html` - landing page, services, dynamic project catalog,
+  process, and project inquiry form.
+- `/careers.html` - career/project-work tracks, application form, local
   application history, and FAQ.
+
+## React structure
+
+- `src/main.jsx` - React entry point.
+- `src/App.jsx` - page components, forms, navigation, cards, and dynamic UI.
+- `src/data.js` - project, service, process, and career track data.
+- `src/storage.js` - local-storage helpers for demo submissions.
+- `assets/styles.css` - shared responsive styling.
+- `assets/logo.svg` and `assets/favicon.svg` - GravityTech brand assets.
 
 ## Features
 
 - Responsive GravityTech-branded layout.
-- Dynamic project filtering by technology track.
-- Data-driven career cards.
+- React state for dynamic project filtering by technology track.
+- Data-driven React career cards.
 - Local-storage demo forms for project inquiries and career applications.
 - Mobile navigation and animated hero counters.
 - SVG logo and favicon included in `assets/`.
 
-## Run locally
+## Install dependencies
 
 ```bash
-npm run serve
+npm install
+```
+
+## Run locally in development
+
+```bash
+npm run dev
 ```
 
 Then open `http://localhost:4173`.
 
-## Verify JavaScript
+## Build for production
+
+```bash
+npm run build
+```
+
+## Preview production build
+
+```bash
+npm run preview
+```
+
+## Verify
 
 ```bash
 npm run check
