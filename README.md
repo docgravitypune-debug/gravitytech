@@ -1,6 +1,6 @@
 # GravityTech Software React Website
 
-A complete futuristic React + Vite website for GravityTech Software. The site
+A complete professional React + Vite website for GravityTech Software. The site
 presents client software services, real-time project work, technology project
 tracks, uploaded Coditas-style design tokens, impact sections, animated
 backgrounds, sliders, client reviews, proper client cards, and a careers page for applicants interested in
@@ -41,7 +41,8 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 
 ## Features
 
-- Futuristic responsive GravityTech-branded layout.
+- Professional responsive GravityTech-branded layout inspired by modern careers
+  pages.
 - CSS tokens from the provided GravityTech style guide: dark pill navbar,
   pink/purple gradient sections, cyan-to-purple buttons, light cards, and dark
   rounded footer.

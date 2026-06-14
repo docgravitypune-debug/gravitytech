@@ -23,12 +23,12 @@ export default function HeroSection() {
             <Sparkles size={16} /> Client project delivery + career-ready training
           </p>
           <h1>
-            Build real software in a <span className="text-gradient">futuristic project lab.</span>
+            Innovate, build, and launch <span className="text-gradient">real software.</span>
           </h1>
           <p className="hero-text">
-            GravityTech Software helps clients launch dependable technology solutions and gives
-            candidates real-time project exposure across Java, Python, data analytics, React, web
-            apps, and cloud-ready systems.
+            GravityTech Software helps clients ship dependable technology solutions and gives
+            working professionals, freshers, and interns real project exposure across Java, Python,
+            data analytics, React, web apps, and cloud-ready systems.
           </p>
           <div className="hero-actions">
             <a className="button" href="#projects">

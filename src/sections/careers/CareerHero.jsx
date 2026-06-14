@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight, BriefcaseBusiness, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Sparkles } from "lucide-react";
 import AnimatedBackground from "../../components/AnimatedBackground.jsx";
 
 export default function CareerHero() {
   return (
     <section className="hero section career-hero futuristic-hero">
       <AnimatedBackground variant="career" />
-      <div className="container hero-grid">
+      <div className="container career-hero-grid">
         <motion.div
           className="hero-copy"
           initial={{ opacity: 0, y: 36 }}
@@ -17,12 +17,11 @@ export default function CareerHero() {
             <Sparkles size={16} /> Careers and real-time project work
           </p>
           <h1>
-            Grow with live client-style <span>software missions.</span>
+            Innovate, Belong, <span>And Thrive</span>
           </h1>
           <p className="hero-text">
-            GravityTech Software welcomes freshers, interns, and early-career developers who want
-            hands-on project exposure in Java, Python, data analytics, React, web apps, and delivery
-            practices.
+            Shape your future through client-style software projects, mentor-led delivery, and
+            practical experience across Java, Python, React, analytics, QA, DevOps, and documentation.
           </p>
           <div className="hero-actions">
             <a className="button" href="job-openings.html">
@@ -37,26 +36,15 @@ export default function CareerHero() {
           </div>
         </motion.div>
         <motion.aside
-          className="career-panel holo-card"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          className="career-hero-note"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.15 }}
         >
-          <h2>What you will practice</h2>
-          <ul className="check-list">
-            <li>
-              <CheckCircle2 size={18} /> Requirement analysis from real client scenarios
-            </li>
-            <li>
-              <CheckCircle2 size={18} /> Git, code reviews, documentation, and demos
-            </li>
-            <li>
-              <CheckCircle2 size={18} /> Backend, frontend, analytics, and deployment tasks
-            </li>
-            <li>
-              <CheckCircle2 size={18} /> Portfolio-ready project outcomes
-            </li>
-          </ul>
+          <p>
+            Bring your whole self to a team that believes in you. At GravityTech, you will find a
+            place that sees your potential, nurtures it, and celebrates it.
+          </p>
         </motion.aside>
       </div>
     </section>
