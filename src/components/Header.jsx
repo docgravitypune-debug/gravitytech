@@ -15,6 +15,7 @@ export default function Header() {
 
   const closeMenu = () => setIsOpen(false);
   const isHome = location.pathname === routes.home;
+  const ctaLabel = isHome ? "Start a Project" : "Hire Us";
   const links = [
     { to: `${routes.home}#services`, label: "Services" },
     { to: `${routes.home}#projects`, label: "Projects" },
@@ -29,6 +30,27 @@ export default function Header() {
     <header className="site-header">
       <nav className="navbar container" aria-label="Primary navigation">
         <Brand href={routes.home} size={66} />
+        <div className={`nav-center ${isOpen ? "open" : ""}`}>
+          <ul id="primary-menu" className="nav-links">
+            {links.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  className={({ isActive }) => (isActive && !link.to.includes("#") ? "active" : "")}
+                  to={link.to}
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <Link className="button button-secondary button-small nav-cta nav-cta-mobile" to={`${routes.home}#contact`} onClick={closeMenu}>
+            {ctaLabel}
+          </Link>
+        </div>
+        <Link className="button button-secondary button-small nav-cta nav-cta-desktop" to={`${routes.home}#contact`}>
+          {ctaLabel}
+        </Link>
         <button
           className="nav-toggle"
           type="button"
@@ -39,28 +61,6 @@ export default function Header() {
           <span className="sr-only">Toggle navigation</span>
           {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
-        <ul id="primary-menu" className={`nav-links ${isOpen ? "open" : ""}`}>
-          {links.map((link) => (
-            <li key={link.to}>
-              <NavLink
-                className={({ isActive }) => (isActive && !link.to.includes("#") ? "active" : "")}
-                to={link.to}
-                onClick={closeMenu}
-              >
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-          <li>
-            <Link
-              className="button button-small"
-              to={isHome ? `${routes.home}#contact` : `${routes.home}#contact`}
-              onClick={closeMenu}
-            >
-              {isHome ? "Start a Project" : "Hire Us"}
-            </Link>
-          </li>
-        </ul>
       </nav>
     </header>
   );
