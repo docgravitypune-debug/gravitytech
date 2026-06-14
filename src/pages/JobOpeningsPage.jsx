@@ -1,9 +1,11 @@
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import AnimatedBackground from "../components/AnimatedBackground.jsx";
 import { jobOpenings } from "../data.js";
+import { routes } from "../routes.js";
 
 const areas = ["All", ...Array.from(new Set(jobOpenings.map((job) => job.area)))];
 const jobTypes = ["All", ...Array.from(new Set(jobOpenings.map((job) => job.type)))];
@@ -95,10 +97,10 @@ export default function JobOpeningsPage() {
       <Footer
         description="Explore real-time GravityTech project opportunities across modern technical fields."
         links={[
-          { href: "careers.html", label: "Careers" },
-          { href: "index.html#projects", label: "Projects" },
-          { href: "index.html#clients", label: "Clients" },
-          { href: "careers.html#apply", label: "Apply" },
+          { href: routes.careers, label: "Careers" },
+          { href: `${routes.home}#projects`, label: "Projects" },
+          { href: `${routes.home}#clients`, label: "Clients" },
+          { href: `${routes.careers}#apply`, label: "Apply" },
         ]}
         heading="Open fields"
         tracks={["Java", "Python", "React", "Data Analytics"]}
@@ -130,9 +132,9 @@ function JobCard({ job }) {
           <p className="job-area">{job.area}</p>
           <h2>{job.title}</h2>
         </div>
-        <a className="button button-small" href={`careers.html#apply`}>
+        <Link className="button button-small" to={`${routes.careers}#apply`}>
           Apply Now
-        </a>
+        </Link>
       </div>
       <div className="job-pills">
         <span>{job.type}</span>
@@ -144,9 +146,9 @@ function JobCard({ job }) {
         <span>{job.skills.join(", ")}</span>
       </div>
       <p>{job.description}</p>
-      <a className="read-more-link" href={`careers.html#apply`}>
+      <Link className="read-more-link" to={`${routes.careers}#apply`}>
         Read more +
-      </a>
+      </Link>
     </article>
   );
 }

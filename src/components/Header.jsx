@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Brand from "./Brand.jsx";
+import { routes } from "../routes.js";
 
-export default function Header({ page }) {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", isOpen);
@@ -11,31 +14,21 @@ export default function Header({ page }) {
   }, [isOpen]);
 
   const closeMenu = () => setIsOpen(false);
-  const links =
-    page === "careers" || page === "jobs" || page === "about"
-      ? [
-          { href: "index.html#services", label: "Services" },
-          { href: "index.html#projects", label: "Projects" },
-          { href: "about.html", label: "About" },
-          { href: "index.html#clients", label: "Clients" },
-          { href: "job-openings.html", label: "Openings" },
-          { href: "#reviews", label: "Reviews" },
-          { href: "careers.html#apply", label: "Apply" },
-        ]
-      : [
-          { href: "#services", label: "Services" },
-          { href: "#projects", label: "Projects" },
-          { href: "about.html", label: "About" },
-          { href: "#process", label: "Process" },
-          { href: "#clients", label: "Clients" },
-          { href: "#reviews", label: "Reviews" },
-          { href: "careers.html", label: "Careers" },
-        ];
+  const isHome = location.pathname === routes.home;
+  const links = [
+    { to: `${routes.home}#services`, label: "Services" },
+    { to: `${routes.home}#projects`, label: "Projects" },
+    { to: routes.about, label: "About" },
+    { to: `${routes.home}#clients`, label: "Clients" },
+    { to: routes.jobs, label: "Openings" },
+    { to: `${routes.careers}#reviews`, label: "Reviews" },
+    { to: routes.careers, label: "Careers" },
+  ];
 
   return (
     <header className="site-header">
       <nav className="navbar container" aria-label="Primary navigation">
-        <Brand href="index.html" size={54} />
+        <Brand href={routes.home} size={54} />
         <button
           className="nav-toggle"
           type="button"
@@ -48,20 +41,24 @@ export default function Header({ page }) {
         </button>
         <ul id="primary-menu" className={`nav-links ${isOpen ? "open" : ""}`}>
           {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} onClick={closeMenu}>
+            <li key={link.to}>
+              <NavLink
+                className={({ isActive }) => (isActive && !link.to.includes("#") ? "active" : "")}
+                to={link.to}
+                onClick={closeMenu}
+              >
                 {link.label}
-              </a>
+              </NavLink>
             </li>
           ))}
           <li>
-            <a
+            <Link
               className="button button-small"
-              href={page === "careers" || page === "jobs" || page === "about" ? "index.html#contact" : "#contact"}
+              to={isHome ? `${routes.home}#contact` : `${routes.home}#contact`}
               onClick={closeMenu}
             >
-              {page === "careers" || page === "jobs" || page === "about" ? "Hire Us" : "Start a Project"}
-            </a>
+              {isHome ? "Start a Project" : "Hire Us"}
+            </Link>
           </li>
         </ul>
       </nav>

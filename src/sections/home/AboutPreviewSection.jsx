@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
 import { aboutStats } from "../../data.js";
+import { routes } from "../../routes.js";
 
 export default function AboutPreviewSection() {
   return (
@@ -15,9 +17,9 @@ export default function AboutPreviewSection() {
             GravityTech Software blends software delivery, guided project practice, and career-ready
             mentorship across Java, Python, analytics, React, QA, DevOps, and documentation.
           </p>
-          <a className="button" href="about.html">
+          <Link className="button" to={routes.about}>
             Read About Us <ArrowRight size={18} />
-          </a>
+          </Link>
         </div>
         <div className="about-mini-stats">
           {aboutStats.map((stat) => (

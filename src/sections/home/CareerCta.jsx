@@ -1,5 +1,7 @@
 import { ArrowRight, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import { routes } from "../../routes.js";
 
 export default function CareerCta() {
   return (
@@ -15,9 +17,9 @@ export default function CareerCta() {
             matches your goals.
           </p>
         </div>
-        <a className="button" href="careers.html">
+        <Link className="button" to={routes.careers}>
           View Career Page <ArrowRight size={18} />
-        </a>
+        </Link>
       </div>
     </AnimatedSection>
   );

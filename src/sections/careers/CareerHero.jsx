@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BriefcaseBusiness, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import AnimatedBackground from "../../components/AnimatedBackground.jsx";
+import { routes } from "../../routes.js";
 
 export default function CareerHero() {
   return (
@@ -24,9 +26,9 @@ export default function CareerHero() {
             practical experience across Java, Python, React, analytics, QA, DevOps, and documentation.
           </p>
           <div className="hero-actions">
-            <a className="button" href="job-openings.html">
+            <Link className="button" to={routes.jobs}>
               Job Openings <BriefcaseBusiness size={18} />
-            </a>
+            </Link>
             <a className="button" href="#apply">
               Apply Now <ArrowRight size={18} />
             </a>

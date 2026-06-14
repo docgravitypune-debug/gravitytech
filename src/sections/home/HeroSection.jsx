@@ -1,10 +1,12 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, ShieldCheck, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import logoUrl from "../../../assets/logo.svg";
 import AnimatedBackground from "../../components/AnimatedBackground.jsx";
 import useAnimatedMetrics from "../../hooks/useAnimatedMetrics.js";
 import { clients, heroMetrics } from "../../data.js";
+import { routes } from "../../routes.js";
 
 export default function HeroSection() {
   const metrics = useAnimatedMetrics(useMemo(() => heroMetrics, []));
@@ -34,9 +36,9 @@ export default function HeroSection() {
             <a className="button" href="#projects">
               Explore Project Tracks <ArrowRight size={18} />
             </a>
-            <a className="button button-secondary" href="careers.html">
+            <Link className="button button-secondary" to={routes.careers}>
               <PlayCircle size={18} /> Apply for Project Work
-            </a>
+            </Link>
           </div>
           <dl className="hero-metrics" aria-label="GravityTech delivery highlights">
             {metrics.map((metric) => (

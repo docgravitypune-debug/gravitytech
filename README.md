@@ -8,19 +8,23 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 
 ## Pages
 
-- `/` or `index.html` - landing page, services, dynamic project catalog,
+- `/` - landing page, services, dynamic project catalog,
   process, and project inquiry form.
-- `/about.html` - about page with company story, values, stats, and delivery
+- `/about` - about page with company story, values, stats, and delivery
   method.
-- `/careers.html` - career/project-work tracks, application form, local
+- `/careers` - career/project-work tracks, application form, local
   application history, and FAQ.
-- `/job-openings.html` - technical job openings board with search, filters, and
+- `/job-openings` - technical job openings board with search, filters, and
   role cards.
+
+Legacy URLs such as `/careers.html`, `/about.html`, and `/job-openings.html`
+redirect inside the React app for compatibility.
 
 ## React structure
 
 - `src/main.jsx` - React entry point.
 - `src/App.jsx` - small app shell that selects the current page.
+- `src/routes.js` - route constants and legacy URL normalization.
 - `src/pages/` - page-level React components for home, careers, and job
   openings.
 - `src/components/` - shared components such as header, footer, brand, toast,
@@ -43,6 +47,8 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 
 - Professional responsive GravityTech-branded layout inspired by modern careers
   pages.
+- Enterprise-style client-side routing with React Router so navigation opens
+  pages without a full app reload.
 - CSS tokens from the provided GravityTech style guide: dark pill navbar,
   pink/purple gradient sections, cyan-to-purple buttons, light cards, and dark
   rounded footer.
@@ -69,6 +75,7 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 
 - React
 - Vite
+- React Router
 - Framer Motion
 - Swiper
 - Lucide React

@@ -12,6 +12,7 @@ import ProgramHighlights from "../sections/careers/ProgramHighlights.jsx";
 import ApplicationSection from "../sections/careers/ApplicationSection.jsx";
 import FaqSection from "../sections/careers/FaqSection.jsx";
 import { readEntries, saveEntry, storageKeys } from "../storage.js";
+import { routes } from "../routes.js";
 
 export default function CareersPage({ showToast }) {
   const [selectedTrack, setSelectedTrack] = useState("");
@@ -62,11 +63,11 @@ export default function CareersPage({ showToast }) {
       <Footer
         description="Apply for practical client-style project work and software career growth."
         links={[
-          { href: "index.html#services", label: "Services" },
-          { href: "index.html#projects", label: "Projects" },
-          { href: "index.html#clients", label: "Clients" },
-          { href: "#reviews", label: "Reviews" },
-          { href: "#apply", label: "Apply" },
+          { href: `${routes.home}#services`, label: "Services" },
+          { href: `${routes.home}#projects`, label: "Projects" },
+          { href: `${routes.home}#clients`, label: "Clients" },
+          { href: `${routes.careers}#reviews`, label: "Reviews" },
+          { href: `${routes.careers}#apply`, label: "Apply" },
         ]}
         heading="Career tracks"
         tracks={["Java Developer", "Python Developer", "Data Analyst", "React Trainee"]}

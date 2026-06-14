@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Brand from "./Brand.jsx";
+import { routes } from "../routes.js";
 
 const currentYear = new Date().getFullYear();
 
@@ -7,15 +9,15 @@ export default function Footer({ description, links, tracks, heading = "Tracks" 
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <Brand href="index.html" footer size={46} />
+          <Brand href={routes.home} footer size={46} />
           <p>{description}</p>
         </div>
         <div>
           <h3>Explore</h3>
           {links.map((link) => (
-            <a href={link.href} key={link.href}>
+            <Link to={link.href} key={link.href}>
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
         <div>

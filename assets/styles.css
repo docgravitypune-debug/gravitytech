@@ -279,7 +279,8 @@ textarea {
 }
 
 .nav-links a:not(.button):hover,
-.nav-links a:not(.button):focus-visible {
+.nav-links a:not(.button):focus-visible,
+.nav-links a.active:not(.button) {
   color: var(--brand);
 }
 

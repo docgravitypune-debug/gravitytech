@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import logoUrl from "../../assets/logo.svg";
 
-export default function Brand({ href = "index.html", footer = false, size = 54 }) {
+export default function Brand({ href = "/", footer = false, size = 54 }) {
   return (
-    <a
+    <Link
       className={`brand ${footer ? "brand-footer" : ""}`}
-      href={href}
+      to={href}
       aria-label="GravityTech Software home"
     >
       <img src={logoUrl} alt="" width={size} height={size} />
@@ -12,6 +13,6 @@ export default function Brand({ href = "index.html", footer = false, size = 54 }
         <strong>GravityTech</strong>
         <small>Software</small>
       </span>
-    </a>
+    </Link>
   );
 }

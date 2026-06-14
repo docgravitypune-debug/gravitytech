@@ -4,6 +4,7 @@ import AnimatedBackground from "../components/AnimatedBackground.jsx";
 import AnimatedSection from "../components/AnimatedSection.jsx";
 import { aboutStats, aboutValues, processSteps } from "../data.js";
 import { Icon } from "../utils/icons.jsx";
+import { routes } from "../routes.js";
 
 export default function AboutPage() {
   return (
@@ -93,10 +94,10 @@ export default function AboutPage() {
       <Footer
         description="GravityTech Software builds practical client software and career-ready project experiences."
         links={[
-          { href: "index.html#services", label: "Services" },
-          { href: "index.html#projects", label: "Projects" },
-          { href: "careers.html", label: "Careers" },
-          { href: "job-openings.html", label: "Openings" },
+          { href: `${routes.home}#services`, label: "Services" },
+          { href: `${routes.home}#projects`, label: "Projects" },
+          { href: routes.careers, label: "Careers" },
+          { href: routes.jobs, label: "Openings" },
         ]}
         heading="Focus"
         tracks={["Delivery", "Mentorship", "Analytics", "Automation"]}

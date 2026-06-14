@@ -10,6 +10,7 @@ import ClientsSection from "../sections/home/ClientsSection.jsx";
 import TestimonialsSection from "../sections/shared/TestimonialsSection.jsx";
 import CareerCta from "../sections/home/CareerCta.jsx";
 import ContactSection from "../sections/home/ContactSection.jsx";
+import { routes } from "../routes.js";
 
 export default function HomePage({ showToast }) {
   return (
@@ -30,12 +31,12 @@ export default function HomePage({ showToast }) {
       <Footer
         description="Futuristic software delivery, client project labs, and career-ready real-time project work."
         links={[
-          { href: "#services", label: "Services" },
-          { href: "about.html", label: "About" },
-          { href: "#projects", label: "Projects" },
-          { href: "#clients", label: "Clients" },
-          { href: "#reviews", label: "Reviews" },
-          { href: "careers.html", label: "Careers" },
+          { href: `${routes.home}#services`, label: "Services" },
+          { href: routes.about, label: "About" },
+          { href: `${routes.home}#projects`, label: "Projects" },
+          { href: `${routes.home}#clients`, label: "Clients" },
+          { href: `${routes.careers}#reviews`, label: "Reviews" },
+          { href: routes.careers, label: "Careers" },
         ]}
         tracks={["Java", "Python", "Data Analytics", "React"]}
       />
