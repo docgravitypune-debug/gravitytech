@@ -4,6 +4,7 @@ import Footer from "../components/Footer.jsx";
 import TestimonialsSection from "../sections/shared/TestimonialsSection.jsx";
 import CareerHero from "../sections/careers/CareerHero.jsx";
 import LifeAtSection from "../sections/careers/LifeAtSection.jsx";
+import WhyJoinSection from "../sections/careers/WhyJoinSection.jsx";
 import PerksBenefitsSection from "../sections/careers/PerksBenefitsSection.jsx";
 import OpeningsSection from "../sections/careers/OpeningsSection.jsx";
 import CareerJourneySection from "../sections/careers/CareerJourneySection.jsx";
@@ -44,6 +45,7 @@ export default function CareersPage({ showToast }) {
       <main>
         <CareerHero />
         <LifeAtSection />
+        <WhyJoinSection />
         <PerksBenefitsSection />
         <OpeningsSection onTrackApply={setSelectedTrack} />
         <CareerJourneySection />

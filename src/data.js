@@ -392,6 +392,37 @@ export const lifeAtGravityTech = [
   },
 ];
 
+export const whyJoinGravityTech = [
+  {
+    image: "career-team-sprint.svg",
+    kicker: "Culture",
+    title: "Where innovation becomes everyday work",
+    description:
+      "Join project sprints that mix planning, design, development, QA, documentation, and demo practice.",
+  },
+  {
+    image: "career-mentor-review.svg",
+    kicker: "Growth",
+    title: "A culture that helps you build confidence",
+    description:
+      "Mentors review your work, explain improvements, and help you understand client-style expectations.",
+  },
+  {
+    image: "career-analytics-lab.svg",
+    kicker: "Learning",
+    title: "Learning that never slows down",
+    description:
+      "Every track is practical, measurable, and connected to real project outcomes across modern tech.",
+  },
+  {
+    image: "career-demo-day.svg",
+    kicker: "Impact",
+    title: "Make an impact through visible demos",
+    description:
+      "Showcase working modules, dashboards, documentation, and deployment-ready project stories.",
+  },
+];
+
 export const perksBenefits = [
   {
     icon: "HeartPulse",

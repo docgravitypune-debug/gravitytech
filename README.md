@@ -28,7 +28,8 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 - `src/sections/home/` - homepage sections including hero, services, project
   slider, impact stats, process, clients, CTA, and contact form.
 - `src/sections/careers/` - careers page sections including hero, openings,
-  life-at section, perks and benefits, highlights, application form, and FAQ.
+  life-at section, why-join image story, perks and benefits, highlights,
+  application form, and FAQ.
 - `src/sections/shared/` - shared testimonial/review slider.
 - `src/hooks/` - custom React hooks.
 - `src/utils/` - icon mapping and formatting helpers.
@@ -61,6 +62,7 @@ Java, Python, data analytics, React, and web/full-stack project experience.
 - Local-storage demo forms for project inquiries and career applications.
 - Mobile navigation and animated hero counters.
 - SVG logo and favicon included in `assets/`.
+- Local SVG career illustrations in `assets/` for team/project imagery.
 
 ## Main packages
 

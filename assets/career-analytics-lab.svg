@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Analytics lab</title>
+  <desc id="desc">Illustration of analytics dashboard and team discussion</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8fbff"/>
+      <stop offset=".55" stop-color="#f4d9ff"/>
+      <stop offset="1" stop-color="#fff0c1"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#29d6e0"/>
+      <stop offset="1" stop-color="#b13cf0"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" rx="42" fill="url(#bg)"/>
+  <rect x="82" y="78" width="556" height="292" rx="28" fill="#fff" opacity=".76"/>
+  <rect x="128" y="126" width="164" height="180" rx="18" fill="#f8f3fc"/>
+  <rect x="328" y="126" width="250" height="180" rx="18" fill="#1a1530"/>
+  <rect x="362" y="248" width="28" height="38" rx="8" fill="#29d6e0"/>
+  <rect x="414" y="216" width="28" height="70" rx="8" fill="#6a5cf5"/>
+  <rect x="466" y="178" width="28" height="108" rx="8" fill="#b13cf0"/>
+  <path d="M144 264c35-72 71-63 104-114" fill="none" stroke="url(#chart)" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="144" cy="264" r="10" fill="#29d6e0"/>
+  <circle cx="190" cy="210" r="10" fill="#6a5cf5"/>
+  <circle cx="248" cy="150" r="10" fill="#b13cf0"/>
+  <circle cx="252" cy="360" r="30" fill="#fb923c"/>
+  <path d="M202 420c8-51 35-79 57-79s49 28 57 79z" fill="#2d2443"/>
+  <circle cx="466" cy="358" r="34" fill="#29d6e0"/>
+  <path d="M408 426c10-59 42-92 66-92s56 33 66 92z" fill="#36295a"/>
+</svg>
