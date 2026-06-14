@@ -1945,6 +1945,31 @@ textarea {
   transform: translateY(0);
 }
 
+.page-loader {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  color: var(--color-text-light);
+  background: var(--gradient-hero-bg), var(--color-bg-dark);
+  font-weight: 900;
+}
+
+.page-loader span {
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(255, 255, 255, 0.22);
+  border-top-color: var(--brand);
+  border-radius: 999px;
+  animation: loader-spin 800ms linear infinite;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 1080px) {
   .nav-links {
     gap: 12px;

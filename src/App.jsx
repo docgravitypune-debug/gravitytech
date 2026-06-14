@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import CareersPage from "./pages/CareersPage.jsx";
-import HomePage from "./pages/HomePage.jsx";
-import JobOpeningsPage from "./pages/JobOpeningsPage.jsx";
-import AboutPage from "./pages/AboutPage.jsx";
 import ScrollManager from "./components/ScrollManager.jsx";
 import Toast from "./components/Toast.jsx";
 import { routes } from "./routes.js";
+
+const AboutPage = lazy(() => import("./pages/AboutPage.jsx"));
+const CareersPage = lazy(() => import("./pages/CareersPage.jsx"));
+const HomePage = lazy(() => import("./pages/HomePage.jsx"));
+const JobOpeningsPage = lazy(() => import("./pages/JobOpeningsPage.jsx"));
 
 const routeTitles = {
   "/": "GravityTech Software | Futuristic Client Project Lab",
@@ -40,18 +41,29 @@ export default function App() {
   return (
     <>
       <ScrollManager />
-      <Routes>
-        <Route path={routes.home} element={<HomePage showToast={showToast} />} />
-        <Route path={routes.about} element={<AboutPage />} />
-        <Route path={routes.careers} element={<CareersPage showToast={showToast} />} />
-        <Route path={routes.jobs} element={<JobOpeningsPage />} />
-        <Route path="/index.html" element={<Navigate replace to={routes.home} />} />
-        <Route path="/about.html" element={<Navigate replace to={routes.about} />} />
-        <Route path="/careers.html" element={<Navigate replace to={routes.careers} />} />
-        <Route path="/job-openings.html" element={<Navigate replace to={routes.jobs} />} />
-        <Route path="*" element={<Navigate replace to={routes.home} />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path={routes.home} element={<HomePage showToast={showToast} />} />
+          <Route path={routes.about} element={<AboutPage />} />
+          <Route path={routes.careers} element={<CareersPage showToast={showToast} />} />
+          <Route path={routes.jobs} element={<JobOpeningsPage />} />
+          <Route path="/index.html" element={<Navigate replace to={routes.home} />} />
+          <Route path="/about.html" element={<Navigate replace to={routes.about} />} />
+          <Route path="/careers.html" element={<Navigate replace to={routes.careers} />} />
+          <Route path="/job-openings.html" element={<Navigate replace to={routes.jobs} />} />
+          <Route path="*" element={<Navigate replace to={routes.home} />} />
+        </Routes>
+      </Suspense>
       <Toast message={toast} />
     </>
+  );
+}
+
+function PageLoader() {
+  return (
+    <div className="page-loader" role="status" aria-live="polite">
+      <span />
+      Loading GravityTech...
+    </div>
   );
 }
