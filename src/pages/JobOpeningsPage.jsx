@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { Check, Plus, RotateCcw, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
@@ -16,6 +16,19 @@ export default function JobOpeningsPage() {
   const [jobType, setJobType] = useState("All");
   const [experience, setExperience] = useState("All");
   const [search, setSearch] = useState("");
+  const [openFilter, setOpenFilter] = useState("area");
+
+  const filterGroups = [
+    { id: "area", label: "Areas of Interest", value: area, options: areas, onChange: setArea },
+    { id: "type", label: "Job Type", value: jobType, options: jobTypes, onChange: setJobType },
+    {
+      id: "experience",
+      label: "Experience",
+      value: experience,
+      options: experiences,
+      onChange: setExperience,
+    },
+  ];
 
   const filteredJobs = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
@@ -32,6 +45,17 @@ export default function JobOpeningsPage() {
       return matchesArea && matchesType && matchesExperience && matchesSearch;
     });
   }, [area, experience, jobType, search]);
+
+  const hasActiveFilters =
+    area !== "All" || jobType !== "All" || experience !== "All" || search.trim().length > 0;
+
+  const resetFilters = () => {
+    setArea("All");
+    setJobType("All");
+    setExperience("All");
+    setSearch("");
+    setOpenFilter("area");
+  };
 
   return (
     <>
@@ -53,16 +77,30 @@ export default function JobOpeningsPage() {
 
         <section className="jobs-board section section-muted">
           <div className="container jobs-layout">
-            <aside className="jobs-filter-panel" aria-label="Job filters">
-              <h2>Filters</h2>
-              <FilterSelect label="Areas of Interest" value={area} options={areas} onChange={setArea} />
-              <FilterSelect label="Job Type" value={jobType} options={jobTypes} onChange={setJobType} />
-              <FilterSelect
-                label="Experience"
-                value={experience}
-                options={experiences}
-                onChange={setExperience}
-              />
+            <aside className="jobs-filter-panel glass-card" aria-label="Job filters">
+              <div className="jobs-filter-intro">
+                <h2>Filters</h2>
+                <p>Open a filter, choose one option, and the job list updates instantly.</p>
+              </div>
+              {filterGroups.map((filter) => (
+                <FilterDropdown
+                  key={filter.id}
+                  label={filter.label}
+                  value={filter.value}
+                  options={filter.options}
+                  isOpen={openFilter === filter.id}
+                  onToggle={() => setOpenFilter((current) => (current === filter.id ? "" : filter.id))}
+                  onChange={(nextValue) => {
+                    filter.onChange(nextValue);
+                    setOpenFilter("");
+                  }}
+                />
+              ))}
+              {hasActiveFilters ? (
+                <button className="button button-secondary button-small jobs-reset" type="button" onClick={resetFilters}>
+                  Reset filters <RotateCcw size={16} />
+                </button>
+              ) : null}
             </aside>
 
             <div className="jobs-results">
@@ -72,7 +110,7 @@ export default function JobOpeningsPage() {
                   <span className="sr-only">Search job openings</span>
                   <input
                     type="search"
-                    placeholder="Search for opening..."
+                    placeholder="Search by title, skill, or location"
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
                   />
@@ -109,18 +147,34 @@ export default function JobOpeningsPage() {
   );
 }
 
-function FilterSelect({ label, value, options, onChange }) {
+function FilterDropdown({ label, value, options, isOpen, onToggle, onChange }) {
   return (
-    <label className="job-filter">
-      {label}
-      <select value={value} onChange={(event) => onChange(event.target.value)}>
-        {options.map((option) => (
-          <option value={option} key={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    </label>
+    <div className={`job-filter ${isOpen ? "open" : ""}`}>
+      <button className="job-filter-trigger" type="button" aria-expanded={isOpen} onClick={onToggle}>
+        <span className="job-filter-copy">
+          <span className="job-filter-label">{label}</span>
+          <strong>{value}</strong>
+        </span>
+        <span className="job-filter-icon" aria-hidden="true">
+          <Plus size={18} />
+        </span>
+      </button>
+      {isOpen ? (
+        <div className="job-filter-options" role="listbox" aria-label={label}>
+          {options.map((option) => (
+            <button
+              className={`job-filter-option ${option === value ? "active" : ""}`}
+              key={option}
+              type="button"
+              onClick={() => onChange(option)}
+            >
+              <span>{option}</span>
+              {option === value ? <Check size={16} /> : null}
+            </button>
+          ))}
+        </div>
+      ) : null}
+    </div>
   );
 }
 

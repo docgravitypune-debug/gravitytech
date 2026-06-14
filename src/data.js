@@ -378,7 +378,7 @@ export const lifeAtGravityTech = [
   {
     title: "Freedom to shape your own journey",
     description:
-      "Instead of forcing you into a fixed mould, GravityTech gives you project tracks, mentors, client-style tasks, and space to grow through real delivery.",
+      "Instead of forcing you into a fixed mould, GravityTech gives you project tracks, mentors, client-style tasks, and enough ownership to build confidence through real delivery.",
   },
   {
     title: "Collaborative project culture",
@@ -390,37 +390,55 @@ export const lifeAtGravityTech = [
     description:
       "Every module includes requirements, reviews, demo checkpoints, and documentation so you learn how professional software work actually moves.",
   },
+  {
+    title: "Recognition that moves your career forward",
+    description:
+      "Strong contributors get recommendation-ready feedback, portfolio talking points, and visible demo opportunities that help in interviews and future roles.",
+  },
 ];
 
 export const whyJoinGravityTech = [
   {
-    image: "career-team-sprint.svg",
+    image: "career-culture-team.jpg",
     kicker: "Culture",
     title: "Where innovation becomes everyday work",
     description:
       "Join project sprints that mix planning, design, development, QA, documentation, and demo practice.",
+    alt: "GravityTech team members collaborating during a planning session",
   },
   {
-    image: "career-mentor-review.svg",
+    image: "career-mentor-guidance.jpg",
     kicker: "Growth",
     title: "A culture that helps you build confidence",
     description:
       "Mentors review your work, explain improvements, and help you understand client-style expectations.",
+    alt: "Mentor reviewing work with a teammate in a modern office",
   },
   {
-    image: "career-analytics-lab.svg",
+    image: "career-analytics-meeting.jpg",
     kicker: "Learning",
     title: "Learning that never slows down",
     description:
       "Every track is practical, measurable, and connected to real project outcomes across modern tech.",
+    alt: "Analytics-focused discussion around charts and project insights",
   },
   {
-    image: "career-demo-day.svg",
+    image: "career-coding-session.jpg",
     kicker: "Impact",
     title: "Make an impact through visible demos",
     description:
       "Showcase working modules, dashboards, documentation, and deployment-ready project stories.",
+    alt: "Developers working together on software delivery and demos",
   },
+];
+
+export const careerPerkHighlights = [
+  "Mentor-led sprint reviews",
+  "Flexible internship timing",
+  "Live client-style modules",
+  "Interview and portfolio guidance",
+  "Demo-day exposure",
+  "Performance-based recognition",
 ];
 
 export const perksBenefits = [
@@ -473,6 +491,54 @@ export const perksBenefits = [
     icon: "Scale",
     title: "Equal Opportunities",
     description: "Freshers, students, switchers, and early-career talent can grow through practical work.",
+  },
+  {
+    icon: "Rocket",
+    title: "Client Demo Exposure",
+    description: "Present your modules, dashboards, and delivery stories during showcase-style walkthroughs.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Interview and Portfolio Support",
+    description: "Get help shaping project explanations, resume bullets, and confidence for technical conversations.",
+  },
+  {
+    icon: "Headphones",
+    title: "Flexible Internship Timing",
+    description: "Balance classes, personal commitments, and delivery work through structured but adaptable schedules.",
+  },
+  {
+    icon: "Sparkles",
+    title: "Recognition for Strong Delivery",
+    description: "Consistent performers earn standout feedback, referral consideration, and recommendation-ready proof of work.",
+  },
+];
+
+export const careerFaqs = [
+  {
+    question: "Do I need previous project experience?",
+    answer:
+      "No. Freshers and students can apply. We match tasks to the selected track and current skill level so you can grow with guided delivery work.",
+  },
+  {
+    question: "Which technologies are available?",
+    answer:
+      "GravityTech focuses on Java, Python, data analytics, React, frontend, full-stack, cloud, DevOps, QA, and technical documentation project work.",
+  },
+  {
+    question: "Will I get mentor feedback on my work?",
+    answer:
+      "Yes. Each sprint includes reviews on code quality, testing, documentation, demos, and how clearly you explain your project decisions.",
+  },
+  {
+    question: "Can client requirements be customized?",
+    answer:
+      "Yes. Project modules can be shaped around client workflows, academic requirements, internship goals, or portfolio outcomes when needed.",
+  },
+  {
+    question: "What extra perks do team members receive?",
+    answer:
+      "Beyond project experience, team members benefit from flexible schedules, portfolio guidance, demo exposure, modern tools, and recognition for strong delivery.",
   },
 ];
 

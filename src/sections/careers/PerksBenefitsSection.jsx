@@ -1,5 +1,5 @@
 import AnimatedSection from "../../components/AnimatedSection.jsx";
-import { perksBenefits } from "../../data.js";
+import { careerPerkHighlights, perksBenefits } from "../../data.js";
 import { Icon } from "../../utils/icons.jsx";
 
 export default function PerksBenefitsSection() {
@@ -17,6 +17,11 @@ export default function PerksBenefitsSection() {
             We support your growth in and out of work through mentoring, flexibility, real project
             practice, transparent feedback, and portfolio-focused outcomes.
           </p>
+        </div>
+        <div className="perks-ribbon" aria-label="Career perks highlights">
+          {careerPerkHighlights.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
         </div>
         <div className="perks-grid">
           {perksBenefits.map((perk, index) => (

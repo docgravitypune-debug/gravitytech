@@ -9,7 +9,7 @@ export default function Footer({ description, links, tracks, heading = "Tracks" 
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <Brand href={routes.home} footer size={46} />
+          <Brand href={routes.home} footer size={86} />
           <p>{description}</p>
         </div>
         <div>

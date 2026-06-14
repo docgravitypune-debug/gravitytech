@@ -1,12 +1,28 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
-import { lifeAtGravityTech } from "../../data.js";
+import { careerPerkHighlights, lifeAtGravityTech } from "../../data.js";
 
 const collageItems = [
-  { image: "career-team-sprint.svg", label: "Project sprint" },
-  { image: "career-mentor-review.svg", label: "Mentor review" },
-  { image: "career-demo-day.svg", label: "Demo day" },
-  { image: "career-analytics-lab.svg", label: "Analytics lab" },
+  {
+    image: "career-culture-team.jpg",
+    label: "Project sprint",
+    alt: "GravityTech team collaborating during a project sprint",
+  },
+  {
+    image: "career-mentor-guidance.jpg",
+    label: "Mentor review",
+    alt: "Mentor guiding a teammate through review feedback",
+  },
+  {
+    image: "career-coding-session.jpg",
+    label: "Build session",
+    alt: "Developers working together on coding tasks",
+  },
+  {
+    image: "career-analytics-meeting.jpg",
+    label: "Analytics lab",
+    alt: "Team reviewing analytics insights during a working session",
+  },
 ];
 
 export default function LifeAtSection() {
@@ -18,6 +34,11 @@ export default function LifeAtSection() {
           <h2>
             Life at <span className="text-gradient">GravityTech</span>
           </h2>
+          <div className="life-badges" aria-label="GravityTech perks highlights">
+            {careerPerkHighlights.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
           <div className="life-story-list">
             {lifeAtGravityTech.map((item) => (
               <article key={item.title}>
@@ -38,7 +59,7 @@ export default function LifeAtSection() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               key={item.label}
             >
-              <img src={`/assets/${item.image}`} alt="" loading="lazy" />
+              <img src={`/assets/${item.image}`} alt={item.alt} loading="lazy" />
               <span>{item.label}</span>
             </motion.div>
           ))}

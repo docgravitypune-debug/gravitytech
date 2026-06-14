@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <nav className="navbar container" aria-label="Primary navigation">
-        <Brand href={routes.home} size={54} />
+        <Brand href={routes.home} size={66} />
         <button
           className="nav-toggle"
           type="button"

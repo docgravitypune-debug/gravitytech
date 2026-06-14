@@ -8,11 +8,7 @@ export default function Brand({ href = "/", footer = false, size = 54 }) {
       to={href}
       aria-label="GravityTech Software home"
     >
-      <img src={logoUrl} alt="" width={size} height={size} />
-      <span>
-        <strong>GravityTech</strong>
-        <small>Software</small>
-      </span>
+      <img src={logoUrl} alt="GravityTech Software logo" width={size} height={size} />
     </Link>
   );
 }

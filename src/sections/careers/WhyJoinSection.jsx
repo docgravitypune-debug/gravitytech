@@ -29,7 +29,7 @@ export default function WhyJoinSection() {
               key={item.title}
             >
               <div className="why-join-image">
-                <img src={`${imageBase}${item.image}`} alt="" loading="lazy" />
+                <img src={`${imageBase}${item.image}`} alt={item.alt} loading="lazy" />
               </div>
               <div className="why-join-copy">
                 <span>{item.kicker}</span>
