@@ -1,22 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap");
 
 :root {
-  --color-bg-dark: #0d0d12;
-  --color-bg-dark-2: #111119;
+  --color-bg-dark: #f7f2ff;
+  --color-bg-dark-2: #eee6fb;
   --color-bg-light: #ffffff;
-  --color-text-dark: #262133;
-  --color-text-light: #faf7ff;
-  --color-text-muted: #615c70;
-  --color-text-muted-light: #d8d3e3;
+  --color-text-dark: #241d38;
+  --color-text-light: #241d38;
+  --color-text-muted: #665f7b;
+  --color-text-muted-light: #7a7191;
   --gradient-accent: linear-gradient(90deg, #29d6e0 0%, #6a5cf5 55%, #b13cf0 100%);
   --gradient-accent-soft: linear-gradient(90deg, #4dd0e1 0%, #7c4dff 100%);
-  --gradient-hero-bg: linear-gradient(135deg, rgba(10, 10, 14, 0.98) 0%, rgba(23, 16, 40, 0.94) 52%, rgba(7, 43, 52, 0.9) 100%);
+  --gradient-hero-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 241, 255, 0.96) 52%, rgba(235, 248, 255, 0.94) 100%);
   --gradient-section-pink: linear-gradient(135deg, #fff0fb 0%, #f7dbff 38%, #dba3ff 72%, #ffe6a8 100%);
   --gradient-section-warm: linear-gradient(135deg, #fff6ef 0%, #fbe4f1 50%, #f3d6ff 100%);
   --card-bg-light: #f8f3fc;
   --card-bg-light-alt: #f2e6fb;
-  --card-bg-dark: #232032;
-  --border-soft: rgba(0, 0, 0, 0.06);
+  --card-bg-dark: rgba(255, 255, 255, 0.9);
+  --border-soft: rgba(52, 35, 86, 0.1);
   --shadow-soft: 0 18px 50px rgba(60, 30, 90, 0.1);
   --shadow-card: 0 10px 34px rgba(40, 20, 80, 0.08);
   --radius-pill: 999px;
@@ -37,10 +37,10 @@
   --paper: var(--color-bg-light);
   --surface: var(--color-bg-dark);
   --surface-2: var(--color-bg-dark-2);
-  --line: rgba(255, 255, 255, 0.12);
-  --glass: rgba(35, 32, 50, 0.7);
-  --glass-light: rgba(248, 243, 252, 0.86);
-  --shadow: 0 24px 80px rgba(40, 20, 80, 0.16);
+  --line: rgba(84, 62, 126, 0.14);
+  --glass: rgba(255, 255, 255, 0.76);
+  --glass-light: rgba(255, 255, 255, 0.9);
+  --shadow: 0 24px 80px rgba(40, 20, 80, 0.12);
   --radius: var(--radius-card-lg);
   --max-width: var(--container-max);
 }
@@ -119,8 +119,10 @@ textarea {
 
 .section-dark {
   margin: 24px;
-  background: var(--color-bg-dark);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 240, 255, 0.96));
+  border: 1px solid rgba(98, 81, 132, 0.08);
   border-radius: 40px;
+  box-shadow: var(--shadow-soft);
 }
 
 .section-heading {
@@ -193,11 +195,11 @@ textarea {
 
 .pulse-label {
   padding: 8px 12px;
-  color: var(--color-text-light);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-text-dark);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(98, 81, 132, 0.16);
   border-radius: var(--radius-pill);
-  box-shadow: 0 0 30px rgba(120, 80, 240, 0.22);
+  box-shadow: 0 14px 28px rgba(120, 80, 240, 0.12);
 }
 
 .site-header {
@@ -208,8 +210,8 @@ textarea {
   right: 0;
   padding: 16px 0;
   background:
-    linear-gradient(180deg, rgba(10, 10, 14, 0.62), rgba(10, 10, 14, 0.16) 72%, transparent),
-    rgba(10, 10, 14, 0.08);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.38) 72%, transparent),
+    rgba(255, 255, 255, 0.08);
   border-bottom: 0;
   backdrop-filter: blur(16px);
 }
@@ -222,13 +224,13 @@ textarea {
   gap: 22px;
   padding: 10px 22px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)),
-    rgba(20, 18, 32, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(250, 245, 255, 0.86)),
+    rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(98, 81, 132, 0.12);
   border-radius: var(--radius-pill);
   box-shadow:
-    0 18px 54px rgba(5, 5, 8, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    0 18px 54px rgba(72, 44, 118, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
   backdrop-filter: blur(24px);
 }
 
@@ -236,7 +238,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-weight: 900;
 }
 
@@ -273,7 +275,7 @@ textarea {
 }
 
 .nav-links a:not(.button) {
-  color: rgba(250, 247, 255, 0.76);
+  color: rgba(36, 29, 56, 0.78);
   font-size: 0.9rem;
   font-weight: 800;
 }
@@ -288,8 +290,8 @@ textarea {
   display: none;
   width: 46px;
   height: 46px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-dark);
+  background: rgba(255, 255, 255, 0.86);
   border: 1px solid var(--line);
   border-radius: 16px;
 }
@@ -333,9 +335,9 @@ textarea {
 }
 
 .button-secondary {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.075);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--color-text-dark);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(98, 81, 132, 0.14);
   box-shadow: none;
 }
 
@@ -348,10 +350,10 @@ textarea {
 .glass-card {
   position: relative;
   overflow: hidden;
-  background: rgba(255, 250, 255, 0.84);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--border-soft);
   border-radius: 24px;
-  box-shadow: 0 14px 42px rgba(40, 20, 80, 0.08);
+  box-shadow: 0 14px 42px rgba(40, 20, 80, 0.06);
   backdrop-filter: blur(16px);
   transform-style: preserve-3d;
   transition:
@@ -396,7 +398,7 @@ textarea {
 
 .dark-card {
   background: var(--card-bg-dark);
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(98, 81, 132, 0.12);
 }
 
 .animated-bg {
@@ -410,8 +412,8 @@ textarea {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(98, 81, 132, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(98, 81, 132, 0.08) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.86), transparent 92%);
 }
@@ -475,7 +477,7 @@ textarea {
     radial-gradient(circle at 22% 42%, rgba(177, 60, 240, 0.16), transparent 24rem),
     var(--gradient-hero-bg),
     var(--color-bg-dark);
-  background-blend-mode: multiply;
+  background-blend-mode: normal;
 }
 
 .hero-grid {
@@ -572,7 +574,7 @@ textarea {
 
 .hero-metrics div {
   padding: 18px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--line);
   border-radius: 20px;
   backdrop-filter: blur(16px);
@@ -617,7 +619,8 @@ textarea {
 .hero-logo-strip span {
   padding: 8px 14px;
   color: var(--color-text-muted-light);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(98, 81, 132, 0.14);
   border-radius: var(--radius-pill);
   white-space: nowrap;
   font-weight: 700;
@@ -631,14 +634,14 @@ textarea {
 .holo-card {
   position: relative;
   overflow: hidden;
-  background: rgba(35, 32, 50, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(98, 81, 132, 0.14);
   border-radius: var(--radius-card-lg);
   backdrop-filter: blur(18px);
   border-color: rgba(0, 212, 255, 0.24);
   box-shadow:
-    0 28px 90px rgba(0, 0, 0, 0.35),
-    0 0 80px rgba(0, 212, 255, 0.14);
+    0 28px 90px rgba(72, 44, 118, 0.12),
+    0 0 80px rgba(0, 212, 255, 0.1);
 }
 
 .orbit-card {
@@ -690,7 +693,7 @@ textarea {
   position: relative;
   z-index: 1;
   margin: 0 0 12px;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-size: 1.55rem;
   line-height: 1.2;
 }
@@ -717,7 +720,7 @@ textarea {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: rgba(236, 254, 255, 0.88);
+  color: var(--color-text-dark);
   font-weight: 800;
 }
 
@@ -1122,7 +1125,7 @@ textarea {
 }
 
 .review-card strong {
-  color: #ffffff;
+  color: var(--color-text-dark);
 }
 
 .review-card span {
@@ -1246,7 +1249,7 @@ textarea {
   padding: 132px 0 72px;
   color: var(--color-text-light);
   background: var(--gradient-hero-bg), var(--color-bg-dark);
-  background-blend-mode: multiply;
+  background-blend-mode: normal;
 }
 
 .jobs-hero-grid {
@@ -1542,9 +1545,9 @@ textarea {
 
 .why-join-section {
   background:
-    radial-gradient(circle at 72% 14%, rgba(177, 60, 240, 0.28), transparent 28rem),
-    radial-gradient(circle at 20% 68%, rgba(41, 214, 224, 0.12), transparent 26rem),
-    #1f1f1f;
+    radial-gradient(circle at 72% 14%, rgba(177, 60, 240, 0.16), transparent 28rem),
+    radial-gradient(circle at 20% 68%, rgba(41, 214, 224, 0.1), transparent 26rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 237, 255, 0.96));
 }
 
 .why-join-heading {
@@ -1557,7 +1560,7 @@ textarea {
 
 .why-join-heading h2 {
   margin: 0;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.4rem);
 }
@@ -1591,7 +1594,7 @@ textarea {
 .why-join-image {
   overflow: hidden;
   border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 18px 40px rgba(72, 44, 118, 0.12);
 }
 
 .why-join-image img {
@@ -1602,11 +1605,11 @@ textarea {
 }
 
 .why-join-copy {
-  color: #ffffff;
+  color: var(--color-text-dark);
 }
 
 .why-join-copy span {
-  color: #c9c6d6;
+  color: var(--color-text-muted);
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -1616,7 +1619,7 @@ textarea {
 .why-join-copy h3 {
   max-width: 300px;
   margin: 8px 0 8px;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-size: clamp(1.05rem, 2vw, 1.35rem);
 }
 
@@ -1841,7 +1844,7 @@ textarea {
   position: relative;
   z-index: 1;
   margin: 0 0 14px;
-  color: #ffffff;
+  color: var(--color-text-dark);
 }
 
 .saved-applications ul {
@@ -1851,7 +1854,7 @@ textarea {
   gap: 10px;
   margin: 0;
   padding-left: 18px;
-  color: rgba(236, 254, 255, 0.82);
+  color: var(--color-text-muted);
 }
 
 .faq-wrap {
@@ -1865,14 +1868,14 @@ textarea {
 
 .faq-list details {
   padding: 22px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--line);
   border-radius: 20px;
 }
 
 .faq-list summary {
   cursor: pointer;
-  color: #ffffff;
+  color: var(--color-text-dark);
   font-weight: 950;
 }
 
@@ -1884,10 +1887,10 @@ textarea {
 .site-footer {
   margin-top: 24px;
   padding: 80px 0 40px;
-  color: var(--color-text-muted-light);
-  background: var(--color-bg-dark-2);
+  color: var(--color-text-muted);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(245, 237, 255, 0.98));
   border-radius: 40px 40px 0 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(98, 81, 132, 0.12);
 }
 
 .footer-grid {
@@ -1897,14 +1900,14 @@ textarea {
 }
 
 .site-footer h3 {
-  color: #ffffff;
+  color: var(--color-text-dark);
 }
 
 .site-footer a,
 .site-footer span {
   display: block;
   margin-top: 8px;
-  color: var(--color-text-muted-light);
+  color: var(--color-text-muted);
 }
 
 .site-footer a:hover,
@@ -1916,7 +1919,7 @@ textarea {
   width: min(100% - 32px, var(--max-width));
   margin: 34px auto 0;
   padding-top: 22px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(98, 81, 132, 0.12);
   font-size: 0.9rem;
 }
 
@@ -1958,7 +1961,7 @@ textarea {
 .page-loader span {
   width: 42px;
   height: 42px;
-  border: 3px solid rgba(255, 255, 255, 0.22);
+  border: 3px solid rgba(98, 81, 132, 0.18);
   border-top-color: var(--brand);
   border-radius: 999px;
   animation: loader-spin 800ms linear infinite;
@@ -2071,7 +2074,7 @@ textarea {
     flex-direction: column;
     align-items: stretch;
     padding: 22px;
-    background: rgba(5, 11, 22, 0.95);
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid var(--line);
     border-radius: 22px;
     box-shadow: var(--shadow);
