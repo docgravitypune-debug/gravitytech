@@ -1,7 +1,10 @@
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import GradientCard from "../../components/GradientCard.jsx";
 import ProSectionHeading from "../../components/ProSectionHeading.jsx";
 import { clients } from "../../data.js";
 import { getInitials } from "../../utils/format.js";
+
+const variants = ["cyan", "violet", "lime", "sunset"];
 
 export default function ClientsSection({ showHeading = false }) {
   return (
@@ -16,14 +19,19 @@ export default function ClientsSection({ showHeading = false }) {
         ) : null}
 
         <div className="pro-client-wall" aria-label="GravityTech client partners">
-          {clients.map((client) => (
-            <article className="pro-client-item" key={client.name}>
-              <span>{getInitials(client.name)}</span>
+          {clients.map((client, index) => (
+            <GradientCard
+              className="pro-client-item"
+              delay={Math.min(index * 0.03, 0.28)}
+              key={client.name}
+              variant={variants[index % variants.length]}
+            >
+              <span className="pro-client-avatar">{getInitials(client.name)}</span>
               <div>
                 <h3>{client.name}</h3>
                 <p>{client.sector}</p>
               </div>
-            </article>
+            </GradientCard>
           ))}
         </div>
       </div>

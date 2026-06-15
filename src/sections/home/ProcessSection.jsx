@@ -1,6 +1,9 @@
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import GradientCard from "../../components/GradientCard.jsx";
 import ProSectionHeading from "../../components/ProSectionHeading.jsx";
 import { deliveryMethods } from "../../data.js";
+
+const variants = ["cyan", "violet", "lime", "sunset"];
 
 export default function ProcessSection() {
   return (
@@ -14,43 +17,40 @@ export default function ProcessSection() {
 
         <div className="pro-methods-grid">
           {deliveryMethods.map((method, index) => (
-            <article className="pro-method-card" key={method.title}>
+            <GradientCard
+              className="pro-method-card"
+              delay={index * 0.06}
+              key={method.title}
+              variant={variants[index % variants.length]}
+            >
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{method.title}</h3>
               <p>{method.description}</p>
-            </article>
+            </GradientCard>
           ))}
         </div>
 
         <ol className="pro-process-steps">
-          <li>
-            <strong>01</strong>
-            <div>
-              <h4>Signal capture</h4>
-              <p>Requirements, roles, data flows, risks, and success metrics.</p>
-            </div>
-          </li>
-          <li>
-            <strong>02</strong>
-            <div>
-              <h4>Sprint architecture</h4>
-              <p>UI, backend, database, analytics, QA, docs, and demo milestones.</p>
-            </div>
-          </li>
-          <li>
-            <strong>03</strong>
-            <div>
-              <h4>Build lab</h4>
-              <p>Guided pods, code review, task boards, and testing loops.</p>
-            </div>
-          </li>
-          <li>
-            <strong>04</strong>
-            <div>
-              <h4>Launch demo</h4>
-              <p>Demo, screenshots, deployment notes, and roadmap handoff.</p>
-            </div>
-          </li>
+          {[
+            ["01", "Signal capture", "Requirements, roles, data flows, risks, and success metrics."],
+            ["02", "Sprint architecture", "UI, backend, database, analytics, QA, docs, and demo milestones."],
+            ["03", "Build lab", "Guided pods, code review, task boards, and testing loops."],
+            ["04", "Launch demo", "Demo, screenshots, deployment notes, and roadmap handoff."],
+          ].map(([number, title, copy], index) => (
+            <GradientCard
+              as="li"
+              className="pro-process-step-card"
+              delay={index * 0.05}
+              key={number}
+              variant={variants[index % variants.length]}
+            >
+              <strong>{number}</strong>
+              <div>
+                <h4>{title}</h4>
+                <p>{copy}</p>
+              </div>
+            </GradientCard>
+          ))}
         </ol>
       </div>
     </AnimatedSection>

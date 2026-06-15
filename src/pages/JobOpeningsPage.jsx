@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageHero from "../components/PageHero.jsx";
+import GradientCard from "../components/GradientCard.jsx";
 import { jobOpenings } from "../data.js";
 import { pageHeroes } from "../pageHeroes.js";
 import { routes } from "../routes.js";
@@ -114,7 +115,7 @@ export default function JobOpeningsPage() {
                     <p>Try changing the filters or search term.</p>
                   </article>
                 ) : (
-                  filteredJobs.map((job) => <JobCard job={job} key={job.title} />)
+                  filteredJobs.map((job, index) => <JobCard job={job} index={index} key={job.title} />)
                 )}
               </div>
             </div>
@@ -167,9 +168,14 @@ function FilterDropdown({ label, value, options, isOpen, onToggle, onChange }) {
   );
 }
 
-function JobCard({ job }) {
+function JobCard({ job, index }) {
+  const variants = ["cyan", "violet", "lime", "sunset"];
   return (
-    <article className="job-card pro-form-card">
+    <GradientCard
+      className="job-card"
+      delay={Math.min(index * 0.04, 0.24)}
+      variant={variants[index % variants.length]}
+    >
       <div className="job-card-top">
         <div>
           <p className="job-area">{job.area}</p>
@@ -192,6 +198,6 @@ function JobCard({ job }) {
       <Link className="read-more-link" to={`${routes.careers}#apply`}>
         Read more +
       </Link>
-    </article>
+    </GradientCard>
   );
 }

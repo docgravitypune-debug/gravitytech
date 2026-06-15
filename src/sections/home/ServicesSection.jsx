@@ -23,7 +23,7 @@ export default function ServicesSection({ showHeading = false }) {
           />
         ) : null}
 
-        <div className="pro-service-explorer">
+        <div className="pro-service-explorer gradient-tile gradient-tile--violet">
           <div className="pro-service-nav">
             <span className="pro-service-counter">
               {String(activeIndex + 1).padStart(2, "0")}/{String(services.length).padStart(2, "0")}

@@ -75,7 +75,7 @@ export default function ContactSection({ showToast, showHeading = false }) {
             <span>Java | Python | Data Analytics | React | Web Apps</span>
           </div>
         </div>
-        <form className="form-card pro-form-card" onSubmit={handleSubmit} noValidate>
+        <form className="form-card pro-form-card gradient-tile gradient-tile--violet" onSubmit={handleSubmit} noValidate>
           <label className={form.touched.name && form.errors.name ? "field-invalid" : ""}>
             Full name
             <input type="text" placeholder="Your name" {...fieldProps("name")} />

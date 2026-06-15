@@ -1,6 +1,9 @@
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import GradientCard from "../../components/GradientCard.jsx";
 import ProSectionHeading from "../../components/ProSectionHeading.jsx";
 import { deliveryProblems } from "../../data.js";
+
+const variants = ["violet", "cyan", "sunset"];
 
 export default function ProblemSection() {
   return (
@@ -15,12 +18,17 @@ export default function ProblemSection() {
         </ProSectionHeading>
 
         <div className="pro-problem-grid">
-          {deliveryProblems.map((item) => (
-            <article className="pro-problem-card" key={item.tag}>
+          {deliveryProblems.map((item, index) => (
+            <GradientCard
+              className="pro-problem-card"
+              delay={index * 0.07}
+              key={item.tag}
+              variant={variants[index % variants.length]}
+            >
               <p className="pro-problem-tag">{item.tag}</p>
               <strong>{item.value}</strong>
               <p>{item.label}</p>
-            </article>
+            </GradientCard>
           ))}
         </div>
       </div>

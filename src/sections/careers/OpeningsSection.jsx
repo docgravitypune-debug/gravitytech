@@ -1,7 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import GradientCard from "../../components/GradientCard.jsx";
 import SectionHeading from "../../components/SectionHeading.jsx";
 import { careerTracks } from "../../data.js";
+
+const variants = ["cyan", "violet", "lime", "sunset"];
 
 export default function OpeningsSection({ onTrackApply }) {
   return (
@@ -12,8 +15,13 @@ export default function OpeningsSection({ onTrackApply }) {
           confidence with production-style work.
         </SectionHeading>
         <div className="career-grid" aria-live="polite">
-          {careerTracks.map((track) => (
-            <article className="career-card glass-card" key={track.title}>
+          {careerTracks.map((track, index) => (
+            <GradientCard
+              className="career-card"
+              delay={index * 0.06}
+              key={track.title}
+              variant={variants[index % variants.length]}
+            >
               <header>
                 <div>
                   <span className="tag">{track.type}</span>
@@ -33,7 +41,7 @@ export default function OpeningsSection({ onTrackApply }) {
               >
                 Apply for this track <ArrowRight size={16} />
               </a>
-            </article>
+            </GradientCard>
           ))}
         </div>
       </div>

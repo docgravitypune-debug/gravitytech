@@ -2,6 +2,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Star } from "lucide-react";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import GradientCard from "../../components/GradientCard.jsx";
 import ProSectionHeading from "../../components/ProSectionHeading.jsx";
 import { testimonials } from "../../data.js";
 
@@ -27,9 +28,9 @@ export default function TestimonialsSection() {
             900: { slidesPerView: 2 },
           }}
         >
-          {testimonials.map((review) => (
+          {testimonials.map((review, index) => (
             <SwiperSlide key={`${review.company}-${review.name}`}>
-              <article className="pro-review-card">
+              <GradientCard className="pro-review-card" delay={index * 0.05} variant={index % 2 === 0 ? "violet" : "cyan"}>
                 <div className="pro-review-stars" aria-label={`${review.rating} star review`}>
                   {Array.from({ length: review.rating }).map((_, index) => (
                     <Star fill="currentColor" size={16} key={index} />
@@ -40,7 +41,7 @@ export default function TestimonialsSection() {
                   <strong>{review.name}</strong>
                   <span>{review.company}</span>
                 </footer>
-              </article>
+              </GradientCard>
             </SwiperSlide>
           ))}
         </Swiper>

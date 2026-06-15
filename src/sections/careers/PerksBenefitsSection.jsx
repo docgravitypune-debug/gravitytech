@@ -1,6 +1,9 @@
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import GradientCard from "../../components/GradientCard.jsx";
 import { careerPerkHighlights, perksBenefits } from "../../data.js";
 import { Icon } from "../../utils/icons.jsx";
+
+const variants = ["cyan", "violet", "lime", "sunset"];
 
 export default function PerksBenefitsSection() {
   return (
@@ -25,13 +28,18 @@ export default function PerksBenefitsSection() {
         </div>
         <div className="perks-grid">
           {perksBenefits.map((perk, index) => (
-            <article className={`perk-card glass-card perk-card-${index + 1}`} key={perk.title}>
+            <GradientCard
+              className={`perk-card perk-card-${index + 1}`}
+              delay={index * 0.05}
+              key={perk.title}
+              variant={variants[index % variants.length]}
+            >
               <span className="perk-icon">
                 <Icon name={perk.icon} size={36} />
               </span>
               <h3>{perk.title}</h3>
               <p>{perk.description}</p>
-            </article>
+            </GradientCard>
           ))}
         </div>
       </div>

@@ -2,6 +2,7 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageHero from "../components/PageHero.jsx";
 import CoditasFeatureRows from "../components/CoditasFeatureRows.jsx";
+import ExploreTilesSection from "../sections/home/ExploreTilesSection.jsx";
 import ProblemSection from "../sections/home/ProblemSection.jsx";
 import StatementSection from "../sections/home/StatementSection.jsx";
 import ValuePillarsSection from "../sections/home/ValuePillarsSection.jsx";
@@ -28,6 +29,7 @@ export default function HomePage() {
             subtitle: "Structured pods, mentor reviews, and client-ready demos.",
           }}
         />
+        <ExploreTilesSection />
         <ProblemSection />
         <StatementSection />
         <ValuePillarsSection />

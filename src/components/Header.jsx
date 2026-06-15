@@ -17,10 +17,7 @@ export default function Header() {
 
   const links = [
     { to: routes.services, label: "Services" },
-    { to: routes.projects, label: "Projects" },
     { to: routes.about, label: "About" },
-    { to: routes.clients, label: "Clients" },
-    { to: routes.jobs, label: "Openings" },
     { to: routes.careers, label: "Careers" },
   ];
 

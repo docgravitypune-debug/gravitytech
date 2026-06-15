@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import GradientCard from "../../components/GradientCard.jsx";
 import { aboutStats } from "../../data.js";
 import { routes } from "../../routes.js";
 
@@ -18,14 +19,30 @@ export default function AboutPreviewSection() {
           <Link className="button pro-button" to={routes.about}>
             Read About Us <ArrowRight size={18} />
           </Link>
+
+          <div className="about-link-tiles">
+            <GradientCard className="about-link-tile" showArrow={false} to={routes.projects} variant="cyan">
+              <h3>Explore Projects</h3>
+              <p>Java, Python, analytics, and web tracks.</p>
+            </GradientCard>
+            <GradientCard className="about-link-tile" showArrow={false} to={routes.clients} variant="violet">
+              <h3>Meet Our Clients</h3>
+              <p>Partners across software and education.</p>
+            </GradientCard>
+          </div>
         </div>
 
         <div className="pro-about-stats">
-          {aboutStats.map((stat) => (
-            <article key={stat.label}>
+          {aboutStats.map((stat, index) => (
+            <GradientCard
+              className="pro-about-stat-card"
+              delay={index * 0.05}
+              key={stat.label}
+              variant={index % 2 === 0 ? "lime" : "sunset"}
+            >
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>
-            </article>
+            </GradientCard>
           ))}
         </div>
       </div>

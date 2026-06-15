@@ -3,10 +3,15 @@ import Footer from "../components/Footer.jsx";
 import PageHero from "../components/PageHero.jsx";
 import CoditasFeatureRows from "../components/CoditasFeatureRows.jsx";
 import AnimatedSection from "../components/AnimatedSection.jsx";
+import GradientCard from "../components/GradientCard.jsx";
+import ExploreTilesSection from "../sections/home/ExploreTilesSection.jsx";
 import { aboutStats, aboutValues, processSteps, aboutFeatureRows } from "../data.js";
+import { FolderKanban, Handshake } from "lucide-react";
 import { Icon } from "../utils/icons.jsx";
 import { pageHeroes } from "../pageHeroes.js";
 import { routes } from "../routes.js";
+
+const variants = ["cyan", "violet", "lime", "sunset"];
 
 export default function AboutPage() {
   return (
@@ -23,6 +28,26 @@ export default function AboutPage() {
             subtitle: "We build practical software with clarity, quality, and momentum.",
           }}
         />
+        <ExploreTilesSection
+          eyebrow="Discover more"
+          tiles={[
+            {
+              title: "Project Catalog",
+              description: "See the modules and tracks GravityTech delivers.",
+              to: routes.projects,
+              variant: "cyan",
+              icon: FolderKanban,
+            },
+            {
+              title: "Client Network",
+              description: "Explore the partners that trust our delivery model.",
+              to: routes.clients,
+              variant: "violet",
+              icon: Handshake,
+            },
+          ]}
+          title="Browse projects and clients from here."
+        />
 
         <AnimatedSection className="pro-section pro-about">
           <div className="container about-story-grid">
@@ -36,11 +61,16 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="about-stat-grid">
-              {aboutStats.map((stat) => (
-                <article className="pro-form-card" key={stat.label}>
+              {aboutStats.map((stat, index) => (
+                <GradientCard
+                  className="about-stat-card"
+                  delay={index * 0.05}
+                  key={stat.label}
+                  variant={variants[index % variants.length]}
+                >
                   <strong>{stat.value}</strong>
                   <span>{stat.label}</span>
-                </article>
+                </GradientCard>
               ))}
             </div>
           </div>
@@ -57,12 +87,17 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="about-value-grid">
-              {aboutValues.map((value) => (
-                <article className="pro-pillar-card" key={value.title}>
+              {aboutValues.map((value, index) => (
+                <GradientCard
+                  className="about-value-card"
+                  delay={index * 0.06}
+                  key={value.title}
+                  variant={variants[index % variants.length]}
+                >
                   <Icon name={value.icon} size={34} />
                   <h3>{value.title}</h3>
                   <p>{value.description}</p>
-                </article>
+                </GradientCard>
               ))}
             </div>
           </div>
@@ -75,14 +110,20 @@ export default function AboutPage() {
               <h2>Every project moves through a simple delivery system.</h2>
             </div>
             <ol className="pro-process-steps">
-              {processSteps.map((step) => (
-                <li key={step.number}>
+              {processSteps.map((step, index) => (
+                <GradientCard
+                  as="li"
+                  className="pro-process-step-card"
+                  delay={index * 0.05}
+                  key={step.number}
+                  variant={variants[index % variants.length]}
+                >
                   <strong>{step.number}</strong>
                   <div>
                     <h4>{step.title}</h4>
                     <p>{step.description}</p>
                   </div>
-                </li>
+                </GradientCard>
               ))}
             </ol>
           </div>
@@ -94,7 +135,7 @@ export default function AboutPage() {
           { href: routes.services, label: "Services" },
           { href: routes.projects, label: "Projects" },
           { href: routes.careers, label: "Careers" },
-          { href: routes.jobs, label: "Openings" },
+          { href: routes.clients, label: "Clients" },
         ]}
         heading="Focus"
         tracks={["Delivery", "Mentorship", "Analytics", "Automation"]}
