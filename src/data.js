@@ -26,6 +26,76 @@ export const heroFeatures = [
   },
 ];
 
+export const deliveryProblems = [
+  {
+    tag: "Disconnected delivery",
+    value: "68%",
+    label: "of teams report unclear project direction before build starts",
+  },
+  {
+    tag: "Unrealized outcomes",
+    value: "54%",
+    label: "of training programs fail to produce portfolio-ready software artifacts",
+  },
+  {
+    tag: "Trust gaps",
+    value: "72%",
+    label: "of stakeholders want stronger documentation, QA, and review gates",
+  },
+];
+
+export const valuePillars = [
+  {
+    title: "Set a clear delivery direction",
+    description:
+      "We define scope, milestones, roles, and success metrics before development begins so effort stays focused.",
+  },
+  {
+    title: "Create business context",
+    description:
+      "Requirements are mapped to real workflows, data flows, and user roles so every module solves an actual need.",
+  },
+  {
+    title: "Drive team adoption",
+    description:
+      "Mentorship, code reviews, and guided sprints help interns, freshers, and delivery pods use the same playbook.",
+  },
+  {
+    title: "Strengthen the delivery base",
+    description:
+      "Documentation, QA checklists, demos, and deployment notes create trust across clients and internal teams.",
+  },
+];
+
+export const deliveryMethods = [
+  {
+    title: "Structured methods",
+    description:
+      "Defined phases from signal capture to launch demo reduce drift and keep delivery predictable.",
+  },
+  {
+    title: "Clear deliverables",
+    description:
+      "Roadmaps, dashboards, API specs, and review artifacts—not vague progress updates.",
+  },
+  {
+    title: "Quality gates",
+    description:
+      "Sign-off criteria, testing checkpoints, and review loops before anything reaches a client demo.",
+  },
+  {
+    title: "Measurable outcomes",
+    description:
+      "Track module completion, demo readiness, adoption, and delivery confidence at every stage.",
+  },
+];
+
+export const outcomeStats = [
+  { value: "42+", label: "Project modules delivered across active tracks" },
+  { value: "14+", label: "Client partners across software and education sectors" },
+  { value: "100%", label: "Practical focus on demos, docs, and review loops" },
+];
+
 export const services = [
   {
     icon: "Code2",

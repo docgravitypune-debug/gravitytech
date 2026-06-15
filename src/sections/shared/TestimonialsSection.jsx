@@ -1,24 +1,27 @@
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Quote, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
-import SectionHeading from "../../components/SectionHeading.jsx";
+import ProSectionHeading from "../../components/ProSectionHeading.jsx";
 import { testimonials } from "../../data.js";
 
 export default function TestimonialsSection() {
   return (
-    <AnimatedSection id="reviews" className="section reviews-section">
+    <AnimatedSection id="reviews" className="pro-section pro-reviews">
       <div className="container">
-        <SectionHeading eyebrow="Client reviews" title="What partners say about GravityTech." center>
-          Practical delivery, clear communication, and portfolio-ready real-time project outcomes.
-        </SectionHeading>
+        <ProSectionHeading
+          eyebrow="Client voices"
+          title="What partners say about working with GravityTech."
+          center
+        />
+
         <Swiper
-          className="review-slider"
+          className="pro-review-slider"
           modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 3200, disableOnInteraction: false }}
+          autoplay={{ delay: 4200, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop
-          spaceBetween={22}
+          spaceBetween={24}
           slidesPerView={1}
           breakpoints={{
             900: { slidesPerView: 2 },
@@ -26,14 +29,13 @@ export default function TestimonialsSection() {
         >
           {testimonials.map((review) => (
             <SwiperSlide key={`${review.company}-${review.name}`}>
-              <article className="review-card glass-card">
-                <Quote className="quote-icon" size={36} />
-                <div className="stars" aria-label={`${review.rating} star review`}>
+              <article className="pro-review-card">
+                <div className="pro-review-stars" aria-label={`${review.rating} star review`}>
                   {Array.from({ length: review.rating }).map((_, index) => (
-                    <Star fill="currentColor" size={18} key={index} />
+                    <Star fill="currentColor" size={16} key={index} />
                   ))}
                 </div>
-                <p>{review.quote}</p>
+                <p>&ldquo;{review.quote}&rdquo;</p>
                 <footer>
                   <strong>{review.name}</strong>
                   <span>{review.company}</span>

@@ -52,10 +52,10 @@ export default function ContactSection({ showToast }) {
   });
 
   return (
-    <AnimatedSection id="contact" className="section section-muted">
-      <div className="container contact-grid">
+    <AnimatedSection id="contact" className="pro-section pro-contact">
+      <div className="container contact-grid pro-contact-grid">
         <div>
-          <p className="eyebrow">Start with GravityTech</p>
+          <p className="pro-eyebrow">Start with GravityTech</p>
           <h2>Tell us what you want to build.</h2>
           <p>
             Share your project requirement or learning goal. The demo form stores your request
@@ -71,7 +71,7 @@ export default function ContactSection({ showToast }) {
             <span>Java | Python | Data Analytics | React | Web Apps</span>
           </div>
         </div>
-        <form className="form-card glass-card" onSubmit={handleSubmit} noValidate>
+        <form className="form-card pro-form-card" onSubmit={handleSubmit} noValidate>
           <label className={form.touched.name && form.errors.name ? "field-invalid" : ""}>
             Full name
             <input type="text" placeholder="Your name" {...fieldProps("name")} />
@@ -107,7 +107,7 @@ export default function ContactSection({ showToast }) {
               <span className="field-error">{form.errors.message}</span>
             ) : null}
           </label>
-          <button className="button" type="submit">
+          <button className="button pro-button" type="submit">
             Submit Requirement
           </button>
           <p className="form-note">
