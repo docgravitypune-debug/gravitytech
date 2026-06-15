@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
+import PageHero from "../components/PageHero.jsx";
 import TestimonialsSection from "../sections/shared/TestimonialsSection.jsx";
-import CareerHero from "../sections/careers/CareerHero.jsx";
 import LifeAtSection from "../sections/careers/LifeAtSection.jsx";
 import WhyJoinSection from "../sections/careers/WhyJoinSection.jsx";
 import PerksBenefitsSection from "../sections/careers/PerksBenefitsSection.jsx";
@@ -12,6 +12,7 @@ import ProgramHighlights from "../sections/careers/ProgramHighlights.jsx";
 import ApplicationSection from "../sections/careers/ApplicationSection.jsx";
 import FaqSection from "../sections/careers/FaqSection.jsx";
 import { readEntries, saveEntry, storageKeys } from "../storage.js";
+import { pageHeroes } from "../pageHeroes.js";
 import { routes } from "../routes.js";
 
 export default function CareersPage({ showToast }) {
@@ -42,9 +43,9 @@ export default function CareersPage({ showToast }) {
 
   return (
     <>
-      <Header page="careers" />
-      <main>
-        <CareerHero />
+      <Header />
+      <main className="page-with-hero">
+        <PageHero {...pageHeroes.careers} />
         <LifeAtSection />
         <WhyJoinSection />
         <PerksBenefitsSection />
@@ -63,9 +64,9 @@ export default function CareersPage({ showToast }) {
       <Footer
         description="Apply for practical client-style project work and software career growth."
         links={[
-          { href: `${routes.home}#services`, label: "Services" },
-          { href: `${routes.home}#projects`, label: "Projects" },
-          { href: `${routes.home}#clients`, label: "Clients" },
+          { href: routes.services, label: "Services" },
+          { href: routes.projects, label: "Projects" },
+          { href: routes.clients, label: "Clients" },
           { href: `${routes.careers}#reviews`, label: "Reviews" },
           { href: `${routes.careers}#apply`, label: "Apply" },
         ]}

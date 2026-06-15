@@ -6,14 +6,22 @@ import { routes } from "./routes.js";
 
 const AboutPage = lazy(() => import("./pages/AboutPage.jsx"));
 const CareersPage = lazy(() => import("./pages/CareersPage.jsx"));
+const ClientsPage = lazy(() => import("./pages/ClientsPage.jsx"));
+const ContactPage = lazy(() => import("./pages/ContactPage.jsx"));
 const HomePage = lazy(() => import("./pages/HomePage.jsx"));
 const JobOpeningsPage = lazy(() => import("./pages/JobOpeningsPage.jsx"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage.jsx"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage.jsx"));
 
 const routeTitles = {
-  "/": "GravityTech Software | Futuristic Client Project Lab",
-  "/about": "About Us | GravityTech Software",
-  "/careers": "Careers | GravityTech Software",
-  "/job-openings": "Job Openings | GravityTech Software",
+  [routes.home]: "GravityTech Software | Software Delivery Partner",
+  [routes.services]: "Services | GravityTech Software",
+  [routes.projects]: "Projects | GravityTech Software",
+  [routes.about]: "About Us | GravityTech Software",
+  [routes.clients]: "Clients | GravityTech Software",
+  [routes.careers]: "Careers | GravityTech Software",
+  [routes.jobs]: "Job Openings | GravityTech Software",
+  [routes.contact]: "Contact | GravityTech Software",
 };
 
 export default function App() {
@@ -22,7 +30,7 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = routeTitles[location.pathname] || routeTitles["/"];
+    document.title = routeTitles[location.pathname] || routeTitles[routes.home];
   }, [location.pathname]);
 
   useEffect(() => {
@@ -43,10 +51,14 @@ export default function App() {
       <ScrollManager />
       <Suspense fallback={<PageLoader />}>
         <Routes>
-          <Route path={routes.home} element={<HomePage showToast={showToast} />} />
+          <Route path={routes.home} element={<HomePage />} />
+          <Route path={routes.services} element={<ServicesPage />} />
+          <Route path={routes.projects} element={<ProjectsPage />} />
           <Route path={routes.about} element={<AboutPage />} />
+          <Route path={routes.clients} element={<ClientsPage />} />
           <Route path={routes.careers} element={<CareersPage showToast={showToast} />} />
           <Route path={routes.jobs} element={<JobOpeningsPage />} />
+          <Route path={routes.contact} element={<ContactPage showToast={showToast} />} />
           <Route path="/index.html" element={<Navigate replace to={routes.home} />} />
           <Route path="/about.html" element={<Navigate replace to={routes.about} />} />
           <Route path="/careers.html" element={<Navigate replace to={routes.careers} />} />

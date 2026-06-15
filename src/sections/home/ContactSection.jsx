@@ -10,7 +10,7 @@ const contactValidators = {
   message: (value) => (value.trim().length < 15 ? "Please describe your requirement in at least 15 characters." : ""),
 };
 
-export default function ContactSection({ showToast }) {
+export default function ContactSection({ showToast, showHeading = false }) {
   const form = useLiveValidation(
     {
       email: "",
@@ -55,8 +55,12 @@ export default function ContactSection({ showToast }) {
     <AnimatedSection id="contact" className="pro-section pro-contact">
       <div className="container contact-grid pro-contact-grid">
         <div>
-          <p className="pro-eyebrow">Start with GravityTech</p>
-          <h2>Tell us what you want to build.</h2>
+          {showHeading ? (
+            <>
+              <p className="pro-eyebrow">Start with GravityTech</p>
+              <h2>Tell us what you want to build.</h2>
+            </>
+          ) : null}
           <p>
             Share your project requirement or learning goal. The demo form stores your request
             locally in this browser and can be connected to a backend later.

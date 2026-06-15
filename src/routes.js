@@ -1,9 +1,12 @@
 export const routes = {
   about: "/about",
   careers: "/careers",
-  contact: "/#contact",
+  clients: "/clients",
+  contact: "/contact",
   home: "/",
   jobs: "/job-openings",
+  projects: "/projects",
+  services: "/services",
 };
 
 export function normalizeLegacyPath(pathname) {

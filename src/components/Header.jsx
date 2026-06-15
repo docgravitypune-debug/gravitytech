@@ -14,15 +14,13 @@ export default function Header() {
   }, [isOpen]);
 
   const closeMenu = () => setIsOpen(false);
-  const isHome = location.pathname === routes.home;
-  const ctaLabel = isHome ? "Start a Project" : "Hire Us";
+
   const links = [
-    { to: `${routes.home}#services`, label: "Services" },
-    { to: `${routes.home}#projects`, label: "Projects" },
+    { to: routes.services, label: "Services" },
+    { to: routes.projects, label: "Projects" },
     { to: routes.about, label: "About" },
-    { to: `${routes.home}#clients`, label: "Clients" },
+    { to: routes.clients, label: "Clients" },
     { to: routes.jobs, label: "Openings" },
-    { to: `${routes.careers}#reviews`, label: "Reviews" },
     { to: routes.careers, label: "Careers" },
   ];
 
@@ -35,7 +33,7 @@ export default function Header() {
             {links.map((link) => (
               <li key={link.to}>
                 <NavLink
-                  className={({ isActive }) => (isActive && !link.to.includes("#") ? "active" : "")}
+                  className={({ isActive }) => (isActive ? "active" : "")}
                   to={link.to}
                   onClick={closeMenu}
                 >
@@ -44,12 +42,12 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Link className="button button-secondary button-small nav-cta nav-cta-mobile" to={`${routes.home}#contact`} onClick={closeMenu}>
-            {ctaLabel}
+          <Link className="button button-secondary button-small nav-cta nav-cta-mobile" to={routes.contact} onClick={closeMenu}>
+            Let&apos;s Talk!
           </Link>
         </div>
-        <Link className="button button-secondary button-small nav-cta nav-cta-desktop" to={`${routes.home}#contact`}>
-          {ctaLabel}
+        <Link className="button button-secondary button-small nav-cta nav-cta-desktop" to={routes.contact}>
+          Let&apos;s Talk!
         </Link>
         <button
           className="nav-toggle"

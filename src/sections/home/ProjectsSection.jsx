@@ -5,7 +5,7 @@ import { categoryLabels, projectData } from "../../data.js";
 
 const projectTracks = ["all", "java", "python", "analytics", "web"];
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ showHeading = false }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const projects = useMemo(
     () =>
@@ -18,14 +18,16 @@ export default function ProjectsSection() {
   return (
     <AnimatedSection id="projects" className="pro-section pro-projects">
       <div className="container">
-        <ProSectionHeading
-          eyebrow="Project catalog"
-          title="Tracks designed for client delivery and career portfolios."
-          center
-        >
-          Filter by technology to explore modules that can be customized for internships,
-          capstones, and enterprise requirements.
-        </ProSectionHeading>
+        {showHeading ? (
+          <ProSectionHeading
+            eyebrow="Project catalog"
+            title="Tracks designed for client delivery and career portfolios."
+            center
+          >
+            Filter by technology to explore modules that can be customized for internships,
+            capstones, and enterprise requirements.
+          </ProSectionHeading>
+        ) : null}
 
         <div className="pro-filter-bar" role="tablist" aria-label="Project technology filters">
           {projectTracks.map((track) => (

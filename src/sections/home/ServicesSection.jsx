@@ -5,7 +5,7 @@ import ProSectionHeading from "../../components/ProSectionHeading.jsx";
 import { services } from "../../data.js";
 import { Icon } from "../../utils/icons.jsx";
 
-export default function ServicesSection() {
+export default function ServicesSection({ showHeading = false }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeService = services[activeIndex];
 
@@ -15,11 +15,13 @@ export default function ServicesSection() {
   return (
     <AnimatedSection id="services" className="pro-section pro-services">
       <div className="container">
-        <ProSectionHeading
-          eyebrow="Explore our services"
-          title="Technology services built for enterprise-grade delivery."
-          center
-        />
+        {showHeading ? (
+          <ProSectionHeading
+            eyebrow="Explore our services"
+            title="Technology services built for enterprise-grade delivery."
+            center
+          />
+        ) : null}
 
         <div className="pro-service-explorer">
           <div className="pro-service-nav">
