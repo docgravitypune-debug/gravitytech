@@ -1,8 +1,9 @@
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageHero from "../components/PageHero.jsx";
+import CoditasFeatureRows from "../components/CoditasFeatureRows.jsx";
 import AnimatedSection from "../components/AnimatedSection.jsx";
-import { aboutStats, aboutValues, processSteps } from "../data.js";
+import { aboutStats, aboutValues, processSteps, aboutFeatureRows } from "../data.js";
 import { Icon } from "../utils/icons.jsx";
 import { pageHeroes } from "../pageHeroes.js";
 import { routes } from "../routes.js";
@@ -13,6 +14,15 @@ export default function AboutPage() {
       <Header />
       <main className="page-with-hero">
         <PageHero {...pageHeroes.about} />
+        <CoditasFeatureRows
+          rows={aboutFeatureRows}
+          intro={{
+            eyebrow: "Who we are",
+            title: "A project-first",
+            titleAccent: "software studio",
+            subtitle: "We build practical software with clarity, quality, and momentum.",
+          }}
+        />
 
         <AnimatedSection className="pro-section pro-about">
           <div className="container about-story-grid">

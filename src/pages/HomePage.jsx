@@ -1,6 +1,7 @@
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageHero from "../components/PageHero.jsx";
+import CoditasFeatureRows from "../components/CoditasFeatureRows.jsx";
 import ProblemSection from "../sections/home/ProblemSection.jsx";
 import StatementSection from "../sections/home/StatementSection.jsx";
 import ValuePillarsSection from "../sections/home/ValuePillarsSection.jsx";
@@ -9,6 +10,7 @@ import AboutPreviewSection from "../sections/home/AboutPreviewSection.jsx";
 import TestimonialsSection from "../sections/shared/TestimonialsSection.jsx";
 import CareerCta from "../sections/home/CareerCta.jsx";
 import { pageHeroes } from "../pageHeroes.js";
+import { homeFeatureRows } from "../data.js";
 import { routes } from "../routes.js";
 
 export default function HomePage() {
@@ -17,6 +19,15 @@ export default function HomePage() {
       <Header />
       <main className="page-with-hero">
         <PageHero {...pageHeroes.home} />
+        <CoditasFeatureRows
+          rows={homeFeatureRows}
+          intro={{
+            eyebrow: "How we work",
+            title: "Delivery designed for",
+            titleAccent: "real outcomes",
+            subtitle: "Structured pods, mentor reviews, and client-ready demos.",
+          }}
+        />
         <ProblemSection />
         <StatementSection />
         <ValuePillarsSection />

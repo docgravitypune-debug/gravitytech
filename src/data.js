@@ -488,6 +488,63 @@ export const lifeAtGravityTech = [
   },
 ];
 
+export const cultureFeatureRows = [
+  {
+    image: "career-culture-team.jpg",
+    title: "Where innovation is everyday work",
+    alt: "GravityTech team members collaborating during a project sprint",
+    reverse: false,
+  },
+  {
+    image: "career-mentor-guidance.jpg",
+    title: "A delivery culture you don't just experience, you help build",
+    alt: "Mentor guiding a teammate through project review feedback",
+    reverse: true,
+  },
+  {
+    image: "career-analytics-meeting.jpg",
+    title: "Learning that stays connected to real outcomes",
+    alt: "Team reviewing analytics insights during a working session",
+    reverse: false,
+  },
+  {
+    image: "career-coding-session.jpg",
+    title: "Make an impact through demos people can trust",
+    alt: "Developers building software together during a coding session",
+    reverse: true,
+  },
+];
+
+export const homeFeatureRows = [
+  {
+    image: "career-coding-session.jpg",
+    title: "Where client delivery becomes everyday practice",
+    alt: "Developers working together on software modules",
+    reverse: false,
+  },
+  {
+    image: "career-analytics-meeting.jpg",
+    title: "A project culture you don't just observe, you help shape",
+    alt: "Team collaborating around analytics and delivery insights",
+    reverse: true,
+  },
+];
+
+export const aboutFeatureRows = [
+  {
+    image: "career-culture-team.jpg",
+    title: "Where requirements turn into working software",
+    alt: "GravityTech team planning a software delivery sprint",
+    reverse: false,
+  },
+  {
+    image: "career-demo-day.svg",
+    title: "A studio culture built around demos, docs, and delivery",
+    alt: "GravityTech demo day presentation",
+    reverse: true,
+  },
+];
+
 export const whyJoinGravityTech = [
   {
     image: "career-culture-team.jpg",

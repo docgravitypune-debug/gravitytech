@@ -3,8 +3,7 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageHero from "../components/PageHero.jsx";
 import TestimonialsSection from "../sections/shared/TestimonialsSection.jsx";
-import LifeAtSection from "../sections/careers/LifeAtSection.jsx";
-import WhyJoinSection from "../sections/careers/WhyJoinSection.jsx";
+import CultureFeatureSection from "../sections/careers/CultureFeatureSection.jsx";
 import PerksBenefitsSection from "../sections/careers/PerksBenefitsSection.jsx";
 import OpeningsSection from "../sections/careers/OpeningsSection.jsx";
 import CareerJourneySection from "../sections/careers/CareerJourneySection.jsx";
@@ -46,8 +45,7 @@ export default function CareersPage({ showToast }) {
       <Header />
       <main className="page-with-hero">
         <PageHero {...pageHeroes.careers} />
-        <LifeAtSection />
-        <WhyJoinSection />
+        <CultureFeatureSection />
         <PerksBenefitsSection />
         <OpeningsSection onTrackApply={setSelectedTrack} />
         <CareerJourneySection />
