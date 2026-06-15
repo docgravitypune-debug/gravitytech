@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">GravityTech Software logo</title>
+  <desc id="logoDesc">GravityTech Software circular company logo with stylized GT mark and wordmark.</desc>
+  <rect width="1024" height="1024" rx="180" fill="#0a5a78"/>
+  <circle cx="512" cy="512" r="408" fill="#ffffff"/>
+  <circle cx="512" cy="512" r="370" fill="none" stroke="#202328" stroke-width="10"/>
+  <g transform="translate(226 258)">
+    <path d="M56 38c0-23 19-42 42-42h236v64H106c-13 0-21 14-15 25l96 164c18 31 61 31 79 0l62-107H180c-12 0-23-6-30-16L86 72C65 42 86 2 121 2h235c24 0 44 20 44 44v230h-84V80H56V38z" fill="#0d5663"/>
+    <path d="M334 0h170c43 0 78 35 78 78v276h-84V92c0-15-12-28-28-28H334V0z" fill="#18a8e3"/>
+    <g fill="#18a8e3">
+      <rect x="414" y="24" width="94" height="18" rx="9"/>
+      <rect x="472" y="62" width="94" height="18" rx="9"/>
+      <rect x="542" y="62" width="68" height="18" rx="9"/>
+      <rect x="616" y="62" width="26" height="18" rx="9"/>
+      <rect x="442" y="104" width="138" height="18" rx="9"/>
+      <rect x="506" y="142" width="72" height="18" rx="9"/>
+      <rect x="444" y="182" width="160" height="18" rx="9"/>
+      <rect x="426" y="222" width="72" height="18" rx="9"/>
+      <rect x="528" y="222" width="36" height="18" rx="9"/>
+      <rect x="404" y="262" width="108" height="18" rx="9"/>
+      <rect x="516" y="262" width="84" height="18" rx="9"/>
+      <rect x="470" y="302" width="82" height="18" rx="9"/>
+      <rect x="392" y="142" width="90" height="18" rx="9"/>
+    </g>
+    <path d="M160 98h214c15 0 24 16 16 28l-91 157c-16 28-56 28-72 0L112 126c-8-12 1-28 16-28h32zm118 70-71 1 58 98c6 10 19 10 25 0l57-99H278z" fill="#ffffff"/>
+  </g>
+  <g transform="translate(226 646)" font-family="Arial, Helvetica, sans-serif" text-anchor="start">
+    <text x="0" y="0" font-size="76" font-weight="800" letter-spacing="-2">
+      <tspan fill="#202328">GRAVITY</tspan><tspan fill="#18a8e3">TECH</tspan>
+    </text>
+    <text x="36" y="82" fill="#18a8e3" font-size="50" font-weight="700" letter-spacing="22">SOFTWARE</text>
+  </g>
+</svg>
