@@ -1,14 +1,18 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
-import InteractiveGlassCard from "../../components/InteractiveGlassCard.jsx";
 import SectionHeading from "../../components/SectionHeading.jsx";
 import { categoryIcons, categoryLabels, projectData } from "../../data.js";
 import { Icon } from "../../utils/icons.jsx";
 
 const projectTracks = ["all", "java", "python", "analytics", "web"];
+
+const categoryGradients = {
+  java: "linear-gradient(135deg, #29d6e0 0%, #1f9fd8 100%)",
+  python: "linear-gradient(135deg, #6a5cf5 0%, #8b3df0 100%)",
+  analytics: "linear-gradient(135deg, #84cc16 0%, #22c55e 100%)",
+  web: "linear-gradient(135deg, #fb923c 0%, #f97316 100%)",
+};
 
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -21,69 +25,63 @@ export default function ProjectsSection() {
   );
 
   return (
-    <AnimatedSection id="projects" className="section">
+    <AnimatedSection id="projects" className="section section-porto-muted">
       <div className="container">
-        <SectionHeading eyebrow="Dynamic project catalog" title="Slide through future-ready tech tracks." split>
-          Filter real-time project ideas by technology. These projects can be customized for client
-          requirements, student capstones, internships, and corporate portfolios.
+        <SectionHeading
+          eyebrow="Our portfolio"
+          title="Project tracks built for real delivery."
+          center
+          porto
+        >
+          Filter project ideas by technology. Each track can be customized for client requirements,
+          internships, and career portfolios.
         </SectionHeading>
-        <div className="filter-bar" role="tablist" aria-label="Project technology filters">
+
+        <div className="porto-filter-bar" role="tablist" aria-label="Project technology filters">
           {projectTracks.map((track) => (
-            <motion.button
-              className={`filter-button ${activeFilter === track ? "active" : ""}`}
+            <button
+              className={`porto-filter-button ${activeFilter === track ? "active" : ""}`}
               key={track}
               type="button"
-              whileHover={{ y: -2, scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
               onClick={() => setActiveFilter(track)}
             >
               {categoryLabels[track]}
-            </motion.button>
+            </button>
           ))}
         </div>
-        <Swiper
-          className="project-slider"
-          modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
-          spaceBetween={22}
-          slidesPerView={1}
-          breakpoints={{
-            760: { slidesPerView: 2 },
-            1080: { slidesPerView: 3 },
-          }}
-        >
-          {projects.map((project) => (
-            <SwiperSlide key={project.title}>
-              <ProjectCard project={project} />
-            </SwiperSlide>
+
+        <div className="porto-portfolio-grid">
+          {projects.map((project, index) => (
+            <motion.article
+              className="porto-portfolio-card"
+              key={project.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.25) }}
+            >
+              <div
+                className="porto-portfolio-thumb"
+                style={{ background: categoryGradients[project.category] }}
+              >
+                <Icon name={categoryIcons[project.category]} size={34} />
+                <span>{categoryLabels[project.category]}</span>
+              </div>
+              <div className="porto-portfolio-overlay">
+                <p className="porto-portfolio-tag">{project.level}</p>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="porto-portfolio-meta">
+                  <span>{project.timeline}</span>
+                  {project.skills.slice(0, 3).map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+              </div>
+            </motion.article>
           ))}
-        </Swiper>
+        </div>
       </div>
     </AnimatedSection>
-  );
-}
-
-function ProjectCard({ project }) {
-  return (
-    <InteractiveGlassCard className="project-card glass-card">
-      <header>
-        <div>
-          <span className="tag">{categoryLabels[project.category]}</span>
-          <h3>{project.title}</h3>
-        </div>
-        <span className="card-icon">
-          <Icon name={categoryIcons[project.category]} size={24} />
-        </span>
-      </header>
-      <p>{project.description}</p>
-      <div className="project-meta">
-        <span>{project.level}</span>
-        <span>{project.timeline}</span>
-        {project.skills.map((skill) => (
-          <span key={skill}>{skill}</span>
-        ))}
-      </div>
-    </InteractiveGlassCard>
   );
 }

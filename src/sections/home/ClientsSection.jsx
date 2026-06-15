@@ -6,32 +6,41 @@ import { getInitials } from "../../utils/format.js";
 
 export default function ClientsSection() {
   return (
-    <AnimatedSection id="clients" className="section section-muted clients-section">
+    <AnimatedSection id="clients" className="section section-porto">
       <div className="container">
         <SectionHeading
           eyebrow="Our clients"
           title="Trusted by software, education, consulting, and infrastructure teams."
-          split
+          center
+          porto
         >
-          GravityTech Software supports real-time project work and technology delivery for a diverse
-          client network across modern business sectors.
+          GravityTech supports real-time project work and technology delivery for a diverse client
+          network across modern business sectors.
         </SectionHeading>
-        <div className="client-marquee" aria-hidden="true">
-          <div>
-            {[...clients, ...clients].map((client, index) => (
-              <span key={`${client.name}-${index}`}>{client.name}</span>
-            ))}
-          </div>
+
+        <div className="porto-client-logos" aria-label="GravityTech client names">
+          {clients.map((client, index) => (
+            <motion.span
+              key={client.name}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.35, delay: Math.min(index * 0.03, 0.3) }}
+            >
+              {client.name}
+            </motion.span>
+          ))}
         </div>
-        <div className="client-grid" aria-label="GravityTech client list">
+
+        <div className="porto-client-grid" aria-label="GravityTech client list">
           {clients.map((client, index) => (
             <motion.article
-              className={`client-card glass-card client-accent-${client.accent}`}
-              initial={{ opacity: 0, y: 24, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              whileHover={{ y: -8, rotateX: 2, rotateY: -2 }}
+              className={`porto-client-card client-accent-${client.accent}`}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -6 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, delay: Math.min(index * 0.035, 0.28) }}
+              transition={{ duration: 0.4, delay: Math.min(index * 0.04, 0.28) }}
               key={client.name}
             >
               <span>{getInitials(client.name)}</span>

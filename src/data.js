@@ -5,6 +5,27 @@ export const heroMetrics = [
   { label: "Practical delivery", value: 100, suffix: "%" },
 ];
 
+export const heroFeatures = [
+  {
+    icon: "Layers3",
+    title: "Client Delivery Pods",
+    description:
+      "Structured sprints with APIs, dashboards, documentation, and review-ready demos.",
+  },
+  {
+    icon: "Laptop",
+    title: "Career-Ready Tracks",
+    description:
+      "Java, Python, analytics, React, and cloud paths guided by mentors and real modules.",
+  },
+  {
+    icon: "Rocket",
+    title: "Launch-Ready Outcomes",
+    description:
+      "Ship usable software, portfolios, and client deliverables—not slide decks alone.",
+  },
+];
+
 export const services = [
   {
     icon: "Code2",
