@@ -1,7 +1,9 @@
 import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import InteractiveGlassCard from "../../components/InteractiveGlassCard.jsx";
 import SectionHeading from "../../components/SectionHeading.jsx";
 import { categoryIcons, categoryLabels, projectData } from "../../data.js";
 import { Icon } from "../../utils/icons.jsx";
@@ -27,14 +29,16 @@ export default function ProjectsSection() {
         </SectionHeading>
         <div className="filter-bar" role="tablist" aria-label="Project technology filters">
           {projectTracks.map((track) => (
-            <button
+            <motion.button
               className={`filter-button ${activeFilter === track ? "active" : ""}`}
               key={track}
               type="button"
+              whileHover={{ y: -2, scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               onClick={() => setActiveFilter(track)}
             >
               {categoryLabels[track]}
-            </button>
+            </motion.button>
           ))}
         </div>
         <Swiper
@@ -62,7 +66,7 @@ export default function ProjectsSection() {
 
 function ProjectCard({ project }) {
   return (
-    <article className="project-card glass-card">
+    <InteractiveGlassCard className="project-card glass-card">
       <header>
         <div>
           <span className="tag">{categoryLabels[project.category]}</span>
@@ -80,6 +84,6 @@ function ProjectCard({ project }) {
           <span key={skill}>{skill}</span>
         ))}
       </div>
-    </article>
+    </InteractiveGlassCard>
   );
 }

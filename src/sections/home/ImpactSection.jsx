@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import InteractiveGlassCard from "../../components/InteractiveGlassCard.jsx";
 import { impactStats } from "../../data.js";
 
 export default function ImpactSection() {
@@ -19,12 +20,12 @@ export default function ImpactSection() {
           </a>
         </div>
         <div className="impact-stats">
-          {impactStats.map((stat) => (
-            <article className="impact-card glass-card" key={stat.label}>
+          {impactStats.map((stat, index) => (
+            <InteractiveGlassCard className="impact-card glass-card" delay={index * 0.08} key={stat.label}>
               <strong>{stat.value}</strong>
               <h3>{stat.label}</h3>
               <p>{stat.description}</p>
-            </article>
+            </InteractiveGlassCard>
           ))}
         </div>
       </div>

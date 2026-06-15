@@ -1,4 +1,5 @@
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import InteractiveGlassCard from "../../components/InteractiveGlassCard.jsx";
 import SectionHeading from "../../components/SectionHeading.jsx";
 import { services } from "../../data.js";
 import { Icon } from "../../utils/icons.jsx";
@@ -16,14 +17,18 @@ export default function ServicesSection() {
           industry-oriented development tracks so every engagement produces usable work.
         </SectionHeading>
         <div className="service-grid">
-          {services.map((service) => (
-            <article className={`service-card glass-card accent-${service.accent}`} key={service.title}>
+          {services.map((service, index) => (
+            <InteractiveGlassCard
+              className={`service-card glass-card accent-${service.accent}`}
+              delay={index * 0.06}
+              key={service.title}
+            >
               <span className="card-icon">
                 <Icon name={service.icon} size={24} />
               </span>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-            </article>
+            </InteractiveGlassCard>
           ))}
         </div>
       </div>

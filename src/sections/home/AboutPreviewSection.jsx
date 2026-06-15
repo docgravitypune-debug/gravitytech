@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "../../components/AnimatedSection.jsx";
+import InteractiveGlassCard from "../../components/InteractiveGlassCard.jsx";
 import { aboutStats } from "../../data.js";
 import { routes } from "../../routes.js";
 
@@ -22,11 +23,11 @@ export default function AboutPreviewSection() {
           </Link>
         </div>
         <div className="about-mini-stats">
-          {aboutStats.map((stat) => (
-            <article className="glass-card" key={stat.label}>
+          {aboutStats.map((stat, index) => (
+            <InteractiveGlassCard className="glass-card" delay={index * 0.07} key={stat.label}>
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>
-            </article>
+            </InteractiveGlassCard>
           ))}
         </div>
       </div>
