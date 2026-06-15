@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import HeroScene3D from "./HeroScene3D.jsx";
 
 function HeroAction({ action }) {
   const className = `service-hero-cta ${action.variant === "secondary" ? "secondary" : ""}`;
@@ -45,19 +46,20 @@ export default function ServiceHero({ service }) {
         <span className="service-hero-gridlines" />
         <span className="service-hero-noise" />
       </div>
+      <HeroScene3D variant={hero.gradient} />
 
       <div className="container service-hero-grid">
         <motion.div
           className="service-hero-main"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="service-hero-eyebrow">{hero.eyebrow}</p>
-          <h1>
+          <h1 className="hero-title-3d">
             {hero.title}
             <br />
-            <span>{hero.titleAccent}</span>
+            <span className="hero-accent-3d">{hero.titleAccent}</span>
           </h1>
           {hero.actions?.length ? (
             <div className="service-hero-actions">
@@ -72,7 +74,7 @@ export default function ServiceHero({ service }) {
           className="service-hero-aside"
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.65, delay: 0.12, ease: "easeOut" }}
+          transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
           <p>{hero.aside}</p>
           <ul className="service-hero-highlights">
