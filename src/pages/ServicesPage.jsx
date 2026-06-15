@@ -2,7 +2,7 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import PageHero from "../components/PageHero.jsx";
 import ExploreTilesSection from "../sections/home/ExploreTilesSection.jsx";
-import ServicesSection from "../sections/home/ServicesSection.jsx";
+import EnterpriseServicesHub from "../sections/services/EnterpriseServicesHub.jsx";
 import ProcessSection from "../sections/home/ProcessSection.jsx";
 import { pageHeroes } from "../pageHeroes.js";
 import { routes } from "../routes.js";
@@ -29,18 +29,18 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="page-with-hero">
+      <main className="page-with-hero services-page">
         <PageHero {...pageHeroes.services} />
+        <EnterpriseServicesHub />
         <ExploreTilesSection
           eyebrow="Continue exploring"
           tiles={serviceQuickTiles}
           title="Projects and clients are one click away."
         />
-        <ServicesSection />
         <ProcessSection />
       </main>
       <Footer
-        description="Java, Python, analytics, React, and cloud delivery services with mentor-led project labs."
+        description="ERP, CRM, payroll, talent acquisition, and enterprise solutions with mentor-led delivery."
         links={[
           { href: routes.projects, label: "Projects" },
           { href: routes.about, label: "About" },
@@ -48,7 +48,7 @@ export default function ServicesPage() {
           { href: routes.careers, label: "Careers" },
         ]}
         heading="Service tracks"
-        tracks={["Java Pods", "Python AI", "Analytics", "Web & Cloud"]}
+        tracks={["ERP", "CRM", "Payroll", "Talent Acquisition"]}
       />
     </>
   );
