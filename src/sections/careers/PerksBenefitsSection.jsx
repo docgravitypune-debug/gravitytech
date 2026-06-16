@@ -1,9 +1,6 @@
-import AnimatedSection from "../../components/AnimatedSection.jsx";
-import GradientCard from "../../components/GradientCard.jsx";
-import { careerPerkHighlights, perksBenefits } from "../../data.js";
-import { Icon } from "../../utils/icons.jsx";
-
-const variants = ["cyan", "violet", "lime", "sunset"];
+import AnimatedSection from '../../components/AnimatedSection.jsx';
+import { careerPerkHighlights, perksBenefits } from '../../data.js';
+import { Icon } from '../../utils/icons.jsx';
 
 export default function PerksBenefitsSection() {
   return (
@@ -17,8 +14,8 @@ export default function PerksBenefitsSection() {
             </h2>
           </div>
           <p>
-            We support your growth in and out of work through mentoring, flexibility, real project
-            practice, transparent feedback, and portfolio-focused outcomes.
+            We support your growth in and out of work through mentoring, flexibility, and real
+            project ownership that compounds your career edge.
           </p>
         </div>
         <div className="perks-ribbon" aria-label="Career perks highlights">
@@ -28,18 +25,13 @@ export default function PerksBenefitsSection() {
         </div>
         <div className="perks-grid">
           {perksBenefits.map((perk, index) => (
-            <GradientCard
-              className={`perk-card perk-card-${index + 1}`}
-              delay={index * 0.05}
-              key={perk.title}
-              variant={variants[index % variants.length]}
-            >
+            <article className={`perk-card ${(index + 1) % 3 === 2 ? 'perk-card--tall' : ''}`} key={perk.title}>
               <span className="perk-icon">
-                <Icon name={perk.icon} size={36} />
+                <Icon name={perk.icon} size={32} />
               </span>
               <h3>{perk.title}</h3>
               <p>{perk.description}</p>
-            </GradientCard>
+            </article>
           ))}
         </div>
       </div>
