@@ -1,107 +1,103 @@
-import { Linkedin, MapPin } from 'lucide-react';
+import { BadgeCheck, Compass, Handshake, Lightbulb, MapPin, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import './About.css';
 
-const stats = ['50+ Products', '30+ Engineers', '3 Offices', '100% Live Projects'];
 const values = [
-  'Engineering Integrity',
-  'Outcome Over Output',
-  'Long-Term Partnership',
-  'Radical Transparency',
-  'Continuous Learning',
-  'Community First'
+  { icon: ShieldCheck, title: 'Engineering Integrity', text: 'We build with quality, accountability, and long-term maintainability in mind.' },
+  { icon: Compass, title: 'Outcome Over Output', text: 'We prioritize business impact over vanity metrics and feature volume.' },
+  { icon: Handshake, title: 'Long-Term Partnership', text: 'We embed with your team to become a dependable execution partner.' },
+  { icon: Lightbulb, title: 'Radical Transparency', text: 'Clear visibility, honest communication, and data-backed decision making.' },
+  { icon: BadgeCheck, title: 'Continuous Learning', text: 'We evolve our craft with every release, sprint, and production challenge.' },
+  { icon: MapPin, title: 'Community First', text: 'We grow teams by creating inclusive, mentor-led environments.' }
 ];
 
 function About() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('is-visible')),
+      { threshold: 0.15 }
+    );
+    const targets = document.querySelectorAll('.reveal');
+    targets.forEach((target) => observer.observe(target));
+    return () => {
+      targets.forEach((target) => observer.unobserve(target));
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="about-page">
-      <section className="about-hero fade-up">
-        <div className="section-wrap">
-          <h1>We Engineer What&apos;s Next</h1>
+      <section className="about-hero page-section reveal">
+        <div className="container">
+          <h1>We Build Software Teams Want to Use</h1>
           <p>
             GravityTech Software is a Pune-based IT services company building enterprise-grade
-            software, AI platforms, and talent ecosystems for businesses worldwide.
+            software, talent ecosystems, and payroll platforms for businesses worldwide.
           </p>
+          <Link to="/careers" className="btn-primary">Talk to Our Team →</Link>
         </div>
       </section>
 
-      <section className="about-stats fade-up">
-        <div className="section-wrap stats-grid">
-          {stats.map((stat) => (
-            <article className="glass-card tilt-card" key={stat}>
-              <h3>{stat}</h3>
-            </article>
+      <section className="about-stats page-section reveal">
+        <div className="container stats-row">
+          {['50+ Products', '30+ Engineers', '3 Offices', '100% Live Projects'].map((item) => (
+            <article key={item}>{item}</article>
           ))}
         </div>
       </section>
 
-      <section className="about-story fade-up">
-        <div className="section-wrap story-grid">
+      <section className="about-story page-section reveal">
+        <div className="container story-grid">
           <article>
-            <h2 className="hud-heading">Our Story</h2>
+            <h2>Our Story</h2>
             <p>
               Founded with a mission to make enterprise-grade technology accessible, GravityTech has
-              grown from a small engineering team into a full-service IT partner trusted by
-              businesses across software, education, consulting, and infrastructure sectors.
+              grown from a small engineering team into a full-service IT partner trusted across
+              software, education, consulting, and infrastructure sectors.
             </p>
           </article>
-          <article className="glass-card feature-list">
-            <p>Enterprise architecture and digital modernization</p>
-            <p>AI platform engineering with production deployment</p>
-            <p>Talent acceleration through live client delivery</p>
+          <article className="story-list">
+            <p>✦ Pune-based, globally delivered</p>
+            <p>✦ Real projects from day one</p>
+            <p>✦ AI-first engineering culture</p>
+            <p>✦ End-to-end IT partnership</p>
           </article>
         </div>
       </section>
 
-      <section className="about-values fade-up">
-        <div className="section-wrap">
-          <h2 className="hud-heading">Core Values</h2>
-          <div className="value-columns">
-            {values.map((value) => (
-              <article key={value} className="glass-card">
-                <h3>{value}</h3>
-              </article>
-            ))}
+      <section className="about-values page-section reveal">
+        <div className="container">
+          <h2>Core Values</h2>
+          <div className="values-masonry">
+            {values.map((value) => {
+              const Icon = value.icon;
+              return (
+                <article key={value.title}>
+                  <Icon size={24} />
+                  <h3>{value.title}</h3>
+                  <p>{value.text}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="about-team fade-up">
-        <div className="section-wrap">
-          <h2 className="hud-heading">Leadership</h2>
-          <div className="team-grid">
-            {[
-              ['Aarav Kulkarni', 'Founder & CEO'],
-              ['Mira Shah', 'Director of Engineering'],
-              ['Rohan Iyer', 'Head of Talent Programs']
-            ].map(([name, role]) => (
-              <article className="glass-card" key={name}>
-                <h3>{name}</h3>
-                <p>{role}</p>
-                <button type="button" aria-label={`View ${name} on LinkedIn`}>
-                  <Linkedin size={16} />
-                </button>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="about-offices fade-up">
-        <div className="section-wrap">
-          <h2 className="hud-heading">Offices</h2>
-          <div className="offices-grid">
-            {[
-              ['Pune India', 'Baner Corporate Hub, Pune'],
-              ['Dubai UAE', 'Business Bay Innovation Tower'],
-              ['Delaware USA', 'Wilmington Enterprise Center']
-            ].map(([location, address]) => (
-              <article key={location} className="glass-card">
-                <MapPin size={18} />
-                <h3>{location}</h3>
-                <p>{address}</p>
-              </article>
-            ))}
-          </div>
+      <section className="about-offices page-section reveal">
+        <div className="container office-grid">
+          {[
+            ['Pune', 'Baner, Pune, Maharashtra', 'India 🇮🇳'],
+            ['Dubai', 'Business Bay, Dubai', 'UAE 🇦🇪'],
+            ['Delaware', 'Wilmington, Delaware', 'USA 🇺🇸']
+          ].map(([city, address, country]) => (
+            <article key={city}>
+              <MapPin size={22} />
+              <h3>{city}</h3>
+              <p>{address}</p>
+              <span>{country}</span>
+            </article>
+          ))}
         </div>
       </section>
     </div>

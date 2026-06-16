@@ -7,47 +7,27 @@ import Services from './pages/Services/Services';
 import Careers from './pages/Careers/Careers';
 import About from './pages/About/About';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      {
-        threshold: 0.15
-      }
-    );
-
-    const elements = document.querySelectorAll('.fade-up');
-    elements.forEach((element) => observer.observe(element));
-
-    return () => {
-      elements.forEach((element) => observer.unobserve(element));
-      observer.disconnect();
-    };
-  }, [location.pathname]);
-
   return (
     <>
+      <ScrollToTop />
       <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<Careers />} />
+      </Routes>
       <Footer />
     </>
   );

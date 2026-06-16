@@ -5,116 +5,73 @@ import './Services.css';
 
 const services = [
   {
-    id: 'crm',
-    icon: <Users2 size={36} />,
+    number: '01',
     title: 'CRM Solutions',
+    icon: Users2,
     description:
-      'Custom CRM platforms built for sales teams, relationship managers, and enterprise pipelines. AI-assisted lead scoring, pipeline automation, and real-time analytics dashboards.',
-    features: [
-      'Lead & Contact Management',
-      'Pipeline Automation',
-      'AI-Powered Insights',
-      'Multi-channel Integration',
-      'Custom Reporting'
-    ]
+      'Custom CRM platforms built for sales pipelines, relationship management, and enterprise growth.',
+    features: ['Lead & Contact Management', 'Pipeline Automation', 'AI-Powered Insights', 'Multi-channel Integration', 'Custom Reporting']
   },
   {
-    id: 'talent',
-    icon: <UserSearch size={36} />,
-    title: 'Talent Acquisition Platform',
+    number: '02',
+    title: 'Talent Acquisition',
+    icon: UserSearch,
     description:
-      'End-to-end recruitment technology — from job posting and AI resume screening to interview scheduling and onboarding workflows. Built for HR teams that move fast.',
-    features: [
-      'AI Resume Screening',
-      'Automated Interview Scheduling',
-      'Candidate Pipeline Tracking',
-      'Onboarding Automation',
-      'Analytics & Compliance'
-    ]
+      'End-to-end recruitment technology from sourcing to onboarding, designed for high-speed hiring teams.',
+    features: ['AI Resume Screening', 'Automated Interview Scheduling', 'Candidate Pipeline Tracking', 'Onboarding Automation', 'Analytics & Compliance']
   },
   {
-    id: 'enterprise',
-    icon: <Building2 size={36} />,
+    number: '03',
     title: 'Enterprise Solutions',
+    icon: Building2,
     description:
-      'Large-scale enterprise software — ERP integrations, workflow automation, cross-department portals, and custom enterprise platforms engineered for scale and security.',
-    features: [
-      'ERP & System Integration',
-      'Workflow Automation',
-      'Role-Based Access Control',
-      'Audit & Compliance Modules',
-      'Scalable Cloud Architecture'
-    ]
+      'Large-scale enterprise systems combining workflow orchestration, integrations, and role-secure operations.',
+    features: ['ERP & System Integration', 'Workflow Automation', 'Role-Based Access Control', 'Audit & Compliance', 'Scalable Cloud Architecture']
   },
   {
-    id: 'payroll',
-    icon: <Wallet size={36} />,
+    number: '04',
     title: 'Third Party Payroll',
+    icon: Wallet,
     description:
-      'Fully managed payroll processing for enterprises using third-party vendors — compliance, statutory filings, salary disbursement, and real-time payroll reporting all in one platform.',
-    features: [
-      'Multi-vendor Payroll Processing',
-      'Statutory Compliance (PF, ESI, TDS)',
-      'Salary Slip Automation',
-      'Real-time Payroll Dashboard',
-      'Year-end Filing Support'
-    ]
+      'Compliance-first payroll management with reporting, disbursement, and statutory workflows at scale.',
+    features: ['Multi-vendor Payroll Processing', 'Statutory Compliance (PF, ESI, TDS)', 'Salary Slip Automation', 'Real-time Dashboard', 'Year-end Filing']
   }
 ];
 
 function Services() {
   useEffect(() => {
-    const cards = document.querySelectorAll('.tilt-card');
-    const onMove = (event) => {
-      const card = event.currentTarget;
-      const rect = card.getBoundingClientRect();
-      const rotateX = ((event.clientY - rect.top - rect.height / 2) / rect.height) * -8;
-      const rotateY = ((event.clientX - rect.left - rect.width / 2) / rect.width) * 8;
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    };
-    const onLeave = (event) => {
-      event.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-    };
-
-    cards.forEach((card) => {
-      card.addEventListener('mousemove', onMove);
-      card.addEventListener('mouseleave', onLeave);
-    });
-
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('is-visible')),
+      { threshold: 0.15 }
+    );
+    const targets = document.querySelectorAll('.reveal');
+    targets.forEach((target) => observer.observe(target));
     return () => {
-      cards.forEach((card) => {
-        card.removeEventListener('mousemove', onMove);
-        card.removeEventListener('mouseleave', onLeave);
-      });
+      targets.forEach((target) => observer.unobserve(target));
+      observer.disconnect();
     };
   }, []);
 
   return (
     <div className="services-page">
-      <section className="services-hero fade-up">
-        <div className="mesh-aurora" />
-        <div className="section-wrap">
-          <h1>Enterprise Software Solutions</h1>
-          <p>
-            From customer lifecycle systems to compliance-heavy enterprise modules, we design and
-            deploy resilient digital platforms that evolve with your business.
-          </p>
+      <section className="services-hero page-section reveal">
+        <div className="container">
+          <h1>Enterprise IT Services Built for Scale</h1>
+          <p>Four core capabilities. One delivery partner.</p>
         </div>
       </section>
 
-      <section className="service-list fade-up">
-        <div className="section-wrap">
-          {services.map((service, index) => (
-            <article
-              className={`service-row ${index % 2 === 1 ? 'reverse' : ''}`}
-              id={service.id}
-              key={service.title}
-            >
-              <div className="service-icon-panel glass-card tilt-card">
-                {service.icon}
-                <span className="tech-tag">{service.title}</span>
+      {services.map((service, index) => {
+        const Icon = service.icon;
+        return (
+          <section className="service-detail page-section reveal" key={service.title}>
+            <div className={`container service-row ${index % 2 === 1 ? 'reverse' : ''}`}>
+              <div className="service-visual">
+                <div className="service-glow" />
+                <Icon size={80} />
               </div>
-              <div className="service-content glass-card">
+              <div className="service-text">
+                <span>{service.number}</span>
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
                 <ul>
@@ -122,20 +79,20 @@ function Services() {
                     <li key={feature}>{feature}</li>
                   ))}
                 </ul>
-                <Link to="/careers#apply" className="glow-button">
-                  Get Started
+                <Link className="btn-primary" to="/careers">
+                  Get Started →
                 </Link>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
+            </div>
+          </section>
+        );
+      })}
 
-      <section className="services-bottom-cta fade-up">
-        <div className="section-wrap glass-card">
-          <h2>Have a custom requirement? Let's talk →</h2>
-          <Link className="glow-button" to="/careers#apply">
-            Start Consultation
+      <section className="services-cta page-section reveal">
+        <div className="container">
+          <h2>Have a custom requirement?</h2>
+          <Link className="btn-primary" to="/careers">
+            Let's Talk →
           </Link>
         </div>
       </section>

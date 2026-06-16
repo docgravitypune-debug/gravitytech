@@ -1,78 +1,76 @@
 import { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import logo from '../../assets/logo.jpeg';
 import './Navbar.css';
 
-const serviceLinks = [
-  { label: 'CRM Solutions', to: '/services#crm' },
-  { label: 'Talent Acquisition Platform', to: '/services#talent' },
-  { label: 'Enterprise Solutions', to: '/services#enterprise' },
-  { label: 'Third Party Payroll', to: '/services#payroll' }
+const dropdownItems = [
+  { label: 'CRM Solutions', to: '/services' },
+  { label: 'Talent Acquisition', to: '/services' },
+  { label: 'Enterprise Solutions', to: '/services' },
+  { label: 'Third Party Payroll', to: '/services' }
 ];
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const location = useLocation();
 
-  const closeMenus = () => {
+  const closeAll = () => {
     setMobileOpen(false);
-    setServicesOpen(false);
+    setDropdownOpen(false);
   };
 
+  const servicesActive = location.pathname === '/services';
+
   return (
-    <header className="navbar-shell">
-      <nav className="navbar glass-card">
-        <Link to="/" className="navbar-logo" onClick={closeMenus}>
-          <img src={logo} alt="GravityTech Software" />
+    <header className="nav-wrap">
+      <nav className="nav-pill">
+        <Link to="/" className="nav-logo" onClick={closeAll}>
+          <img src={logo} alt="GravityTech" />
           <span>GravityTech</span>
         </Link>
 
-        <button
-          type="button"
-          className="menu-toggle"
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-label="Toggle navigation"
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+        <button className="nav-menu-btn" onClick={() => setMobileOpen((v) => !v)} type="button" aria-label="menu">
+          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
         </button>
 
-        <div className={`nav-links ${mobileOpen ? 'is-open' : ''}`}>
-          <NavLink to="/" onClick={closeMenus}>
-            Home
-          </NavLink>
-
-          <div
-            className="services-dropdown"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
+        <div className={`nav-center ${mobileOpen ? 'open' : ''}`}>
+          <div className="nav-dropdown" onMouseLeave={() => setDropdownOpen(false)}>
             <button
               type="button"
-              className="services-trigger"
-              onClick={() => setServicesOpen((prev) => !prev)}
+              className={`nav-link nav-dropdown-trigger ${servicesActive ? 'active' : ''}`}
+              onMouseEnter={() => setDropdownOpen(true)}
+              onClick={() => setDropdownOpen((v) => !v)}
             >
               Services <ChevronDown size={16} />
             </button>
-            <div className={`dropdown-menu glass-card ${servicesOpen ? 'is-open' : ''}`}>
-              {serviceLinks.map((service) => (
-                <Link key={service.label} to={service.to} onClick={closeMenus}>
-                  {service.label}
+            <div className={`nav-dropdown-menu ${dropdownOpen ? 'open' : ''}`}>
+              {dropdownItems.map((item) => (
+                <Link to={item.to} key={item.label} onClick={closeAll}>
+                  {item.label}
                 </Link>
               ))}
             </div>
           </div>
 
-          <NavLink to="/about" onClick={closeMenus}>
-            About
+          <NavLink to="/services" className="nav-link" onClick={closeAll}>
+            Industries
           </NavLink>
-          <NavLink to="/careers" onClick={closeMenus}>
+          <NavLink to="/about" className="nav-link" onClick={closeAll}>
+            About Us
+          </NavLink>
+          <NavLink to="/careers" className="nav-link" onClick={closeAll}>
             Careers
           </NavLink>
+
+          <Link className="btn-primary nav-mobile-cta" to="/careers" onClick={closeAll}>
+            Let's Talk!
+          </Link>
         </div>
 
-        <Link to="/careers#apply" className="glow-button nav-cta" onClick={closeMenus}>
-          Let's Talk
+        <Link className="btn-primary nav-cta" to="/careers" onClick={closeAll}>
+          Let's Talk!
         </Link>
       </nav>
     </header>
