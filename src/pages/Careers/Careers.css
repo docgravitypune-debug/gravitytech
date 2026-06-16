@@ -1,0 +1,357 @@
+.careers-hero,
+.scip-section {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.careers-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.careers-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.careers-hero p {
+  margin-top: 10px;
+  color: var(--text-muted-light);
+}
+
+.hero-actions {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-stats {
+  display: grid;
+  gap: 10px;
+}
+
+.hero-stats article {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 18px;
+  font-size: 1.8rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-stats span {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-muted-light);
+  font-family: 'Inter', sans-serif;
+}
+
+.perks-section,
+.apply-section {
+  background: var(--bg-light);
+}
+
+.perks-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.perks-head p {
+  color: var(--text-muted);
+}
+
+.perks-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.perks-tags button {
+  border: 1px solid rgba(10, 61, 92, 0.15);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text-dark);
+  padding: 8px 14px;
+}
+
+.perks-masonry {
+  columns: 3;
+  column-gap: 20px;
+}
+
+.perk-card {
+  break-inside: avoid;
+  background: var(--bg-section);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.perk-card--tall {
+  padding-bottom: 60px;
+}
+
+.perk-card svg {
+  color: var(--cyan);
+}
+
+.perk-card h3 {
+  margin: 12px 0 8px;
+}
+
+.perk-card p {
+  color: var(--text-muted);
+}
+
+.positions-section {
+  background: var(--gradient-section);
+}
+
+.positions-section > .container > p {
+  color: var(--text-muted);
+  margin: 8px 0 16px;
+}
+
+.positions-list {
+  display: grid;
+  gap: 12px;
+}
+
+.position-card {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid rgba(10, 61, 92, 0.08);
+}
+
+.position-head {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.position-head span {
+  display: inline-flex;
+  background: rgba(31, 182, 232, 0.14);
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: #0e5672;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.position-head h3 {
+  margin: 8px 0 4px;
+}
+
+.position-head p {
+  color: var(--text-muted);
+}
+
+.position-head svg {
+  transition: transform 0.25s ease;
+}
+
+.position-head svg.open {
+  transform: rotate(180deg);
+}
+
+.position-body {
+  border-top: 1px solid rgba(10, 61, 92, 0.08);
+  padding: 0 16px 16px;
+}
+
+.position-body p {
+  color: var(--text-muted);
+  margin: 12px 0;
+}
+
+.scip-badge {
+  border: 1px solid var(--cyan);
+  color: var(--cyan-light);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.scip-section h2 {
+  margin-top: 14px;
+}
+
+.scip-section h3 {
+  margin-top: 8px;
+  color: #d2eaf7;
+}
+
+.scip-desc {
+  margin-top: 14px;
+  color: var(--text-muted-light);
+}
+
+.scip-timeline {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.scip-timeline .line {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 24px;
+  height: 2px;
+  background: rgba(31, 182, 232, 0.35);
+}
+
+.scip-timeline article {
+  position: relative;
+  text-align: center;
+}
+
+.node {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+  background: #0d2d44;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+}
+
+.node svg {
+  color: var(--cyan-light);
+}
+
+.scip-timeline p {
+  color: var(--text-muted-light);
+  font-size: 0.92rem;
+}
+
+.scip-benefits {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.scip-benefits article {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.scip-section .btn-primary {
+  margin-top: 18px;
+}
+
+.scip-note {
+  margin-top: 10px;
+  color: var(--text-muted-light);
+}
+
+.apply-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 22px;
+}
+
+.apply-grid p {
+  color: var(--text-muted);
+}
+
+.apply-chips {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.apply-chips span {
+  background: var(--bg-section-alt);
+  border-radius: 999px;
+  padding: 8px 12px;
+}
+
+.apply-panel {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(10, 61, 92, 0.1);
+  box-shadow: var(--shadow-card);
+  padding: 18px;
+}
+
+.apply-panel form {
+  display: grid;
+  gap: 10px;
+}
+
+.apply-panel input,
+.apply-panel select,
+.apply-panel textarea {
+  border: 1px solid rgba(10, 61, 92, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  font: inherit;
+}
+
+.apply-panel .btn-primary {
+  width: 100%;
+}
+
+.success-state {
+  text-align: center;
+  padding: 28px 10px;
+}
+
+.success-state svg {
+  color: #18a765;
+}
+
+.success-state h3 {
+  margin-top: 10px;
+}
+
+.success-state p {
+  margin-top: 6px;
+}
+
+@media (max-width: 1024px) {
+  .careers-hero-grid,
+  .perks-head,
+  .apply-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perks-masonry {
+    columns: 2;
+  }
+
+  .scip-timeline,
+  .scip-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .scip-timeline .line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .perks-masonry {
+    columns: 1;
+  }
+}
